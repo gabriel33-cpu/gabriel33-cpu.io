@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="google-site-verification" content="I4vV_O4-e_jz382eO1W-n7roFTHmzQ7mi1udRNXoCIA" />
+  <meta name="google-site-verification" content="Byliq6bCY8axGepqw4pUIBES40ilo60vY1U3-iHCz6M" />
+  <meta name="google-site-verification" content="rHPuTDoYB8E25eZB9N8NMH9EYg80ojTbdTAmyz-rltY" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RPP Agency - Creación de Contenido</title>
+  <link rel="icon" href="logotipo-web.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --color-bg: #faf9f7;
+      --color-primary: #1a1a1a;
+      --color-secondary: #b8860b;
+      --color-text: #2c2c2c;
+      --color-accent: #c77f00;
+      --color-white: #ffffff;
+      --transition-speed: 0.4s;
+      --font-main: 'Montserrat', sans-serif;
+      --border-radius: 10px;
+      --shadow-light: rgba(0, 0, 0, 0.05);
+      --shadow-dark: rgba(0, 0, 0, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: var(--color-white);
+      box-shadow: 0 4px 15px var(--shadow-light);
+      z-index: 1000;
+      transition: background-color var(--transition-speed);
+    }
+
+    nav .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: var(--color-primary);
+      cursor: pointer;
+      letter-spacing: 2px;
+      user-select: none;
+      transition: color var(--transition-speed);
+    }
+
+    nav .logo:hover,
+    nav .logo:focus {
+      color: var(--color-secondary);
+      outline: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      color: var(--color-primary);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+      padding-bottom: 3px;
+      transition: color var(--transition-speed);
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--color-secondary);
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    nav ul li a:hover::after,
+    nav ul li a:focus::after {
+      width: 100%;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+      color: var(--color-secondary);
+      outline: none;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a1add 0%, #1a1a1aee 100%);
+      color: var(--color-white);
+      padding: 7rem 1.5rem 4rem;
+      text-align: center;
+      box-shadow: 0 4px 20px var(--shadow-dark);
+    }
+
+    header h1 {
+      font-size: 3.6rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 0.5rem;
+      text-shadow: 1px 1px 10px rgba(184, 134, 11, 0.7);
+      animation: fadeInDown 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    header p {
+      font-size: 1.4rem;
+      font-style: italic;
+      max-width: 700px;
+      margin: 0 auto;
+      animation: fadeInUp 1.2s ease forwards;
+      opacity: 0;
+      color: #d6c58a;
+      text-shadow: 0 0 5px rgba(184, 134, 11, 0.4);
+    }
+
+    @keyframes fadeInDown {
+      to {opacity: 1; transform: translateY(0);}
+      from {opacity: 0; transform: translateY(-30px);}
+    }
+
+    @keyframes fadeInUp {
+      to {opacity: 1; transform: translateY(0);}
+      from {opacity: 0; transform: translateY(30px);}
+    }
+
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem 2rem 3rem;
+      background-color: var(--color-white);
+      border-radius: var(--border-radius);
+      box-shadow: 0 12px 40px var(--shadow-light);
+      transition: box-shadow var(--transition-speed);
+    }
+
+    section:hover {
+      box-shadow: 0 14px 50px var(--shadow-dark);
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: var(--color-primary);
+      margin-bottom: 1.8rem;
+      font-weight: 700;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 70px;
+      background-color: var(--color-secondary);
+      border-radius: 2px;
+    }
+
+    .services ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .services li {
+      background-color: #fcfbf8;
+      border-radius: var(--border-radius);
+      padding: 1.8rem 2rem;
+      box-shadow: 0 4px 18px var(--shadow-light);
+      border-left: 6px solid var(--color-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+
+    .services li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px var(--shadow-dark);
+    }
+
+    .services li i {
+      color: var(--color-secondary);
+      font-size: 2rem;
+    }
+
+    .services li strong {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--color-primary);
+    }
+
+    .services li.highlighted {
+      background: linear-gradient(135deg, #f9f7ef, #f2e9bf);
+      border-left-color: var(--color-accent);
+      box-shadow: 0 6px 20px rgba(199, 127, 0, 0.25);
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 1rem 1.2rem;
+      border: 2px solid #ccc;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      font-family: var(--font-main);
+      resize: vertical;
+      transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+      background-color: #fff;
+      color: var(--color-primary);
+      box-shadow: inset 0 0 6px #f0f0f0;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--color-secondary);
+      box-shadow: 0 0 8px var(--color-secondary);
+      outline: none;
+    }
+
+    .contact-form button {
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+      padding: 1.3rem 0;
+      border: none;
+      border-radius: var(--border-radius);
+      font-weight: 700;
+      font-size: 1.15rem;
+      cursor: pointer;
+      transition: background-color var(--transition-speed), transform var(--transition-speed);
+      box-shadow: 0 6px 15px rgba(184, 134, 11, 0.6);
+    }
+
+    .contact-form button:hover,
+    .contact-form button:focus {
+      background-color: #a37506;
+      transform: scale(1.05);
+      outline: none;
+      box-shadow: 0 8px 20px rgba(163, 117, 6, 0.75);
+    }
+
+    footer {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.95rem;
+      margin-top: 4rem;
+      border-top: 3px solid var(--color-secondary);
+      box-shadow: 0 -2px 12px var(--shadow-dark);
+    }
+
+    footer .social-icons {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    footer .social-icons a {
+      color: var(--color-white);
+      font-size: 1.5rem;
+      transition: color var(--transition-speed);
+    }
+
+    footer .social-icons a:hover,
+    footer .social-icons a:focus {
+      color: var(--color-secondary);
+      outline: none;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+      border-radius: 50%;
+      width: 65px;
+      height: 65px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.8rem;
+      box-shadow: 0 6px 15px rgba(184, 134, 11, 0.7);
+      z-index: 1100;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .whatsapp-button:hover,
+    .whatsapp-button:focus {
+      background-color: var(--color-accent);
+      outline: none;
+    }
+
+    @media (max-width: 768px) {
+      nav .container {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      header h1 {
+        font-size: 2.6rem;
+      }
+      .services ul {
+        grid-template-columns: 1fr;
+      }
+      section {
+        margin: 2rem 1rem;
+        padding: 1.5rem 1.5rem 2.5rem;
+      }
+      .contact-form {
+        margin: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav role="navigation" aria-label="Menú principal">
+    <div class="container">
+      <div class="logo" tabindex="0">RPP Agency</div>
+      <ul>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header>
+    <h1>RPP Agency</h1>
+    <p>Ayudo a marcas y emprendedores a conectar con su audiencia a través de contenido profesional.</p>
+  </header>
+
+  <section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p>Soy Gabriel Federico Romero Pérez, creador de RPP Agency. Me dedico a generar contenido que transmite, emociona y conecta. Ya sea para redes sociales, blogs o plataformas audiovisuales, creo piezas que reflejan el mensaje y la esencia de cada marca.</p>
+  </section>
+
+  <section id="servicios" class="services">
+    <h2>Servicios</h2>
+    <ul>
+      <li><i class="fa-solid fa-pen-nib"></i><strong>Redacción de artículos:</strong><br> Textos bien estructurados y optimizados para blogs o páginas web.</li>
+      <li><i class="fa-brands fa-youtube"></i><strong>Guiones para YouTube/TikTok:</strong><br> Ideas claras, creativas y listas para grabar con impacto.</li>
+      <li class="highlighted"><i class="fa-brands fa-twitter"></i><strong>Generación de contenido para Twitter:</strong><br> Tweets atractivos y estratégicos para crecer tu comunidad.</li>
+      <li><i class="fa-solid fa-bullhorn"></i><strong>Campañas de publicidad digital:</strong><br> Conceptos y textos que convierten.</li>
+      <li><i class="fa-solid fa-paintbrush"></i><strong>Diseño de identidad visual:</strong><br> Logotipos, paletas de colores y más.</li>
+    </ul>
+  </section>
+
+  <section id="contacto" aria-labelledby="contacto-title">
+    <h2 id="contacto-title">Contacto</h2>
+    <form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST" aria-label="Formulario de contacto">
+      <input type="hidden" name="_next" value="https://gabriel33-cpu.github.io/gabriel33-cpu.io/" />
+      <input type="text" name="nombre" placeholder="Tu nombre" required aria-label="Nombre" />
+      <input type="email" name="email" placeholder="Tu correo electrónico" required aria-label="Correo electrónico" />
+      <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required aria-label="Mensaje"></textarea>
+      <button type="submit" aria-label="Enviar mensaje">Enviar</button>
+    </form>
+  </section>
+
+  <a href="https://wa.me/541153719211" class="whatsapp-button" aria-label="Contactar vía WhatsApp" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <footer>
+    <p>© 2025 RPP Agency - Todos los derechos reservados.</p>
+    <div class="social-icons" role="region" aria-label="Redes sociales">
+      <a href="https://twitter.com/rppagency" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+      <a href="https://facebook.com/rppagency" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://instagram.com/rppagency" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>
+
