@@ -2,6 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta name="google-site-verification" content="I4vV_O4-e_jz382eO1W-n7roFTHmzQ7mi1udRNXoCIA" />
+  <meta name="google-site-verification" content="Byliq6bCY8axGepqw4pUIBES40ilo60vY1U3-iHCz6M" />
+  <meta name="google-site-verification" content="rHPuTDoYB8E25eZB9N8NMH9EYg80ojTbdTAmyz-rltY" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RPP Agency - Creación de Contenido</title>
   <link rel="icon" href="logotipo-web.ico" type="image/x-icon" />
@@ -279,6 +282,7 @@
       background-color: var(--color-accent);
     }
 
+    /* Modal */
     .modal {
       position: fixed;
       top: 0; left: 0;
@@ -330,12 +334,21 @@
     .close-modal:hover {
       background-color: var(--color-accent);
     }
+
+    /* Responsive Nav */
+    @media (max-width: 768px) {
+      nav .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav>
+  <nav role="navigation" aria-label="Menú principal">
     <div class="container">
-      <div class="logo">RPP Agency</div>
+      <div class="logo" tabindex="0">RPP Agency</div>
       <ul>
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#servicios">Servicios</a></li>
@@ -351,7 +364,7 @@
 
   <section id="sobre-mi">
     <h2>Sobre mí</h2>
-    <p>Soy Gabriel Federico Romero Pérez, creador de RPP Agency. Me dedico a generar contenido que transmite, emociona y conecta. Ya sea para redes sociales, blogs o plataformas audiovisuales, creo piezas que reflejan el mensaje y la esencia de cada marca.</p>
+    <p>Soy Gabriel Federico Romero Pérez, creador de RPP Agency. Me dedico a crear contenido que comunica, emociona y vende. Trabajo para redes sociales, páginas web y campañas visuales, construyendo mensajes claros que representen a cada negocio.</p>
   </section>
 
   <section id="servicios" class="services">
@@ -359,129 +372,117 @@
     <ul>
       <li>
         <i class="fa-solid fa-pen-nib"></i>
-        <strong>Textos para Web o Blog:</strong><br>
-        Contenidos claros, persuasivos y adaptados a tu negocio.
-        <button class="open-modal" data-modal="modal-redaccion">Ver precios</button>
+        <strong>Artículos para tu web o blog</strong><br>
+        Textos claros y bien estructurados que posicionan tu negocio.
+        <button class="open-modal" aria-label="Ver precios de artículos">Ver precios</button>
       </li>
       <li>
         <i class="fa-brands fa-youtube"></i>
-        <strong>Guiones para Videos:</strong><br>
-        Guiones impactantes para YouTube o TikTok.
-        <button class="open-modal" data-modal="modal-guiones">Ver precios</button>
+        <strong>Guiones para vídeos</strong><br>
+        Ideas listas para grabar, adaptadas al tipo de contenido.
+        <button class="open-modal" data-type="guiones" aria-label="Ver precios de guiones">Ver precios</button>
       </li>
       <li>
         <i class="fa-solid fa-bullhorn"></i>
-        <strong>Textos para Anuncios:</strong><br>
-        Publicidad digital que convierte.
-        <button class="open-modal" data-modal="modal-publicidad">Ver precios</button>
+        <strong>Textos para campañas publicitarias</strong><br>
+        Mensajes que destacan y convierten en redes o Google Ads.
+        <button class="open-modal" data-type="campañas" aria-label="Ver precios de campañas">Ver precios</button>
       </li>
       <li>
         <i class="fa-solid fa-paintbrush"></i>
-        <strong>Diseño de Marca:</strong><br>
-        Logotipo, paletas y guía visual para tu proyecto.
-        <button class="open-modal" data-modal="modal-diseno">Ver precios</button>
+        <strong>Diseño de identidad visual</strong><br>
+        Logotipos, colores y estilos para diferenciar tu marca.
+        <button class="open-modal" data-type="diseño" aria-label="Ver precios de diseño">Ver precios</button>
       </li>
     </ul>
   </section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST">
+  <section id="contacto" aria-labelledby="contacto-title">
+    <h2 id="contacto-title">Contacto</h2>
+    <form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST" aria-label="Formulario de contacto">
       <input type="hidden" name="_next" value="https://gabriel33-cpu.github.io/gabriel33-cpu.io/" />
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo electrónico" required>
-      <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
-      <button type="submit">Enviar</button>
+      <input type="text" name="nombre" placeholder="Tu nombre" required aria-label="Nombre" />
+      <input type="email" name="email" placeholder="Tu correo electrónico" required aria-label="Correo electrónico" />
+      <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required aria-label="Mensaje"></textarea>
+      <button type="submit" aria-label="Enviar mensaje">Enviar</button>
     </form>
   </section>
 
-<a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?" 
-   class="whatsapp-button" target="_blank" rel="noopener noreferrer">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
+  <a href="https://wa.me/541153719211?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?" 
+     class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
   <footer>
     <p>© 2025 RPP Agency - Todos los derechos reservados.</p>
-    <div class="social-icons">
-      <a href="https://twitter.com/rppagency" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-      <a href="https://facebook.com/rppagency" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-      <a href="https://instagram.com/rppagency" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <div class="social-icons" role="region" aria-label="Redes sociales">
+      <a href="https://twitter.com/rppagency" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+      <a href="https://facebook.com/rppagency" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://instagram.com/rppagency" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
     </div>
   </footer>
 
-  <!-- MODALES CON PRECIOS -->
-  <div class="modal" id="modal-redaccion">
+  <!-- Modal -->
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
-      <h3>Precios Textos Web / Blog</h3>
-      <ul>
-        <li>Texto normal: <strong>30 €</strong></li>
-        <li>Texto avanzado: <strong>60 €</strong></li>
-        <li>Texto muy avanzado: <strong>90 €</strong></li>
+      <h3 id="modal-title">Precios</h3>
+      <ul id="modal-list">
+        <!-- dinámico -->
       </ul>
-      <button class="close-modal">Cerrar</button>
-    </div>
-  </div>
-
-  <div class="modal" id="modal-guiones">
-    <div class="modal-content">
-      <h3>Precios Guiones Videos</h3>
-      <ul>
-        <li>Guion normal: <strong>5 € + 5 €/min</strong></li>
-        <li>Guion avanzado: <strong>10 € + 7 €/min</strong></li>
-        <li>Guion muy avanzado: <strong>15 € + 10 €/min</strong></li>
-      </ul>
-      <button class="close-modal">Cerrar</button>
-    </div>
-  </div>
-
-  <div class="modal" id="modal-publicidad">
-    <div class="modal-content">
-      <h3>Precios Textos Anuncios</h3>
-      <ul>
-        <li>Texto común: <strong>10 €</strong></li>
-        <li>Texto avanzado: <strong>20 €</strong></li>
-        <li>Texto muy avanzado: <strong>30 €</strong></li>
-      </ul>
-      <button class="close-modal">Cerrar</button>
-    </div>
-  </div>
-
-  <div class="modal" id="modal-diseno">
-    <div class="modal-content">
-      <h3>Precios Diseño de Marca</h3>
-      <ul>
-        <li>El precio varía según el proyecto. ¡Contáctame para un presupuesto personalizado!</li>
-      </ul>
-      <button class="close-modal">Cerrar</button>
+      <button class="close-modal" aria-label="Cerrar ventana">Cerrar</button>
     </div>
   </div>
 
   <script>
-    const modalButtons = document.querySelectorAll('.open-modal');
-    const closeButtons = document.querySelectorAll('.close-modal');
+    const modal = document.querySelector('.modal');
+    const modalList = document.getElementById('modal-list');
+    const modalTitle = document.getElementById('modal-title');
+    const closeModalBtn = document.querySelector('.close-modal');
+    const openModalBtns = document.querySelectorAll('.open-modal');
 
-    modalButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const modalId = button.getAttribute('data-modal');
-        document.getElementById(modalId).style.display = 'flex';
+    const precios = {
+      articulos: [
+        "Artículo normal: <strong>7 €</strong>",
+        "Artículo avanzado: <strong>12 €</strong>",
+        "Artículo muy avanzado: <strong>15 €</strong>"
+      ],
+      guiones: [
+        "Guión normal: <strong>5 €</strong> + duración del vídeo",
+        "Guión avanzado: <strong>10 €</strong> + duración del vídeo",
+        "Guión muy avanzado: <strong>15 €</strong> + duración del vídeo"
+      ],
+      campañas: [
+        "Texto común: <strong>7 €</strong>",
+        "Texto avanzado: <strong>12 €</strong>",
+        "Texto muy avanzado: <strong>15 €</strong>"
+      ],
+      diseño: [
+        "El precio varía según tu proyecto. ¡Pregúntame para un presupuesto personalizado!"
+      ]
+    };
+
+    openModalBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        let tipo = btn.dataset.type || 'articulos';
+        modalTitle.textContent = tipo === 'articulos' ? "Precios de Artículos"
+                          : tipo === 'guiones' ? "Precios de Guiones"
+                          : tipo === 'campañas' ? "Precios de Textos Publicitarios"
+                          : "Precios de Diseño";
+        modalList.innerHTML = precios[tipo].map(item => `<li>${item}</li>`).join('');
+        modal.style.display = 'flex';
       });
     });
 
-    closeButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        button.closest('.modal').style.display = 'none';
-      });
+    closeModalBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
     });
 
-    window.addEventListener('click', e => {
-      if (e.target.classList.contains('modal')) {
-        e.target.style.display = 'none';
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
       }
     });
   </script>
 </body>
 </html>
-
-
-
 
