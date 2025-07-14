@@ -296,6 +296,7 @@
   </style>
 </head>
 <body>
+<body>
   <nav role="navigation" aria-label="Menú principal">
     <div class="container">
       <div class="logo" tabindex="0">RPP Agency</div>
@@ -309,12 +310,12 @@
 
   <header>
     <h1>RPP Agency</h1>
-    <p>Ayudo a marcas y emprendedores a conectar con su audiencia con contenido claro y efectivo.</p>
+    <p>Ayudo a marcas y emprendedores a destacar con contenido profesional y visual único.</p>
   </header>
 
   <section id="sobre-mi">
     <h2>Sobre mí</h2>
-    <p>Soy Gabriel Federico Romero Pérez, creador de RPP Agency. Me dedico a crear textos, guiones, anuncios y diseños que transmiten el mensaje de tu negocio de forma sencilla, para que cualquier cliente lo entienda y confíe en tu marca.</p>
+    <p>Soy Gabriel Federico Romero Pérez, creador de RPP Agency. Me dedico a crear contenido que emociona y conecta con las personas. Ya sea para redes sociales, videos o tu página web, busco transmitir tu mensaje con impacto.</p>
   </section>
 
   <section id="servicios" class="services">
@@ -322,28 +323,26 @@
     <ul>
       <li>
         <i class="fa-solid fa-pen-nib"></i>
-        <strong>Textos para tu web o blog:</strong><br>
-        Escribo textos claros y organizados que harán que tu página luzca profesional y aumenten las ganancias .
+        <strong>Textos para web o blog:</strong><br>
+        Escribo artículos claros y persuasivos para tu sitio o blog.
         <button class="open-modal" data-modal="modal-redaccion" aria-label="Ver precios de textos">Ver precios</button>
       </li>
       <li>
         <i class="fa-brands fa-youtube"></i>
         <strong>Guiones para videos:</strong><br>
-        Creo el guion para que solo tengas que grabar. Ideas fáciles y directas para tu video.
+        Elaboro guiones creativos para YouTube o TikTok según el tipo y duración de tu video.
         <button class="open-modal" data-modal="modal-guiones" aria-label="Ver precios de guiones">Ver precios</button>
       </li>
       <li>
-        <i class="fa
-      <li>
         <i class="fa-solid fa-bullhorn"></i>
         <strong>Textos para anuncios:</strong><br>
-        Preparo textos que venden para tus anuncios en redes o Google.
+        Creo textos que venden para tus campañas publicitarias online.
         <button class="open-modal" data-modal="modal-anuncios" aria-label="Ver precios de anuncios">Ver precios</button>
       </li>
       <li>
         <i class="fa-solid fa-paintbrush"></i>
         <strong>Diseño de tu marca (logo, colores y más):</strong><br>
-        Creo el logo, paleta de colores y estilo visual para que tu marca destaque.
+        Diseñamos el logo, paleta de colores y look visual de tu marca para destacar.
         <button class="open-modal" data-modal="modal-diseno" aria-label="Ver precios de diseño">Ver precios</button>
       </li>
     </ul>
@@ -412,21 +411,42 @@
 
   <div class="modal" id="modal-diseno" role="dialog" aria-modal="true" aria-labelledby="modal-title-diseno">
     <div class="modal-content">
-      <h3 id="modal-title-diseno">Precios de Diseño de marca</h3>
-      <p>El precio varía según el proyecto. ¡Contáctame para darte un presupuesto personalizado!</p>
+      <h3 id="modal-title-diseno">Precios de Diseño de tu marca</h3>
+      <p>El precio varía según tu proyecto. ¡Contáctame y te hago un presupuesto personalizado!</p>
       <button class="close-modal" aria-label="Cerrar ventana">Cerrar</button>
     </div>
   </div>
 
   <script>
     const openModalButtons = document.querySelectorAll('.open-modal');
+    const closeModalButtons = document.querySelectorAll('.close-modal');
     const modals = document.querySelectorAll('.modal');
-    const closeButtons = document.querySelectorAll('.close-modal');
 
     openModalButtons.forEach(button => {
       button.addEventListener('click', () => {
         const modalId = button.getAttribute('data-modal');
-        document.get
+        document.getElementById(modalId).style.display = 'flex';
+      });
+    });
+
+    closeModalButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        button.closest('.modal').style.display = 'none';
+      });
+    });
+
+    window.addEventListener('click', (e) => {
+      modals.forEach(modal => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+
 
 
 
