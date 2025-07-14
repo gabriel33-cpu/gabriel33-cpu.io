@@ -82,8 +82,7 @@
     header p {
       font-size: 1.4rem;
       color: #d6c58a;
-      max-width: 700px;
-      margin: 0 auto;
+      text-shadow: 0 0 5px rgba(184, 134, 11, 0.4);
     }
 
     section {
@@ -94,9 +93,11 @@
       border-radius: var(--border-radius);
       box-shadow: 0 12px 40px var(--shadow-light);
     }
+
     h2 {
       font-size: 2.5rem;
       margin-bottom: 1.8rem;
+      font-weight: 700;
       position: relative;
       padding-bottom: 8px;
     }
@@ -108,6 +109,7 @@
       height: 3px;
       width: 70px;
       background-color: var(--color-secondary);
+      border-radius: 2px;
     }
 
     .services ul {
@@ -122,26 +124,27 @@
       padding: 1.8rem 2rem;
       box-shadow: 0 4px 18px var(--shadow-light);
       border-left: 6px solid var(--color-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
     .services li i {
       color: var(--color-secondary);
       font-size: 2rem;
-      margin-bottom: 0.5rem;
     }
-    .services button {
-      margin-top: 1rem;
+
+    .services li button {
       background: none;
-      border: 2px solid var(--color-secondary);
-      color: var(--color-secondary);
-      padding: 0.6rem 1rem;
+      color: var(--color-primary);
       font-weight: 600;
-      border-radius: var(--border-radius);
+      font-size: 1rem;
       cursor: pointer;
-      transition: all 0.3s ease;
+      text-decoration: underline;
+      border: none;
+      padding: 0;
     }
-    .services button:hover {
-      background: var(--color-secondary);
-      color: var(--color-white);
+    .services li button:hover {
+      color: var(--color-secondary);
     }
 
     .contact-form {
@@ -153,31 +156,60 @@
     }
     .contact-form input,
     .contact-form textarea {
-      padding: 1rem;
+      padding: 1rem 1.2rem;
       border: 2px solid #ccc;
       border-radius: var(--border-radius);
       font-size: 1rem;
+      resize: vertical;
     }
     .contact-form input:focus,
     .contact-form textarea:focus {
       border-color: var(--color-secondary);
+      box-shadow: 0 0 8px var(--color-secondary);
       outline: none;
     }
     .contact-form button {
-      background: var(--color-secondary);
+      background-color: var(--color-secondary);
       color: var(--color-white);
-      padding: 1.2rem;
-      font-weight: 700;
+      padding: 1.3rem 0;
       border: none;
       border-radius: var(--border-radius);
+      font-weight: 700;
+      font-size: 1.15rem;
       cursor: pointer;
+      transition: background-color var(--transition-speed), transform var(--transition-speed);
+    }
+    .contact-form button:hover {
+      background-color: #a37506;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+    footer .social-icons {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    footer .social-icons a {
+      color: var(--color-white);
+      font-size: 1.5rem;
+    }
+    footer .social-icons a:hover {
+      color: var(--color-secondary);
     }
 
     .whatsapp-button {
       position: fixed;
       bottom: 25px;
       right: 25px;
-      background: var(--color-secondary);
+      background-color: var(--color-secondary);
       color: var(--color-white);
       border-radius: 50%;
       width: 65px;
@@ -187,9 +219,13 @@
       align-items: center;
       font-size: 2.8rem;
       box-shadow: 0 6px 15px rgba(184, 134, 11, 0.7);
+      cursor: pointer;
       text-decoration: none;
+      z-index: 1100;
     }
-    .whatsapp-button:hover { background: #a37506; }
+    .whatsapp-button:hover {
+      background-color: #c77f00;
+    }
 
     .modal {
       position: fixed;
@@ -205,18 +241,23 @@
       background: #fff;
       padding: 2rem;
       border-radius: var(--border-radius);
-      max-width: 500px;
+      max-width: 400px;
       width: 90%;
       text-align: center;
     }
-    .modal-content img {
-      width: 100%;
-      margin-top: 1rem;
-      border-radius: var(--border-radius);
+    .modal-content h3 {
+      margin-bottom: 1rem;
     }
-    .close-modal {
-      margin-top: 1.5rem;
-      background: var(--color-secondary);
+    .modal-content ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
+    }
+    .modal-content li {
+      margin: 0.5rem 0;
+    }
+    .close-modal, .go-contact {
+      background-color: var(--color-secondary);
       color: var(--color-white);
       padding: 0.8rem 1.5rem;
       border: none;
@@ -224,12 +265,15 @@
       font-weight: 700;
       cursor: pointer;
     }
+    .close-modal:hover, .go-contact:hover {
+      background-color: #c77f00;
+    }
   </style>
 </head>
 <body>
-  <nav>
+  <nav role="navigation" aria-label="Menú principal">
     <div class="container">
-      <div class="logo">RPP Agency</div>
+      <div class="logo" tabindex="0">RPP Agency</div>
       <ul>
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#servicios">Servicios</a></li>
@@ -254,110 +298,105 @@
       <li>
         <i class="fa-solid fa-pen-nib"></i>
         <strong>Artículos para tu web o blog</strong><br>
-        Textos claros y bien estructurados que posicionan tu negocio.
-        <button class="open-modal" data-type="articulos">Ver precios</button>
-        <button class="open-modal" data-type="articulo-ejemplo">Ver ejemplo</button>
+        Textos claros y bien estructurados que posicionan tu negocio.<br>
+        <button class="open-modal" data-type="articulos">Ver precios</button> |
+        <button class="open-modal" data-type="ejemplo-articulos">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-brands fa-youtube"></i>
         <strong>Guiones para vídeos</strong><br>
-        Ideas listas para grabar, adaptadas al tipo de contenido.
-        <button class="open-modal" data-type="guiones">Ver precios</button>
-        <button class="open-modal" data-type="guion-ejemplo">Ver ejemplo</button>
+        Ideas listas para grabar, adaptadas al tipo de contenido.<br>
+        <button class="open-modal" data-type="guiones">Ver precios</button> |
+        <button class="open-modal" data-type="ejemplo-guiones">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-solid fa-bullhorn"></i>
         <strong>Textos para campañas publicitarias</strong><br>
-        Mensajes que destacan y convierten en redes o Google Ads.
-        <button class="open-modal" data-type="campañas">Ver precios</button>
-        <button class="open-modal" data-type="campaña-ejemplo">Ver ejemplo</button>
+        Mensajes que destacan y convierten en redes o Google Ads.<br>
+        <button class="open-modal" data-type="campañas">Ver precios</button> |
+        <button class="open-modal" data-type="ejemplo-campañas">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-solid fa-paintbrush"></i>
         <strong>Diseño de identidad visual</strong><br>
-        Logotipos, colores y estilos para diferenciar tu marca.
-        <button class="open-modal" data-type="diseño">Ver precios</button>
-        <button class="open-modal" data-type="diseño-ejemplo">Ver ejemplo</button>
+        Logotipos, colores y estilos para diferenciar tu marca.<br>
+        <button class="open-modal" data-type="diseño">Ver precios</button> |
+        <button class="open-modal" data-type="ejemplo-diseño">Ver ejemplo</button>
       </li>
     </ul>
   </section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST">
+  <section id="contacto" aria-labelledby="contacto-title">
+    <h2 id="contacto-title">Contacto</h2>
+    <form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST" aria-label="Formulario de contacto">
       <input type="hidden" name="_next" value="https://gabriel33-cpu.github.io/gabriel33-cpu.io/" />
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <input type="text" name="nombre" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu correo electrónico" required />
       <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
       <button type="submit">Enviar</button>
     </form>
   </section>
 
-  <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?" 
-    class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?"
+     class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
   <footer>
     <p>© 2025 RPP Agency - Todos los derechos reservados.</p>
     <div class="social-icons">
-      <a href="https://twitter.com/rppagency" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-      <a href="https://facebook.com/rppagency" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-      <a href="https://instagram.com/rppagency" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://twitter.com/rppagency" target="_blank" rel="noopener"><i class="fa-brands fa-twitter"></i></a>
+      <a href="https://facebook.com/rppagency" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://instagram.com/rppagency" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
     </div>
   </footer>
 
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
-      <h3 id="modal-title"></h3>
-      <div id="modal-body"></div>
+      <h3 id="modal-title">Precios</h3>
+      <ul id="modal-list"></ul>
       <button class="close-modal">Cerrar</button>
+      <button class="go-contact" style="display:none;">Quiero uno así</button>
     </div>
   </div>
 
   <script>
     const modal = document.querySelector('.modal');
+    const modalList = document.getElementById('modal-list');
     const modalTitle = document.getElementById('modal-title');
-    const modalBody = document.getElementById('modal-body');
     const closeModalBtn = document.querySelector('.close-modal');
+    const goContactBtn = document.querySelector('.go-contact');
+    const openModalBtns = document.querySelectorAll('.open-modal');
 
-    const precios = {
-      articulos: ["Artículo normal: <strong>7 €</strong>","Artículo avanzado: <strong>12 €</strong>","Artículo muy avanzado: <strong>15 €</strong>"],
-      guiones: ["Guión normal: <strong>5 €</strong> + duración del vídeo","Guión avanzado: <strong>10 €</strong> + duración del vídeo","Guión muy avanzado: <strong>15 €</strong> + duración del vídeo"],
-      campañas: ["Texto común: <strong>7 €</strong>","Texto avanzado: <strong>12 €</strong>","Texto muy avanzado: <strong>15 €</strong>"],
-      diseño: ["El precio varía según tu proyecto. ¡Pregúntame para un presupuesto personalizado!"]
+    const data = {
+      articulos: ["Artículo normal: <strong>7 €</strong>", "Artículo avanzado: <strong>12 €</strong>", "Artículo muy avanzado: <strong>15 €</strong>"],
+      'ejemplo-articulos': ["Título: Cómo mejorar tu web en 5 pasos", "Introducción clara con gancho.", "Subtítulos optimizados para SEO.", "Conclusión con llamada a la acción."],
+      guiones: ["Guión normal: <strong>5 €</strong> + duración del vídeo", "Guión avanzado: <strong>10 €</strong> + duración del vídeo", "Guión muy avanzado: <strong>15 €</strong> + duración del vídeo"],
+      'ejemplo-guiones': ["Introducción breve con pregunta al espectador.", "Bloques con ejemplos y datos.", "Cierre con CTA para suscribirse."],
+      campañas: ["Texto común: <strong>7 €</strong>", "Texto avanzado: <strong>12 €</strong>", "Texto muy avanzado: <strong>15 €</strong>"],
+      'ejemplo-campañas': ["Título impactante para redes.", "Breve descripción orientada a conversión.", "Botón con oferta irresistible."],
+      diseño: ["El precio varía según tu proyecto. ¡Pregúntame para un presupuesto personalizado!"],
+      'ejemplo-diseño': ["Logotipo minimalista en dorado.", "Paleta de colores cálidos para transmitir confianza.", "Tipografía moderna y legible."]
     };
 
-    const ejemplos = {
-      "articulo-ejemplo": "<p><strong>Título:</strong> Cómo aumentar tus ventas online con SEO.</p><p>Este artículo explica estrategias clave de posicionamiento orgánico para incrementar tus ingresos.</p>",
-      "guion-ejemplo": "<p><strong>Guión Reel:</strong> 15 segundos mostrando el antes y después de un local reformado, finalizando con: '¿Quieres algo así para tu negocio? ¡Contáctame!'</p>",
-      "campaña-ejemplo": "<p><strong>Google Ads:</strong> '¿Necesitas una web profesional? Incrementa tus clientes ahora. ¡Solicita tu diseño!'</p>",
-      "diseño-ejemplo": "<p><strong>Marca de café artesanal</strong></p><p>Logo: tipografía vintage + icono minimalista.</p><p>Paleta: marrón café, beige y verde oliva suave.</p><img src='https://via.placeholder.com/400x250.png?text=Identidad+Visual' alt='Ejemplo Identidad Visual'>"
-    };
-
-    document.querySelectorAll('.open-modal').forEach(btn => {
+    openModalBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        let tipo = btn.getAttribute('data-type');
-        if (precios[tipo]) {
-          modalTitle.textContent = tipo === "articulos" ? "Precios de Artículos"
-                                : tipo === "guiones" ? "Precios de Guiones"
-                                : tipo === "campañas" ? "Precios de Textos Publicitarios"
-                                : "Precios de Diseño";
-          modalBody.innerHTML = "<ul style='list-style:none;padding:0'>" + 
-            precios[tipo].map(p => `<li style='margin:0.5rem 0;'>${p}</li>`).join('') + "</ul>";
-        } else if (ejemplos[tipo]) {
-          modalTitle.textContent = tipo === "articulo-ejemplo" ? "Ejemplo de Artículo"
-                                : tipo === "guion-ejemplo" ? "Ejemplo de Guión"
-                                : tipo === "campaña-ejemplo" ? "Ejemplo de Texto Publicitario"
-                                : "Ejemplo de Diseño Visual";
-          modalBody.innerHTML = ejemplos[tipo];
-        }
+        let tipo = btn.dataset.type;
+        let isExample = tipo.includes('ejemplo');
+        modalTitle.textContent = isExample ? "Ejemplo" : "Precios";
+        modalList.innerHTML = data[tipo].map(item => `<li>${item}</li>`).join('');
+        goContactBtn.style.display = isExample ? "inline-block" : "none";
         modal.style.display = 'flex';
       });
     });
 
     closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
     window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
+    goContactBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+      document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+    });
   </script>
 </body>
 </html>
+
