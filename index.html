@@ -118,12 +118,12 @@
     .contact-form {
       max-width: 600px; margin: 0 auto;
       display: flex; flex-direction: column; gap: 1.5rem;
-      font-family: Georgia, 'Times New Roman', serif;
     }
     .contact-form input, .contact-form textarea {
       padding: 1rem 1.2rem;
       border: 2px solid #ccc; border-radius: var(--border-radius);
       font-size: 1rem; resize: vertical;
+      font-family: var(--font-main);
     }
     .contact-form input:focus, .contact-form textarea:focus {
       border-color: var(--color-secondary);
@@ -197,3 +197,153 @@
     }
   </style>
 </head>
+tyle>
+</head>
+<body>
+  <nav role="navigation" aria-label="Menú principal">
+    <div class="container">
+      <div class="logo" tabindex="0">RPP Agency</div>
+      <ul>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header>
+    <h1>RPP Agency</h1>
+    <p>Ayudo a marcas y emprendedores a conectar con su audiencia a través de contenido profesional.</p>
+  </header>
+
+  <section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p>Soy Gabriel Federico Romero Pérez, creador de RPP Agency. Me dedico a crear contenido que comunica, emociona y vende. Trabajo para redes sociales, páginas web y campañas visuales, construyendo mensajes claros que representen a cada negocio.</p>
+  </section>
+
+  <section id="servicios" class="services">
+    <h2>Servicios</h2>
+    <ul>
+      <li>
+        <i class="fa-solid fa-pen-nib"></i>
+        <strong>Artículos para tu web o blog</strong><br>
+        Textos claros y bien estructurados que posicionan tu negocio.
+        <button class="open-modal" data-type="articulos">Ver precios / ejemplos</button>
+      </li>
+      <li>
+        <i class="fa-brands fa-youtube"></i>
+        <strong>Guiones para vídeos</strong><br>
+        Ideas listas para grabar, adaptadas al tipo de contenido.
+        <button class="open-modal" data-type="guiones">Ver precios / ejemplos</button>
+      </li>
+      <li>
+        <i class="fa-solid fa-bullhorn"></i>
+        <strong>Textos para campañas publicitarias</strong><br>
+        Mensajes que destacan y convierten en redes o Google Ads.
+        <button class="open-modal" data-type="campañas">Ver precios / ejemplos</button>
+      </li>
+      <li>
+        <i class="fa-solid fa-paintbrush"></i>
+        <strong>Diseño de identidad visual</strong><br>
+        Logotipos, colores y estilos para diferenciar tu marca.
+        <button class="open-modal" data-type="diseño">Ver precios / ejemplos</button>
+      </li>
+    </ul>
+  </section>
+
+  <section id="contacto" aria-labelledby="contacto-title">
+    <h2 id="contacto-title">Contacto</h2>
+    <form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST">
+      <input type="hidden" name="_next" value="https://gabriel33-cpu.github.io/gabriel33-cpu.io/" />
+      <input type="text" name="nombre" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu correo electrónico" required />
+      <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?"
+     class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <footer>
+    <p>© 2025 RPP Agency - Todos los derechos reservados.</p>
+  </footer>
+
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <h3 id="modal-title">Precios y Ejemplo</h3>
+      <ul id="modal-list"></ul>
+      <br>
+      <button class="go-contact">Quiero un servicio así</button>
+      <button class="close-modal">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.querySelector('.modal');
+    const modalList = document.getElementById('modal-list');
+    const modalTitle = document.getElementById('modal-title');
+    const closeModalBtn = document.querySelector('.close-modal');
+    const goContactBtn = document.querySelector('.go-contact');
+    const openModalBtns = document.querySelectorAll('.open-modal');
+
+    const data = {
+      articulos: {
+        titulo: "Artículos para Web o Blog",
+        lista: [
+          "<strong>7 €</strong>: Texto informativo sencillo de 300-400 palabras.",
+          "<strong>12 €</strong>: Artículo optimizado SEO de 600-800 palabras.",
+          "<strong>15 €</strong>: Post premium con investigación y estructura avanzada."
+        ]
+      },
+      guiones: {
+        titulo: "Guiones para Vídeos",
+        lista: [
+          "<strong>5 €</strong>: Guión breve para reels o shorts.",
+          "<strong>10 €</strong>: Guión completo de 1-2 min para YouTube o TikTok.",
+          "<strong>15 €</strong>: Guión detallado con storytelling y CTA."
+        ]
+      },
+      campañas: {
+        titulo: "Textos Publicitarios",
+        lista: [
+          "<strong>7 €</strong>: Copy básico para un post promocional.",
+          "<strong>12 €</strong>: Texto adaptado a campaña de Facebook o Google Ads.",
+          "<strong>15 €</strong>: Copywriting persuasivo con pruebas A/B."
+        ]
+      },
+      diseño: {
+        titulo: "Identidad Visual",
+        lista: [
+          "Precio a medida según lo que necesites. ¡Pregúntame para darte un presupuesto personalizado!"
+        ]
+      }
+    };
+
+    openModalBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tipo = btn.dataset.type;
+        modalTitle.textContent = data[tipo].titulo;
+        modalList.innerHTML = data[tipo].lista.map(item => `<li>${item}</li>`).join('');
+        modal.style.display = 'flex';
+      });
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    goContactBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+      document.querySelector('#contacto').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    window.addEventListener('click', e => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
+
