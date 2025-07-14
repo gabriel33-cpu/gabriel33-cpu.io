@@ -127,46 +127,38 @@
       background-color: var(--color-secondary);
       border-radius: 2px;
     }
-    .services ul {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-    .services li {
-      background-color: #fcfbf8;
+    .contact-form input,
+    .contact-form textarea {
+      font-family: var(--font-main);
+      padding: 1rem 1.2rem;
+      border: 2px solid #ccc;
       border-radius: var(--border-radius);
-      padding: 1.8rem 2rem;
-      box-shadow: 0 4px 18px var(--shadow-light);
-      border-left: 6px solid var(--color-secondary);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      font-weight: 500;
-    }
-    .services li i {
-      color: var(--color-secondary);
-      font-size: 2rem;
-    }
-    .services button {
-      background: var(--color-white);
-      color: var(--color-secondary);
-      border: 2px solid var(--color-secondary);
-      border-radius: var(--border-radius);
-      padding: 0.7rem 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all var(--transition-speed);
-      font-size: 0.95rem;
-    }
-    .services button:hover,
-    .services button:focus {
-      background: var(--color-secondary);
-      color: var(--color-white);
-    }
-    #contacto p {
-      font-size: 1.1rem;
+      font-size: 1rem;
+      resize: vertical;
+      width: 100%;
       margin-bottom: 1rem;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--color-secondary);
+      box-shadow: 0 0 8px var(--color-secondary);
+      outline: none;
+    }
+    .contact-form button {
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+      padding: 1.3rem 0;
+      border: none;
+      border-radius: var(--border-radius);
+      font-weight: 700;
+      font-size: 1.15rem;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color var(--transition-speed), transform var(--transition-speed);
+    }
+    .contact-form button:hover {
+      background-color: #a37506;
+      transform: scale(1.05);
     }
     .whatsapp-button {
       position: fixed;
@@ -196,9 +188,9 @@
   </style>
 </head>
 <body>
-  <nav>
+  <nav role="navigation" aria-label="Menú principal">
     <div class="container">
-      <div class="logo">RPP Agency</div>
+      <div class="logo" tabindex="0">RPP Agency</div>
       <ul>
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#servicios">Servicios</a></li>
@@ -212,46 +204,15 @@
     <p>Ayudo a marcas y emprendedores a conectar con su audiencia a través de contenido profesional.</p>
   </header>
 
-  <section id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <p>Soy Gabriel Federico Romero Pérez, creador de RPP Agency. Me dedico a crear contenido que comunica, emociona y vende. Trabajo para redes sociales, páginas web y campañas visuales, construyendo mensajes claros que representen a cada negocio.</p>
-  </section>
-
-  <section id="servicios" class="services">
-    <h2>Servicios</h2>
-    <ul>
-      <li>
-        <i class="fa-solid fa-pen-nib"></i>
-        <strong>Artículos para tu web o blog</strong><br>
-        Textos claros y bien estructurados que posicionan tu negocio.<br>
-        <button>Ver precios / ejemplos</button>
-      </li>
-      <li>
-        <i class="fa-brands fa-youtube"></i>
-        <strong>Guiones para vídeos</strong><br>
-        Ideas listas para grabar, adaptadas al tipo de contenido.<br>
-        <button>Ver precios / ejemplos</button>
-      </li>
-      <li>
-        <i class="fa-solid fa-bullhorn"></i>
-        <strong>Textos para campañas publicitarias</strong><br>
-        Mensajes que destacan y convierten en redes o Google Ads.<br>
-        <button>Ver precios / ejemplos</button>
-      </li>
-      <li>
-        <i class="fa-solid fa-paintbrush"></i>
-        <strong>Diseño de identidad visual</strong><br>
-        Logotipos, colores y estilos para diferenciar tu marca.<br>
-        <button>Ver precios / ejemplos</button>
-      </li>
-    </ul>
-  </section>
-
   <section id="contacto">
     <h2>Contacto</h2>
-    <p>Puedes escribirme a mi correo <strong>rppagencyy@gmail.com</strong> para solicitar presupuesto o aclarar dudas.</p>
-    <p>También puedes contactarme directamente por WhatsApp al <strong>+34 681 044 146</strong>.</p>
-    <p>Responderé lo antes posible para ayudarte con tu proyecto.</p>
+    <form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST">
+      <input type="hidden" name="_next" value="https://gabriel33-cpu.github.io/gabriel33-cpu.io/" />
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
   </section>
 
   <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?" 
@@ -264,3 +225,4 @@
   </footer>
 </body>
 </html>
+
