@@ -2,9 +2,6 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="google-site-verification" content="I4vV_O4-e_jz382eO1W-n7roFTHmzQ7mi1udRNXoCIA" />
-  <meta name="google-site-verification" content="Byliq6bCY8axGepqw4pUIBES40ilo60vY1U3-iHCz6M" />
-  <meta name="google-site-verification" content="rHPuTDoYB8E25eZB9N8NMH9EYg80ojTbdTAmyz-rltY" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RPP Agency - Creación de Contenido</title>
   <link rel="icon" href="logotipo-web.ico" type="image/x-icon" />
@@ -24,11 +21,7 @@
       --shadow-dark: rgba(0, 0, 0, 0.15);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: var(--font-main);
@@ -39,310 +32,172 @@
     }
 
     nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
+      position: fixed; top: 0; width: 100%;
       background-color: var(--color-white);
       box-shadow: 0 4px 15px var(--shadow-light);
       z-index: 1000;
     }
 
     nav .container {
-      max-width: 1200px;
-      margin: 0 auto;
+      max-width: 1200px; margin: 0 auto;
       padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
     }
 
     nav .logo {
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: var(--color-primary);
-      cursor: pointer;
-      letter-spacing: 2px;
-      user-select: none;
+      font-weight: 700; font-size: 1.8rem;
+      color: var(--color-primary); cursor: pointer; letter-spacing: 2px;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-
+    nav ul { list-style: none; display: flex; gap: 2rem; }
     nav ul li a {
-      color: var(--color-primary);
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 1rem;
-      position: relative;
-      padding-bottom: 3px;
+      color: var(--color-primary); font-weight: 600; text-decoration: none;
+      font-size: 1rem; position: relative; padding-bottom: 3px;
     }
-
     nav ul li a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
+      content: ''; position: absolute; width: 0; height: 2px;
+      bottom: 0; left: 0;
       background-color: var(--color-secondary);
-      transition: width 0.3s ease;
-      border-radius: 2px;
+      transition: width 0.3s ease; border-radius: 2px;
     }
-
-    nav ul li a:hover::after,
-    nav ul li a:focus::after {
-      width: 100%;
-    }
-
-    nav ul li a:hover,
-    nav ul li a:focus {
-      color: var(--color-secondary);
-      outline: none;
-    }
+    nav ul li a:hover::after, nav ul li a:focus::after { width: 100%; }
+    nav ul li a:hover, nav ul li a:focus { color: var(--color-secondary); }
 
     header {
       background: linear-gradient(135deg, #1a1a1add 0%, #1a1a1aee 100%);
       color: var(--color-white);
-      padding: 7rem 1.5rem 4rem;
-      text-align: center;
+      padding: 7rem 1.5rem 4rem; text-align: center;
       box-shadow: 0 4px 20px var(--shadow-dark);
     }
-
     header h1 {
-      font-size: 3.6rem;
-      font-weight: 700;
-      letter-spacing: 3px;
+      font-size: 3.6rem; font-weight: 700; letter-spacing: 3px;
       margin-bottom: 0.5rem;
       text-shadow: 1px 1px 10px rgba(184, 134, 11, 0.7);
     }
-
     header p {
-      font-size: 1.4rem;
-      font-style: italic;
-      max-width: 700px;
-      margin: 0 auto;
-      color: #d6c58a;
+      font-size: 1.4rem; font-style: italic; max-width: 700px;
+      margin: 0 auto; color: #d6c58a;
       text-shadow: 0 0 5px rgba(184, 134, 11, 0.4);
     }
 
     section {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 2rem;
+      max-width: 900px; margin: 3rem auto; padding: 2rem;
       background-color: var(--color-white);
       border-radius: var(--border-radius);
       box-shadow: 0 12px 40px var(--shadow-light);
     }
 
     h2 {
-      font-size: 2.5rem;
-      color: var(--color-primary);
-      margin-bottom: 1.8rem;
-      font-weight: 700;
-      position: relative;
-      padding-bottom: 8px;
+      font-size: 2.5rem; color: var(--color-primary);
+      margin-bottom: 1.8rem; font-weight: 700;
+      position: relative; padding-bottom: 8px;
     }
-
     h2::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 3px;
-      width: 70px;
-      background-color: var(--color-secondary);
+      content: ''; position: absolute; bottom: 0; left: 0;
+      height: 3px; width: 70px; background-color: var(--color-secondary);
       border-radius: 2px;
     }
 
     .services ul {
-      list-style: none;
-      display: grid;
+      list-style: none; display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
     }
-
     .services li {
       background-color: #fcfbf8;
       border-radius: var(--border-radius);
       padding: 1.8rem 2rem;
       box-shadow: 0 4px 18px var(--shadow-light);
       border-left: 6px solid var(--color-secondary);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      font-weight: 500;
+      display: flex; flex-direction: column; gap: 1rem; font-weight: 500;
     }
-
-    .services li i {
-      color: var(--color-secondary);
-      font-size: 2rem;
-    }
-
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      padding: 1rem 1.2rem;
-      border: 2px solid #ccc;
-      border-radius: var(--border-radius);
-      font-size: 1rem;
-      font-family: var(--font-main);
-      resize: vertical;
-      background-color: #fff;
-      color: var(--color-primary);
-      box-shadow: inset 0 0 6px #f0f0f0;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: var(--color-secondary);
-      box-shadow: 0 0 8px var(--color-secondary);
-      outline: none;
-    }
-
-    .contact-form button {
+    .services li i { color: var(--color-secondary); font-size: 2rem; }
+    .services li button {
       background-color: var(--color-secondary);
       color: var(--color-white);
-      padding: 1.3rem 0;
-      border: none;
-      border-radius: var(--border-radius);
-      font-weight: 700;
-      font-size: 1.15rem;
-      cursor: pointer;
-      box-shadow: 0 6px 15px rgba(184, 134, 11, 0.6);
-      transition: background-color var(--transition-speed), transform var(--transition-speed);
+      padding: 0.8rem 1.2rem;
+      border: none; border-radius: var(--border-radius);
+      font-weight: 700; cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 12px rgba(184,134,11,0.4);
+      margin-top: 0.5rem;
+    }
+    .services li button:hover, .services li button:focus {
+      background-color: var(--color-accent); transform: scale(1.05);
     }
 
-    .contact-form button:hover,
-    .contact-form button:focus {
-      background-color: #a37506;
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(163, 117, 6, 0.75);
+    .contact-form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
+    .contact-form input, .contact-form textarea {
+      padding: 1rem 1.2rem; border: 2px solid #ccc;
+      border-radius: var(--border-radius); font-size: 1rem;
+      resize: vertical; background-color: #fff; color: var(--color-primary);
+      box-shadow: inset 0 0 6px #f0f0f0;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      border-color: var(--color-secondary);
+      box-shadow: 0 0 8px var(--color-secondary); outline: none;
+    }
+    .contact-form button {
+      background-color: var(--color-secondary);
+      color: var(--color-white); padding: 1.3rem 0;
+      border: none; border-radius: var(--border-radius);
+      font-weight: 700; font-size: 1.15rem; cursor: pointer;
+      box-shadow: 0 6px 15px rgba(184,134,11,0.6);
+      transition: background-color var(--transition-speed), transform var(--transition-speed);
+    }
+    .contact-form button:hover, .contact-form button:focus {
+      background-color: #a37506; transform: scale(1.05);
     }
 
     footer {
       background-color: var(--color-primary);
       color: var(--color-white);
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.95rem;
-      margin-top: 4rem;
-      border-top: 3px solid var(--color-secondary);
+      text-align: center; padding: 2rem 1rem; font-size: 0.95rem;
+      margin-top: 4rem; border-top: 3px solid var(--color-secondary);
       box-shadow: 0 -2px 12px var(--shadow-dark);
     }
-
-    footer .social-icons {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-
-    footer .social-icons a {
-      color: var(--color-white);
-      font-size: 1.5rem;
-    }
-
-    footer .social-icons a:hover,
-    footer .social-icons a:focus {
-      color: var(--color-secondary);
-    }
+    footer .social-icons { margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem; }
+    footer .social-icons a { color: var(--color-white); font-size: 1.5rem; }
+    footer .social-icons a:hover, footer .social-icons a:focus { color: var(--color-secondary); }
 
     .whatsapp-button {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background-color: var(--color-secondary);
-      color: var(--color-white);
-      border-radius: 50%;
-      width: 65px;
-      height: 65px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2.8rem;
-      box-shadow: 0 6px 15px rgba(184, 134, 11, 0.7);
-      z-index: 1100;
-      transition: background-color 0.3s ease;
-      cursor: pointer;
-      text-decoration: none;
+      position: fixed; bottom: 25px; right: 25px;
+      background-color: var(--color-secondary); color: var(--color-white);
+      border-radius: 50%; width: 65px; height: 65px;
+      display: flex; justify-content: center; align-items: center;
+      font-size: 2.8rem; box-shadow: 0 6px 15px rgba(184, 134, 11, 0.7);
+      z-index: 1100; transition: background-color 0.3s ease; cursor: pointer;
     }
+    .whatsapp-button:hover, .whatsapp-button:focus { background-color: var(--color-accent); }
 
-    .whatsapp-button:hover,
-    .whatsapp-button:focus {
-      background-color: var(--color-accent);
-    }
-
-    /* Modal */
     .modal {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(0,0,0,0.6);
-      display: none;
-      justify-content: center;
-      align-items: center;
+      display: none; justify-content: center; align-items: center;
       z-index: 2000;
     }
-
     .modal-content {
-      background: #fff;
-      padding: 2rem;
-      border-radius: var(--border-radius);
-      max-width: 400px;
-      width: 90%;
+      background: #fff; padding: 2rem; border-radius: var(--border-radius);
+      max-width: 400px; width: 90%;
       box-shadow: 0 8px 30px var(--shadow-dark);
-      text-align: center;
+      text-align: center; max-height: 80vh; overflow:auto;
     }
-
-    .modal-content h3 {
-      margin-bottom: 1rem;
-      color: var(--color-primary);
-    }
-
-    .modal-content ul {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 1.5rem;
-    }
-
-    .modal-content li {
-      margin: 0.5rem 0;
-      font-size: 1.1rem;
-    }
-
-    .close-modal, .close-example-modal {
+    .modal-content h3 { margin-bottom: 1rem; color: var(--color-primary); }
+    .modal-content ul { list-style: none; padding: 0; margin-bottom: 1.5rem; }
+    .modal-content li { margin: 0.5rem 0; font-size: 1.1rem; }
+    .close-modal, .close-example-modal, .example-action {
       background-color: var(--color-secondary);
-      color: var(--color-white);
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: var(--border-radius);
-      font-weight: 700;
-      cursor: pointer;
+      color: var(--color-white); padding: 0.8rem 1.5rem;
+      border: none; border-radius: var(--border-radius);
+      font-weight: 700; cursor: pointer;
       transition: background-color var(--transition-speed);
-      margin-top: 1rem;
+      display: inline-block; margin-top: 1rem;
     }
-
-    .close-modal:hover, .close-example-modal:hover {
+    .close-modal:hover, .close-example-modal:hover, .example-action:hover {
       background-color: var(--color-accent);
     }
-
-    /* Responsive Nav */
     @media (max-width: 768px) {
-      nav .container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
+      nav .container { flex-direction: column; gap: 1rem; }
     }
   </style>
 </head>
@@ -375,26 +230,29 @@
         <i class="fa-solid fa-pen-nib"></i>
         <strong>Artículos para tu web o blog</strong><br>
         Textos claros y bien estructurados que posicionan tu negocio.
-        <button class="open-modal" aria-label="Ver precios de artículos">Ver precios</button>
-        <button class="open-example" style="margin-top:0.8rem; display:block; background:none; border:none; color:#b8860b; font-weight:600; cursor:pointer;">Ver ejemplo</button>
+        <button class="open-modal" data-type="articulos" aria-label="Ver precios de artículos">Ver precios</button>
+        <button class="open-example-modal" data-type="articulos" aria-label="Ver ejemplo de artículo">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-brands fa-youtube"></i>
         <strong>Guiones para vídeos</strong><br>
         Ideas listas para grabar, adaptadas al tipo de contenido.
         <button class="open-modal" data-type="guiones" aria-label="Ver precios de guiones">Ver precios</button>
+        <button class="open-example-modal" data-type="guiones" aria-label="Ver ejemplo de guión">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-solid fa-bullhorn"></i>
         <strong>Textos para campañas publicitarias</strong><br>
         Mensajes que destacan y convierten en redes o Google Ads.
         <button class="open-modal" data-type="campañas" aria-label="Ver precios de campañas">Ver precios</button>
+        <button class="open-example-modal" data-type="campañas" aria-label="Ver ejemplo de campaña">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-solid fa-paintbrush"></i>
         <strong>Diseño de identidad visual</strong><br>
         Logotipos, colores y estilos para diferenciar tu marca.
         <button class="open-modal" data-type="diseño" aria-label="Ver precios de diseño">Ver precios</button>
+        <button class="open-example-modal" data-type="diseño" aria-label="Ver ejemplo de diseño">Ver ejemplo</button>
       </li>
     </ul>
   </section>
@@ -410,7 +268,7 @@
     </form>
   </section>
 
-  <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?" 
+  <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?"
      class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
@@ -424,8 +282,8 @@
     </div>
   </footer>
 
-  <!-- MODAL PRECIOS -->
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <!-- Modal de Precios -->
+  <div class="modal" id="priceModal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
       <h3 id="modal-title">Precios</h3>
       <ul id="modal-list"></ul>
@@ -433,46 +291,27 @@
     </div>
   </div>
 
-  <!-- MODAL EJEMPLO ARTÍCULO -->
-  <div class="modal example-modal" role="dialog" aria-modal="true" aria-labelledby="example-modal-title" style="display:none;">
-    <div class="modal-content" style="max-height:80vh; overflow:auto;">
-      <h3 id="example-modal-title">Ejemplo de Artículo</h3>
-      <p><strong>¿Por qué tu negocio necesita un blog para crecer en internet?</strong></p>
-      <p>Hoy en día, tener presencia online no se limita solo a una página web estática. Si quieres atraer más visitas, ganar autoridad y convertir lectores en clientes, un blog es tu mejor aliado.</p>
-      <h4 style="color:#b8860b;">1. Aumenta tu visibilidad en Google</h4>
-      <p>Cada artículo nuevo en tu blog es una oportunidad para aparecer en Google. Más palabras clave, más oportunidades de ser encontrado.</p>
-      <h4 style="color:#b8860b;">2. Genera confianza y credibilidad</h4>
-      <p>Al ofrecer contenido útil, construyes una relación de confianza que facilita la venta más adelante.</p>
-      <h4 style="color:#b8860b;">3. Es contenido que se comparte</h4>
-      <p>Los artículos interesantes son compartidos en redes sociales, lo que te da tráfico gratuito.</p>
-      <div style="text-align:center; margin-top:1rem;">
-        <a href="#contacto" style="
-          background-color: #b8860b;
-          color: #ffffff;
-          padding: 0.8rem 1.5rem;
-          border-radius: 10px;
-          font-weight: 700;
-          font-size: 1rem;
-          text-decoration: none;
-          box-shadow: 0 6px 15px rgba(184,134,11,0.6);
-          transition: all 0.3s ease;
-          display: inline-block;
-        ">Quiero un artículo así</a>
-      </div>
-      <button class="close-example-modal" aria-label="Cerrar ejemplo">Cerrar</button>
+  <!-- Modal de Ejemplo -->
+  <div class="modal" id="exampleModal" role="dialog" aria-modal="true" aria-labelledby="example-title">
+    <div class="modal-content">
+      <h3 id="example-title">Ejemplo de Artículo</h3>
+      <p><strong>Título:</strong> 5 Estrategias para aumentar las ventas de tu negocio local</p>
+      <p><strong>Introducción:</strong> Hoy en día, los negocios locales enfrentan más competencia que nunca. Aquí te dejamos 5 formas prácticas de atraer clientes...</p>
+      <p><strong>Conclusión:</strong> Aplicar estas estrategias puede marcar la diferencia. Si quieres un artículo similar para tu web, ¡aquí estamos!</p>
+      <button class="example-action" aria-label="Quiero un artículo así">Quiero un artículo así</button>
     </div>
   </div>
 
   <script>
-    const modal = document.querySelector('.modal');
+    const modal = document.getElementById('priceModal');
     const modalList = document.getElementById('modal-list');
     const modalTitle = document.getElementById('modal-title');
-    const closeModalBtn = document.querySelector('.close-modal');
+    const closeModalBtn = modal.querySelector('.close-modal');
     const openModalBtns = document.querySelectorAll('.open-modal');
 
-    const exampleModal = document.querySelector('.example-modal');
-    const openExampleBtns = document.querySelectorAll('.open-example');
-    const closeExampleBtn = document.querySelector('.close-example-modal');
+    const exampleModal = document.getElementById('exampleModal');
+    const closeExampleBtn = exampleModal.querySelector('.example-action');
+    const openExampleBtns = document.querySelectorAll('.open-example-modal');
 
     const precios = {
       articulos: [
@@ -499,21 +338,27 @@
       btn.addEventListener('click', () => {
         let tipo = btn.dataset.type || 'articulos';
         modalTitle.textContent = tipo === 'articulos' ? "Precios de Artículos"
-                              : tipo === 'guiones' ? "Precios de Guiones"
-                              : tipo === 'campañas' ? "Precios de Textos Publicitarios"
-                              : "Precios de Diseño";
+                            : tipo === 'guiones' ? "Precios de Guiones"
+                            : tipo === 'campañas' ? "Precios de Textos Publicitarios"
+                            : "Precios de Diseño";
         modalList.innerHTML = precios[tipo].map(item => `<li>${item}</li>`).join('');
         modal.style.display = 'flex';
       });
     });
 
-    closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
+    closeModalBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
     openExampleBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         exampleModal.style.display = 'flex';
       });
     });
-    closeExampleBtn.addEventListener('click', () => exampleModal.style.display = 'none');
+
+    closeExampleBtn.addEventListener('click', () => {
+      exampleModal.style.display = 'none';
+    });
 
     window.addEventListener('click', (e) => {
       if (e.target === modal) modal.style.display = 'none';
