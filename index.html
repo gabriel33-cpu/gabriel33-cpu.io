@@ -20,13 +20,11 @@
       --shadow-light: rgba(0, 0, 0, 0.05);
       --shadow-dark: rgba(0, 0, 0, 0.15);
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: var(--font-main);
       background-color: var(--color-bg);
@@ -34,7 +32,6 @@
       line-height: 1.6;
       scroll-behavior: smooth;
     }
-
     nav {
       position: fixed;
       top: 0;
@@ -43,7 +40,6 @@
       box-shadow: 0 4px 15px var(--shadow-light);
       z-index: 1000;
     }
-
     nav .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -52,7 +48,6 @@
       justify-content: space-between;
       align-items: center;
     }
-
     nav .logo {
       font-weight: 700;
       font-size: 1.8rem;
@@ -60,13 +55,11 @@
       letter-spacing: 2px;
       cursor: pointer;
     }
-
     nav ul {
       list-style: none;
       display: flex;
       gap: 2rem;
     }
-
     nav ul li a {
       color: var(--color-primary);
       font-weight: 600;
@@ -75,7 +68,6 @@
       position: relative;
       padding-bottom: 3px;
     }
-
     nav ul li a::after {
       content: '';
       position: absolute;
@@ -87,12 +79,10 @@
       transition: width 0.3s ease;
       border-radius: 2px;
     }
-
     nav ul li a:hover::after,
     nav ul li a:focus::after {
       width: 100%;
     }
-
     header {
       background: linear-gradient(135deg, #1a1a1add 0%, #1a1a1aee 100%);
       color: var(--color-white);
@@ -100,14 +90,12 @@
       text-align: center;
       box-shadow: 0 4px 20px var(--shadow-dark);
     }
-
     header h1 {
       font-size: 3.6rem;
       font-weight: 700;
       letter-spacing: 3px;
       margin-bottom: 0.5rem;
     }
-
     header p {
       font-size: 1.4rem;
       font-style: italic;
@@ -115,7 +103,6 @@
       margin: 0 auto;
       color: #d6c58a;
     }
-
     section {
       max-width: 900px;
       margin: 3rem auto;
@@ -124,14 +111,12 @@
       border-radius: var(--border-radius);
       box-shadow: 0 12px 40px var(--shadow-light);
     }
-
     h2 {
       font-size: 2.5rem;
       margin-bottom: 1.8rem;
       position: relative;
       padding-bottom: 8px;
     }
-
     h2::after {
       content: '';
       position: absolute;
@@ -142,14 +127,12 @@
       background-color: var(--color-secondary);
       border-radius: 2px;
     }
-
     .services ul {
       list-style: none;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
     }
-
     .services li {
       background-color: #fcfbf8;
       border-radius: var(--border-radius);
@@ -161,12 +144,10 @@
       gap: 1rem;
       font-weight: 500;
     }
-
     .services li i {
       color: var(--color-secondary);
       font-size: 2rem;
     }
-
     .services button {
       background: var(--color-white);
       color: var(--color-secondary);
@@ -178,13 +159,11 @@
       transition: all var(--transition-speed);
       font-size: 0.95rem;
     }
-
     .services button:hover,
     .services button:focus {
       background: var(--color-secondary);
       color: var(--color-white);
     }
-
     .contact-form {
       max-width: 600px;
       margin: 0 auto;
@@ -192,7 +171,6 @@
       flex-direction: column;
       gap: 1.5rem;
     }
-
     .contact-form input,
     .contact-form textarea {
       padding: 1rem 1.2rem;
@@ -201,14 +179,12 @@
       font-size: 1rem;
       resize: vertical;
     }
-
     .contact-form input:focus,
     .contact-form textarea:focus {
       border-color: var(--color-secondary);
       box-shadow: 0 0 8px var(--color-secondary);
       outline: none;
     }
-
     .contact-form button {
       background-color: var(--color-secondary);
       color: var(--color-white);
@@ -220,12 +196,10 @@
       cursor: pointer;
       transition: background-color var(--transition-speed), transform var(--transition-speed);
     }
-
     .contact-form button:hover {
       background-color: #a37506;
       transform: scale(1.05);
     }
-
     footer {
       background-color: var(--color-primary);
       color: var(--color-white);
@@ -234,8 +208,6 @@
       font-size: 0.95rem;
       margin-top: 4rem;
     }
-
-    /* Modal */
     .modal {
       position: fixed;
       top: 0; left: 0;
@@ -246,7 +218,6 @@
       align-items: center;
       z-index: 2000;
     }
-
     .modal-content {
       background: #fff;
       padding: 2rem;
@@ -257,23 +228,13 @@
       text-align: center;
       font-family: Georgia, 'Times New Roman', serif;
     }
-
     .modal-content h3 {
       margin-bottom: 1rem;
     }
-
-    .modal-content p,
     .modal-content li {
       font-size: 1.1rem;
       margin-bottom: 0.8rem;
     }
-
-    .modal-content img {
-      max-width: 100%;
-      border-radius: var(--border-radius);
-      box-shadow: 0 4px 12px var(--shadow-light);
-    }
-
     .close-modal,
     .go-contact {
       margin-top: 1rem;
@@ -287,26 +248,26 @@
       transition: all var(--transition-speed);
       display: inline-block;
     }
-
     .close-modal:hover,
     .go-contact:hover {
       background: var(--color-secondary);
       color: var(--color-white);
     }
-
     @media (max-width: 768px) {
-      nav .container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
+      nav .container { flex-direction: column; gap: 1rem; }
+      header h1 { font-size: 2.4rem; }
+      header p { font-size: 1.1rem; }
+      h2 { font-size: 2rem; }
+      section { margin: 2rem 1rem; padding: 1.5rem; }
+      .services ul { grid-template-columns: 1fr; }
+      .modal-content { padding: 1.5rem; }
     }
   </style>
 </head>
 <body>
-  <nav role="navigation" aria-label="Menú principal">
+  <nav>
     <div class="container">
-      <div class="logo" tabindex="0">RPP Agency</div>
+      <div class="logo">RPP Agency</div>
       <ul>
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#servicios">Servicios</a></li>
@@ -314,151 +275,68 @@
       </ul>
     </div>
   </nav>
-
   <header>
     <h1>RPP Agency</h1>
     <p>Ayudo a marcas y emprendedores a conectar con su audiencia a través de contenido profesional.</p>
   </header>
-
   <section id="sobre-mi">
     <h2>Sobre mí</h2>
-    <p>Soy Gabriel Federico Romero Pérez, creador de RPP Agency. Me dedico a crear contenido que comunica, emociona y vende. Trabajo para redes sociales, páginas web y campañas visuales, construyendo mensajes claros que representen a cada negocio.</p>
+    <p>Soy Gabriel Federico Romero Pérez, creador de RPP Agency. Me dedico a crear contenido que comunica, emociona y vende.</p>
   </section>
-
   <section id="servicios" class="services">
     <h2>Servicios</h2>
     <ul>
-      <li>
-        <i class="fa-solid fa-pen-nib"></i>
-        <strong>Artículos para tu web o blog</strong><br>
-        Textos claros y bien estructurados que posicionan tu negocio.
-        <button class="open-modal" data-type="articulos" aria-label="Ver precios y ejemplos de artículos">Ver precios / ejemplos</button>
-      </li>
-      <li>
-        <i class="fa-brands fa-youtube"></i>
-        <strong>Guiones para vídeos</strong><br>
-        Ideas listas para grabar, adaptadas al tipo de contenido.
-        <button class="open-modal" data-type="guiones" aria-label="Ver precios y ejemplos de guiones">Ver precios / ejemplos</button>
-      </li>
-      <li>
-        <i class="fa-solid fa-bullhorn"></i>
-        <strong>Textos para campañas publicitarias</strong><br>
-        Mensajes que destacan y convierten en redes o Google Ads.
-        <button class="open-modal" data-type="campañas" aria-label="Ver precios y ejemplos de campañas">Ver precios / ejemplos</button>
-      </li>
-      <li>
-        <i class="fa-solid fa-paintbrush"></i>
-        <strong>Diseño de identidad visual</strong><br>
-        Logotipos, colores y estilos para diferenciar tu marca.
-        <button class="open-modal" data-type="diseño" aria-label="Ver precios y ejemplos de diseño">Ver precios / ejemplos</button>
-      </li>
+      <li><i class="fa-solid fa-pen-nib"></i><strong> Artículos para tu web o blog</strong><br>Textos claros que posicionan.<button class="open-modal" data-type="articulos">Ver precios / ejemplos</button></li>
+      <li><i class="fa-brands fa-youtube"></i><strong> Guiones para vídeos</strong><br>Ideas listas para grabar.<button class="open-modal" data-type="guiones">Ver precios / ejemplos</button></li>
+      <li><i class="fa-solid fa-bullhorn"></i><strong> Textos para campañas</strong><br>Mensajes que convierten.<button class="open-modal" data-type="campañas">Ver precios / ejemplos</button></li>
+      <li><i class="fa-solid fa-paintbrush"></i><strong> Diseño identidad visual</strong><br>Logos y estilos únicos.<button class="open-modal" data-type="diseño">Ver precios / ejemplos</button></li>
     </ul>
   </section>
-
-  <section id="contacto" aria-labelledby="contacto-title">
-    <h2 id="contacto-title">Contacto</h2>
-    <form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST" aria-label="Formulario de contacto">
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST">
       <input type="hidden" name="_next" value="https://gabriel33-cpu.github.io/gabriel33-cpu.io/" />
-      <input type="text" name="nombre" placeholder="Tu nombre" required aria-label="Nombre" />
-      <input type="email" name="email" placeholder="Tu correo electrónico" required aria-label="Correo electrónico" />
-      <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required aria-label="Mensaje"></textarea>
-      <button type="submit" aria-label="Enviar mensaje">Enviar</button>
+      <input type="text" name="nombre" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu correo electrónico" required />
+      <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+      <button type="submit">Enviar</button>
     </form>
   </section>
+  <footer><p>© 2025 RPP Agency - Todos los derechos reservados.</p></footer>
 
-  <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?" 
-     class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-  <footer>
-    <p>© 2025 RPP Agency - Todos los derechos reservados.</p>
-  </footer>
-
-  <!-- Modal -->
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
     <div class="modal-content">
       <h3 id="modal-title">Precios y Ejemplo</h3>
       <ul id="modal-list"></ul>
-      <img id="modal-image" src="" alt="" style="display: none;">
-      <br>
       <button class="go-contact">Quiero un servicio así</button>
       <button class="close-modal">Cerrar</button>
     </div>
   </div>
-
   <script>
     const modal = document.querySelector('.modal');
     const modalList = document.getElementById('modal-list');
     const modalTitle = document.getElementById('modal-title');
-    const modalImage = document.getElementById('modal-image');
     const closeModalBtn = document.querySelector('.close-modal');
     const goContactBtn = document.querySelector('.go-contact');
     const openModalBtns = document.querySelectorAll('.open-modal');
-
     const data = {
-      articulos: {
-        titulo: "Artículos para Web / Blog",
-        lista: [
-          "Artículo normal: <strong>7 €</strong>",
-          "Artículo avanzado: <strong>12 €</strong>",
-          "Artículo muy avanzado: <strong>15 €</strong>"
-        ],
-        img: "https://images.unsplash.com/photo-1581091012184-7f9fcf423f6e"
-      },
-      guiones: {
-        titulo: "Guiones para Vídeos",
-        lista: [
-          "Guión normal: <strong>5 €</strong> + duración",
-          "Guión avanzado: <strong>10 €</strong> + duración",
-          "Guión muy avanzado: <strong>15 €</strong> + duración"
-        ],
-        img: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4"
-      },
-      campañas: {
-        titulo: "Textos para Campañas Publicitarias",
-        lista: [
-          "Texto común: <strong>7 €</strong>",
-          "Texto avanzado: <strong>12 €</strong>",
-          "Texto muy avanzado: <strong>15 €</strong>"
-        ],
-        img: "https://images.unsplash.com/photo-1590608897129-79da98d1590f"
-      },
-      diseño: {
-        titulo: "Diseño de Identidad Visual",
-        lista: [
-          "El precio varía según tu proyecto. ¡Pregúntame para un presupuesto personalizado!"
-        ],
-        img: "https://images.unsplash.com/photo-1611078483839-f1a85b3b2b13"
-      }
+      articulos: { titulo: "Artículos para Web / Blog", lista: ["Artículo normal: <strong>7 €</strong>", "Avanzado: <strong>12 €</strong>", "Muy avanzado: <strong>15 €</strong>"] },
+      guiones: { titulo: "Guiones para Vídeos", lista: ["Guión normal: <strong>5 €</strong>", "Avanzado: <strong>10 €</strong>", "Muy avanzado: <strong>15 €</strong>"] },
+      campañas: { titulo: "Textos para Campañas", lista: ["Común: <strong>7 €</strong>", "Avanzado: <strong>12 €</strong>", "Muy avanzado: <strong>15 €</strong>"] },
+      diseño: { titulo: "Diseño Identidad Visual", lista: ["Precio depende del proyecto. ¡Consúltame!"] }
     };
-
-    openModalBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const tipo = btn.dataset.type;
-        modalTitle.textContent = data[tipo].titulo;
-        modalList.innerHTML = data[tipo].lista.map(item => `<li>${item}</li>`).join('');
-        modalImage.src = data[tipo].img;
-        modalImage.alt = `Ejemplo visual de ${tipo}`;
-        modalImage.style.display = "block";
-        modal.style.display = 'flex';
-      });
-    });
-
-    closeModalBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-
+    openModalBtns.forEach(btn => btn.addEventListener('click', () => {
+      const tipo = btn.dataset.type;
+      modalTitle.textContent = data[tipo].titulo;
+      modalList.innerHTML = data[tipo].lista.map(item => `<li>${item}</li>`).join('');
+      modal.style.display = 'flex';
+    }));
+    closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
     goContactBtn.addEventListener('click', () => {
       modal.style.display = 'none';
       document.querySelector('#contacto').scrollIntoView({ behavior: 'smooth' });
     });
-
-    window.addEventListener('click', e => {
-      if (e.target === modal) {
-        modal.style.display = 'none';
-      }
-    });
+    window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
   </script>
 </body>
 </html>
