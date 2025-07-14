@@ -282,7 +282,6 @@
       background-color: var(--color-accent);
     }
 
-    /* Modal */
     .modal {
       position: fixed;
       top: 0; left: 0;
@@ -335,7 +334,6 @@
       background-color: var(--color-accent);
     }
 
-    /* Responsive Nav */
     @media (max-width: 768px) {
       nav .container {
         flex-direction: column;
@@ -346,7 +344,7 @@
   </style>
 </head>
 <body>
-  <nav role="navigation" aria-label="Menú principal">
+<  <nav role="navigation" aria-label="Menú principal">
     <div class="container">
       <div class="logo" tabindex="0">RPP Agency</div>
       <ul>
@@ -374,25 +372,25 @@
         <i class="fa-solid fa-pen-nib"></i>
         <strong>Artículos para tu web o blog</strong><br>
         Textos claros y bien estructurados que posicionan tu negocio.
-        <button class="open-modal" aria-label="Ver precios de artículos">Ver precios</button>
+        <button class="open-modal" data-type="articulos" aria-label="Ver precios y ejemplos de artículos">Ver precios</button>
       </li>
       <li>
         <i class="fa-brands fa-youtube"></i>
         <strong>Guiones para vídeos</strong><br>
         Ideas listas para grabar, adaptadas al tipo de contenido.
-        <button class="open-modal" data-type="guiones" aria-label="Ver precios de guiones">Ver precios</button>
+        <button class="open-modal" data-type="guiones" aria-label="Ver precios y ejemplos de guiones">Ver precios</button>
       </li>
       <li>
         <i class="fa-solid fa-bullhorn"></i>
         <strong>Textos para campañas publicitarias</strong><br>
         Mensajes que destacan y convierten en redes o Google Ads.
-        <button class="open-modal" data-type="campañas" aria-label="Ver precios de campañas">Ver precios</button>
+        <button class="open-modal" data-type="campañas" aria-label="Ver precios y ejemplos de campañas">Ver precios</button>
       </li>
       <li>
         <i class="fa-solid fa-paintbrush"></i>
         <strong>Diseño de identidad visual</strong><br>
         Logotipos, colores y estilos para diferenciar tu marca.
-        <button class="open-modal" data-type="diseño" aria-label="Ver precios de diseño">Ver precios</button>
+        <button class="open-modal" data-type="diseño" aria-label="Ver precios y ejemplos de diseño">Ver precios</button>
       </li>
     </ul>
   </section>
@@ -408,10 +406,11 @@
     </form>
   </section>
 
-<a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?" 
-   class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
+  <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?" 
+     class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
   <footer>
     <p>© 2025 RPP Agency - Todos los derechos reservados.</p>
     <div class="social-icons" role="region" aria-label="Redes sociales">
@@ -440,34 +439,61 @@
     const openModalBtns = document.querySelectorAll('.open-modal');
 
     const precios = {
-      articulos: [
-        "Artículo normal: <strong>7 €</strong>",
-        "Artículo avanzado: <strong>12 €</strong>",
-        "Artículo muy avanzado: <strong>15 €</strong>"
-      ],
-      guiones: [
-        "Guión normal: <strong>5 €</strong> + duración del vídeo",
-        "Guión avanzado: <strong>10 €</strong> + duración del vídeo",
-        "Guión muy avanzado: <strong>15 €</strong> + duración del vídeo"
-      ],
-      campañas: [
-        "Texto común: <strong>7 €</strong>",
-        "Texto avanzado: <strong>12 €</strong>",
-        "Texto muy avanzado: <strong>15 €</strong>"
-      ],
-      diseño: [
-        "El precio varía según tu proyecto. ¡Pregúntame para un presupuesto personalizado!"
-      ]
+      articulos: {
+        lista: [
+          "Artículo normal: <strong>7 €</strong>",
+          "Artículo avanzado: <strong>12 €</strong>",
+          "Artículo muy avanzado: <strong>15 €</strong>"
+        ],
+        ejemplos: "https://tusitio.com/ejemplos-articulos"
+      },
+      guiones: {
+        lista: [
+          "Guión normal: <strong>5 €</strong> + duración del vídeo",
+          "Guión avanzado: <strong>10 €</strong> + duración del vídeo",
+          "Guión muy avanzado: <strong>15 €</strong> + duración del vídeo"
+        ],
+        ejemplos: "https://tusitio.com/ejemplos-guiones"
+      },
+      campañas: {
+        lista: [
+          "Texto común: <strong>7 €</strong>",
+          "Texto avanzado: <strong>12 €</strong>",
+          "Texto muy avanzado: <strong>15 €</strong>"
+        ],
+        ejemplos: "https://tusitio.com/ejemplos-campanas"
+      },
+      diseño: {
+        lista: [
+          "El precio varía según tu proyecto. ¡Pregúntame para un presupuesto personalizado!"
+        ],
+        ejemplos: "https://tusitio.com/portafolio"
+      }
     };
 
     openModalBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         let tipo = btn.dataset.type || 'articulos';
-        modalTitle.textContent = tipo === 'articulos' ? "Precios de Artículos"
-                          : tipo === 'guiones' ? "Precios de Guiones"
-                          : tipo === 'campañas' ? "Precios de Textos Publicitarios"
-                          : "Precios de Diseño";
-        modalList.innerHTML = precios[tipo].map(item => `<li>${item}</li>`).join('');
+
+        modalTitle.textContent = 
+          tipo === 'articulos' ? "Precios de Artículos"
+        : tipo === 'guiones' ? "Precios de Guiones"
+        : tipo === 'campañas' ? "Precios de Textos Publicitarios"
+        : "Precios de Diseño";
+
+        modalList.innerHTML = precios[tipo].lista.map(item => `<li>${item}</li>`).join('');
+
+        if (precios[tipo].ejemplos) {
+          modalList.innerHTML += `<li>
+            <a href="${precios[tipo].ejemplos}" target="_blank"
+               style="display:inline-block;margin-top:1rem;padding:0.6rem 1.2rem;
+               background:#b8860b;color:#fff;border-radius:8px;text-decoration:none;
+               font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+               Ver ejemplos
+            </a>
+          </li>`;
+        }
+
         modal.style.display = 'flex';
       });
     });
@@ -484,4 +510,5 @@
   </script>
 </body>
 </html>
+!-- CONTINÚA ABAJO (mensaje límite) -->
 
