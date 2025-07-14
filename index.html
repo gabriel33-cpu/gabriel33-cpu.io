@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RPP Agency - Creación de Contenido</title>
+  <link rel="icon" href="logotipo-web.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <style>
@@ -12,16 +13,19 @@
       --color-primary: #1a1a1a;
       --color-secondary: #b8860b;
       --color-white: #ffffff;
+      --transition-speed: 0.4s;
       --font-main: 'Montserrat', sans-serif;
       --border-radius: 10px;
       --shadow-light: rgba(0, 0, 0, 0.05);
       --shadow-dark: rgba(0, 0, 0, 0.15);
     }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: var(--font-main);
       background-color: var(--color-bg);
@@ -29,6 +33,7 @@
       line-height: 1.6;
       scroll-behavior: smooth;
     }
+
     nav {
       position: fixed;
       top: 0;
@@ -37,6 +42,7 @@
       box-shadow: 0 4px 15px var(--shadow-light);
       z-index: 1000;
     }
+
     nav .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -45,18 +51,22 @@
       justify-content: space-between;
       align-items: center;
     }
+
     nav .logo {
       font-weight: 700;
       font-size: 1.8rem;
       color: var(--color-primary);
+      cursor: pointer;
       letter-spacing: 2px;
       user-select: none;
     }
+
     nav ul {
       list-style: none;
       display: flex;
       gap: 2rem;
     }
+
     nav ul li a {
       color: var(--color-primary);
       font-weight: 600;
@@ -65,6 +75,7 @@
       position: relative;
       padding-bottom: 3px;
     }
+
     nav ul li a::after {
       content: '';
       position: absolute;
@@ -76,20 +87,26 @@
       transition: width 0.3s ease;
       border-radius: 2px;
     }
+
     nav ul li a:hover::after,
     nav ul li a:focus::after {
       width: 100%;
     }
+
     nav ul li a:hover,
     nav ul li a:focus {
       color: var(--color-secondary);
+      outline: none;
     }
+
     header {
       background: linear-gradient(135deg, #1a1a1add 0%, #1a1a1aee 100%);
       color: var(--color-white);
       padding: 7rem 1.5rem 4rem;
       text-align: center;
+      box-shadow: 0 4px 20px var(--shadow-dark);
     }
+
     header h1 {
       font-size: 3.6rem;
       font-weight: 700;
@@ -97,13 +114,16 @@
       margin-bottom: 0.5rem;
       text-shadow: 1px 1px 10px rgba(184, 134, 11, 0.7);
     }
+
     header p {
       font-size: 1.4rem;
       font-style: italic;
       max-width: 700px;
       margin: 0 auto;
       color: #d6c58a;
+      text-shadow: 0 0 5px rgba(184, 134, 11, 0.4);
     }
+
     section {
       max-width: 900px;
       margin: 3rem auto;
@@ -112,13 +132,16 @@
       border-radius: var(--border-radius);
       box-shadow: 0 12px 40px var(--shadow-light);
     }
+
     h2 {
       font-size: 2.5rem;
+      color: var(--color-primary);
       margin-bottom: 1.8rem;
       font-weight: 700;
       position: relative;
       padding-bottom: 8px;
     }
+
     h2::after {
       content: '';
       position: absolute;
@@ -129,47 +152,52 @@
       background-color: var(--color-secondary);
       border-radius: 2px;
     }
+
     .services ul {
       list-style: none;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
     }
+
     .services li {
       background-color: #fcfbf8;
       border-radius: var(--border-radius);
       padding: 1.8rem 2rem;
       box-shadow: 0 4px 18px var(--shadow-light);
       border-left: 6px solid var(--color-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-weight: 500;
     }
+
     .services li i {
       color: var(--color-secondary);
       font-size: 2rem;
-      margin-bottom: 0.8rem;
     }
+
     .services button {
-      margin-top: 1rem;
       background: none;
-      border: 2px solid var(--color-primary);
       color: var(--color-primary);
-      padding: 0.7rem 1.5rem;
+      border: 2px solid var(--color-secondary);
+      padding: 0.6rem 1.2rem;
       border-radius: var(--border-radius);
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
+      font-size: 1rem;
     }
+
     .services button:hover,
     .services button:focus {
-      color: var(--color-secondary);
-      border-color: var(--color-secondary);
+      background-color: var(--color-secondary);
+      color: var(--color-white);
     }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
+
     .contact-form input,
     .contact-form textarea {
+      width: 100%;
       padding: 1rem 1.2rem;
       border: 2px solid #ccc;
       border-radius: var(--border-radius);
@@ -179,13 +207,16 @@
       background-color: #fff;
       color: var(--color-primary);
       box-shadow: inset 0 0 6px #f0f0f0;
+      margin-bottom: 1.5rem;
     }
+
     .contact-form input:focus,
     .contact-form textarea:focus {
       border-color: var(--color-secondary);
       box-shadow: 0 0 8px var(--color-secondary);
       outline: none;
     }
+
     .contact-form button {
       background-color: var(--color-secondary);
       color: var(--color-white);
@@ -197,32 +228,43 @@
       cursor: pointer;
       box-shadow: 0 6px 15px rgba(184, 134, 11, 0.6);
       transition: background-color var(--transition-speed), transform var(--transition-speed);
+      width: 100%;
     }
-    .contact-form button:hover {
+
+    .contact-form button:hover,
+    .contact-form button:focus {
       background-color: #a37506;
       transform: scale(1.05);
     }
+
     footer {
       background-color: var(--color-primary);
       color: var(--color-white);
       text-align: center;
       padding: 2rem 1rem;
+      font-size: 0.95rem;
       margin-top: 4rem;
       border-top: 3px solid var(--color-secondary);
+      box-shadow: 0 -2px 12px var(--shadow-dark);
     }
+
     footer .social-icons {
       margin-top: 1rem;
       display: flex;
       justify-content: center;
       gap: 1.5rem;
     }
+
     footer .social-icons a {
       color: var(--color-white);
       font-size: 1.5rem;
     }
-    footer .social-icons a:hover {
+
+    footer .social-icons a:hover,
+    footer .social-icons a:focus {
       color: var(--color-secondary);
     }
+
     .whatsapp-button {
       position: fixed;
       bottom: 25px;
@@ -238,12 +280,17 @@
       font-size: 2.8rem;
       box-shadow: 0 6px 15px rgba(184, 134, 11, 0.7);
       z-index: 1100;
+      transition: background-color 0.3s ease;
       cursor: pointer;
       text-decoration: none;
     }
-    .whatsapp-button:hover {
+
+    .whatsapp-button:hover,
+    .whatsapp-button:focus {
       background-color: var(--color-accent);
     }
+
+    /* Modal */
     .modal {
       position: fixed;
       top: 0; left: 0;
@@ -254,50 +301,55 @@
       align-items: center;
       z-index: 2000;
     }
+
     .modal-content {
       background: #fff;
       padding: 2rem;
       border-radius: var(--border-radius);
-      max-width: 400px;
+      max-width: 450px;
       width: 90%;
-      text-align: center;
       box-shadow: 0 8px 30px var(--shadow-dark);
+      text-align: center;
     }
-    .modal-content h3 {
-      margin-bottom: 1rem;
-    }
+
     .modal-content img {
       width: 100%;
       border-radius: var(--border-radius);
       margin-bottom: 1rem;
     }
+
     .modal-content ul {
       list-style: none;
       padding: 0;
       margin-bottom: 1.5rem;
     }
+
     .modal-content li {
       margin: 0.5rem 0;
       font-size: 1.1rem;
     }
+
     .modal-content button {
       background: none;
-      border: 2px solid var(--color-primary);
       color: var(--color-primary);
-      padding: 0.7rem 1.5rem;
+      border: 2px solid var(--color-secondary);
+      padding: 0.8rem 1.5rem;
       border-radius: var(--border-radius);
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
-      margin: 0.3rem;
+      margin: 0.4rem;
     }
+
     .modal-content button:hover {
-      color: var(--color-secondary);
-      border-color: var(--color-secondary);
+      background-color: var(--color-secondary);
+      color: var(--color-white);
     }
+
     @media (max-width: 768px) {
       nav .container {
         flex-direction: column;
+        align-items: center;
         gap: 1rem;
       }
     }
@@ -332,29 +384,29 @@
         <i class="fa-solid fa-pen-nib"></i>
         <strong>Artículos para tu web o blog</strong><br>
         Textos claros y bien estructurados que posicionan tu negocio.
-        <button class="open-modal" data-type="articulos" aria-label="Ver precios y ejemplos de artículos">Ver precio</button>
-        <button class="open-modal" data-type="articulos" aria-label="Ver precios y ejemplos de artículos">Ver ejemplo</button>
+        <button class="open-modal" data-type="articulos">Ver precios</button>
+        <button class="open-example" data-type="articulos">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-brands fa-youtube"></i>
         <strong>Guiones para vídeos</strong><br>
         Ideas listas para grabar, adaptadas al tipo de contenido.
-        <button class="open-modal" data-type="guiones" aria-label="Ver precios y ejemplos de guiones">Ver precio</button>
-        <button class="open-modal" data-type="guiones" aria-label="Ver precios y ejemplos de guiones">Ver ejemplo</button>
+        <button class="open-modal" data-type="guiones">Ver precios</button>
+        <button class="open-example" data-type="guiones">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-solid fa-bullhorn"></i>
         <strong>Textos para campañas publicitarias</strong><br>
         Mensajes que destacan y convierten en redes o Google Ads.
-        <button class="open-modal" data-type="campañas" aria-label="Ver precios y ejemplos de campañas">Ver precio</button>
-        <button class="open-modal" data-type="campañas" aria-label="Ver precios y ejemplos de campañas">Ver ejemplo</button>
+        <button class="open-modal" data-type="campañas">Ver precios</button>
+        <button class="open-example" data-type="campañas">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-solid fa-paintbrush"></i>
         <strong>Diseño de identidad visual</strong><br>
         Logotipos, colores y estilos para diferenciar tu marca.
-        <button class="open-modal" data-type="diseño" aria-label="Ver precios y ejemplos de diseño">Ver precio</button>
-        <button class="open-modal" data-type="diseño" aria-label="Ver precios y ejemplos de diseño">Ver ejemplo</button>
+        <button class="open-modal" data-type="diseño">Ver precios</button>
+        <button class="open-example" data-type="diseño">Ver ejemplo</button>
       </li>
     </ul>
   </section>
@@ -370,6 +422,11 @@
     </form>
   </section>
 
+  <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?" 
+     class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
   <footer>
     <p>© 2025 RPP Agency - Todos los derechos reservados.</p>
     <div class="social-icons" role="region" aria-label="Redes sociales">
@@ -379,18 +436,16 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?" 
-     class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
+  <!-- Modal -->
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
       <h3 id="modal-title">Precios</h3>
-      <img id="modal-img" src="" alt="" style="display:none;">
       <ul id="modal-list"></ul>
-      <button onclick="location.href='#contacto'">Quiero un servicio así</button>
-      <button class="close-modal">Cerrar</button>
+      <img id="modal-image" src="" alt="" style="display:none;">
+      <div>
+        <button class="close-modal">Cerrar</button>
+        <button class="go-contact" style="margin-left: 8px;">Quiero un servicio así</button>
+      </div>
     </div>
   </div>
 
@@ -398,54 +453,76 @@
     const modal = document.querySelector('.modal');
     const modalList = document.getElementById('modal-list');
     const modalTitle = document.getElementById('modal-title');
-    const modalImg = document.getElementById('modal-img');
+    const modalImage = document.getElementById('modal-image');
     const closeModalBtn = document.querySelector('.close-modal');
-    const openModalBtns = document.querySelectorAll('.open-modal');
+    const goContactBtn = document.querySelector('.go-contact');
 
-    const datos = {
+    const openModalBtns = document.querySelectorAll('.open-modal');
+    const openExampleBtns = document.querySelectorAll('.open-example');
+
+    const precios = {
+      articulos: [
+        "Artículo normal: <strong>7 €</strong>",
+        "Artículo avanzado: <strong>12 €</strong>",
+        "Artículo muy avanzado: <strong>15 €</strong>"
+      ],
+      guiones: [
+        "Guión normal: <strong>5 €</strong> + duración del vídeo",
+        "Guión avanzado: <strong>10 €</strong> + duración del vídeo",
+        "Guión muy avanzado: <strong>15 €</strong> + duración del vídeo"
+      ],
+      campañas: [
+        "Texto común: <strong>7 €</strong>",
+        "Texto avanzado: <strong>12 €</strong>",
+        "Texto muy avanzado: <strong>15 €</strong>"
+      ],
+      diseño: [
+        "El precio varía según tu proyecto. ¡Pregúntame para un presupuesto personalizado!"
+      ]
+    };
+
+    const ejemplos = {
       articulos: {
-        titulo: "Artículos para Web o Blog",
-        precios: [
-          "Artículo normal: <strong>7 €</strong>",
-          "Artículo avanzado: <strong>12 €</strong>",
-          "Artículo muy avanzado: <strong>15 €</strong>"
-        ],
-        img: "https://via.placeholder.com/400x250?text=Ejemplo+Artículo"
+        items: ["Cómo mejorar tu visibilidad online", "Tips de marketing digital efectivos"],
+        img: ""
       },
       guiones: {
-        titulo: "Guiones para Vídeos",
-        precios: [
-          "Guión normal: <strong>5 €</strong> + duración",
-          "Guión avanzado: <strong>10 €</strong> + duración",
-          "Guión muy avanzado: <strong>15 €</strong> + duración"
-        ],
-        img: "https://via.placeholder.com/400x250?text=Ejemplo+Guión"
+        items: ["Introducción atractiva + CTA final", "Estructura clara para reels"],
+        img: ""
       },
       campañas: {
-        titulo: "Textos para Campañas",
-        precios: [
-          "Texto común: <strong>7 €</strong>",
-          "Texto avanzado: <strong>12 €</strong>",
-          "Texto muy avanzado: <strong>15 €</strong>"
-        ],
-        img: "https://via.placeholder.com/400x250?text=Ejemplo+Campaña"
+        items: ["Ejemplo de copy para Instagram Ads", "Frase destacada para Google Ads"],
+        img: ""
       },
       diseño: {
-        titulo: "Identidad Visual",
-        precios: [
-          "El precio varía según tu proyecto. ¡Consúltame!"
-        ],
-        img: "https://via.placeholder.com/400x250?text=Ejemplo+Identidad+Visual"
+        items: [],
+        img: "https://cdn.pixabay.com/photo/2016/03/31/20/37/brand-1296541_1280.png"
       }
     };
 
     openModalBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        let tipo = btn.dataset.type || 'articulos';
-        modalTitle.textContent = datos[tipo].titulo;
-        modalList.innerHTML = datos[tipo].precios.map(p => `<li>${p}</li>`).join('');
-        modalImg.src = datos[tipo].img;
-        modalImg.style.display = "block";
+        const tipo = btn.dataset.type;
+        modalTitle.textContent = "Precios de " + (tipo.charAt(0).toUpperCase() + tipo.slice(1));
+        modalList.innerHTML = precios[tipo].map(item => `<li>${item}</li>`).join('');
+        modalImage.style.display = "none";
+        modal.style.display = 'flex';
+      });
+    });
+
+    openExampleBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tipo = btn.dataset.type;
+        modalTitle.textContent = "Ejemplo de " + (tipo.charAt(0).toUpperCase() + tipo.slice(1));
+        modalList.innerHTML = ejemplos[tipo].items.length > 0
+          ? ejemplos[tipo].items.map(item => `<li>${item}</li>`).join('')
+          : "<li>Ejemplo visual:</li>";
+        if (ejemplos[tipo].img) {
+          modalImage.src = ejemplos[tipo].img;
+          modalImage.style.display = "block";
+        } else {
+          modalImage.style.display = "none";
+        }
         modal.style.display = 'flex';
       });
     });
@@ -454,8 +531,15 @@
       modal.style.display = 'none';
     });
 
+    goContactBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+      window.location.href = "#contacto";
+    });
+
     window.addEventListener('click', (e) => {
-      if (e.target === modal) modal.style.display = 'none';
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
     });
   </script>
 </body>
