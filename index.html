@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RPP Agency - Creación de Contenido</title>
-  <link rel="icon" href="logotipo-web.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <style>
@@ -12,21 +11,17 @@
       --color-bg: #faf9f7;
       --color-primary: #1a1a1a;
       --color-secondary: #b8860b;
-      --color-accent: #c77f00;
       --color-white: #ffffff;
-      --transition-speed: 0.4s;
       --font-main: 'Montserrat', sans-serif;
       --border-radius: 10px;
       --shadow-light: rgba(0, 0, 0, 0.05);
       --shadow-dark: rgba(0, 0, 0, 0.15);
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: var(--font-main);
       background-color: var(--color-bg);
@@ -34,7 +29,6 @@
       line-height: 1.6;
       scroll-behavior: smooth;
     }
-
     nav {
       position: fixed;
       top: 0;
@@ -43,7 +37,6 @@
       box-shadow: 0 4px 15px var(--shadow-light);
       z-index: 1000;
     }
-
     nav .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -52,28 +45,18 @@
       justify-content: space-between;
       align-items: center;
     }
-
     nav .logo {
-      display: flex;
-      align-items: center;
-      font-size: 1.8rem;
       font-weight: 700;
+      font-size: 1.8rem;
+      color: var(--color-primary);
       letter-spacing: 2px;
-      color: var(--color-secondary);
+      user-select: none;
     }
-
-    nav .logo i {
-      font-size: 2rem;
-      margin-right: 0.5rem;
-      color: var(--color-accent);
-    }
-
     nav ul {
       list-style: none;
       display: flex;
       gap: 2rem;
     }
-
     nav ul li a {
       color: var(--color-primary);
       font-weight: 600;
@@ -82,7 +65,6 @@
       position: relative;
       padding-bottom: 3px;
     }
-
     nav ul li a::after {
       content: '';
       position: absolute;
@@ -94,20 +76,20 @@
       transition: width 0.3s ease;
       border-radius: 2px;
     }
-
     nav ul li a:hover::after,
     nav ul li a:focus::after {
       width: 100%;
     }
-
+    nav ul li a:hover,
+    nav ul li a:focus {
+      color: var(--color-secondary);
+    }
     header {
       background: linear-gradient(135deg, #1a1a1add 0%, #1a1a1aee 100%);
       color: var(--color-white);
       padding: 7rem 1.5rem 4rem;
       text-align: center;
-      box-shadow: 0 4px 20px var(--shadow-dark);
     }
-
     header h1 {
       font-size: 3.6rem;
       font-weight: 700;
@@ -115,16 +97,13 @@
       margin-bottom: 0.5rem;
       text-shadow: 1px 1px 10px rgba(184, 134, 11, 0.7);
     }
-
     header p {
       font-size: 1.4rem;
       font-style: italic;
       max-width: 700px;
       margin: 0 auto;
       color: #d6c58a;
-      text-shadow: 0 0 5px rgba(184, 134, 11, 0.4);
     }
-
     section {
       max-width: 900px;
       margin: 3rem auto;
@@ -133,16 +112,13 @@
       border-radius: var(--border-radius);
       box-shadow: 0 12px 40px var(--shadow-light);
     }
-
     h2 {
       font-size: 2.5rem;
-      color: var(--color-primary);
       margin-bottom: 1.8rem;
       font-weight: 700;
       position: relative;
       padding-bottom: 8px;
     }
-
     h2::after {
       content: '';
       position: absolute;
@@ -153,83 +129,100 @@
       background-color: var(--color-secondary);
       border-radius: 2px;
     }
-
     .services ul {
       list-style: none;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
-
     .services li {
       background-color: #fcfbf8;
       border-radius: var(--border-radius);
       padding: 1.8rem 2rem;
       box-shadow: 0 4px 18px var(--shadow-light);
       border-left: 6px solid var(--color-secondary);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      font-weight: 500;
     }
-
     .services li i {
       color: var(--color-secondary);
       font-size: 2rem;
+      margin-bottom: 0.8rem;
     }
-
-    .services li button {
-      background-color: transparent;
-      color: var(--color-secondary);
-      border: 2px solid var(--color-secondary);
+    .services button {
+      margin-top: 1rem;
+      background: none;
+      border: 2px solid var(--color-primary);
+      color: var(--color-primary);
+      padding: 0.7rem 1.5rem;
       border-radius: var(--border-radius);
-      padding: 0.7rem 1.2rem;
-      font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
-      margin-top: 0.5rem;
     }
-
-    .services li button:hover,
-    .services li button:focus {
-      background-color: var(--color-secondary);
-      color: var(--color-white);
-      transform: scale(1.05);
+    .services button:hover,
+    .services button:focus {
+      color: var(--color-secondary);
+      border-color: var(--color-secondary);
     }
-
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
     .contact-form input,
     .contact-form textarea {
+      padding: 1rem 1.2rem;
+      border: 2px solid #ccc;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
       font-family: var(--font-main);
+      resize: vertical;
+      background-color: #fff;
+      color: var(--color-primary);
+      box-shadow: inset 0 0 6px #f0f0f0;
     }
-
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--color-secondary);
+      box-shadow: 0 0 8px var(--color-secondary);
+      outline: none;
+    }
+    .contact-form button {
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+      padding: 1.3rem 0;
+      border: none;
+      border-radius: var(--border-radius);
+      font-weight: 700;
+      font-size: 1.15rem;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(184, 134, 11, 0.6);
+      transition: background-color var(--transition-speed), transform var(--transition-speed);
+    }
+    .contact-form button:hover {
+      background-color: #a37506;
+      transform: scale(1.05);
+    }
     footer {
       background-color: var(--color-primary);
       color: var(--color-white);
       text-align: center;
       padding: 2rem 1rem;
-      font-size: 0.95rem;
       margin-top: 4rem;
       border-top: 3px solid var(--color-secondary);
-      box-shadow: 0 -2px 12px var(--shadow-dark);
     }
-
     footer .social-icons {
       margin-top: 1rem;
       display: flex;
       justify-content: center;
       gap: 1.5rem;
     }
-
     footer .social-icons a {
       color: var(--color-white);
       font-size: 1.5rem;
     }
-
     footer .social-icons a:hover {
       color: var(--color-secondary);
     }
-
     .whatsapp-button {
       position: fixed;
       bottom: 25px;
@@ -245,15 +238,12 @@
       font-size: 2.8rem;
       box-shadow: 0 6px 15px rgba(184, 134, 11, 0.7);
       z-index: 1100;
-      transition: background-color 0.3s ease;
       cursor: pointer;
       text-decoration: none;
     }
-
     .whatsapp-button:hover {
       background-color: var(--color-accent);
     }
-
     .modal {
       position: fixed;
       top: 0; left: 0;
@@ -264,61 +254,50 @@
       align-items: center;
       z-index: 2000;
     }
-
     .modal-content {
       background: #fff;
       padding: 2rem;
       border-radius: var(--border-radius);
-      max-width: 420px;
+      max-width: 400px;
       width: 90%;
-      box-shadow: 0 8px 30px var(--shadow-dark);
       text-align: center;
+      box-shadow: 0 8px 30px var(--shadow-dark);
     }
-
     .modal-content h3 {
       margin-bottom: 1rem;
-      color: var(--color-primary);
     }
-
+    .modal-content img {
+      width: 100%;
+      border-radius: var(--border-radius);
+      margin-bottom: 1rem;
+    }
     .modal-content ul {
       list-style: none;
       padding: 0;
       margin-bottom: 1.5rem;
-      font-family: var(--font-main);
-      font-size: 1.05rem;
     }
-
-    .modal-content img {
-      width: 100%;
-      height: auto;
-      border-radius: var(--border-radius);
-      margin-bottom: 1rem;
+    .modal-content li {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
     }
-
-    .modal-content .goto-contact,
-    .modal-content .close-modal {
-      display: inline-block;
-      margin: 0.4rem 0.5rem;
+    .modal-content button {
+      background: none;
+      border: 2px solid var(--color-primary);
+      color: var(--color-primary);
       padding: 0.7rem 1.5rem;
-      border: 2px solid var(--color-secondary);
-      background: transparent;
-      color: var(--color-secondary);
-      font-weight: 600;
       border-radius: var(--border-radius);
+      font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
+      margin: 0.3rem;
     }
-
-    .modal-content .goto-contact:hover,
-    .modal-content .close-modal:hover {
-      background: var(--color-secondary);
-      color: var(--color-white);
+    .modal-content button:hover {
+      color: var(--color-secondary);
+      border-color: var(--color-secondary);
     }
-
     @media (max-width: 768px) {
       nav .container {
         flex-direction: column;
-        align-items: center;
         gap: 1rem;
       }
     }
@@ -327,9 +306,7 @@
 <body>
   <nav role="navigation" aria-label="Menú principal">
     <div class="container">
-      <div class="logo" tabindex="0">
-        <i class="fa-solid fa-pen-nib"></i> RPP Agency
-      </div>
+      <div class="logo" tabindex="0">RPP Agency</div>
       <ul>
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#servicios">Servicios</a></li>
@@ -355,29 +332,29 @@
         <i class="fa-solid fa-pen-nib"></i>
         <strong>Artículos para tu web o blog</strong><br>
         Textos claros y bien estructurados que posicionan tu negocio.
-        <button class="open-modal" data-type="articulos">Ver precio</button>
-        <button class="open-modal" data-type="articulos" data-example="true">Ver ejemplo</button>
+        <button class="open-modal" data-type="articulos" aria-label="Ver precios y ejemplos de artículos">Ver precio</button>
+        <button class="open-modal" data-type="articulos" aria-label="Ver precios y ejemplos de artículos">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-brands fa-youtube"></i>
         <strong>Guiones para vídeos</strong><br>
         Ideas listas para grabar, adaptadas al tipo de contenido.
-        <button class="open-modal" data-type="guiones">Ver precio</button>
-        <button class="open-modal" data-type="guiones" data-example="true">Ver ejemplo</button>
+        <button class="open-modal" data-type="guiones" aria-label="Ver precios y ejemplos de guiones">Ver precio</button>
+        <button class="open-modal" data-type="guiones" aria-label="Ver precios y ejemplos de guiones">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-solid fa-bullhorn"></i>
         <strong>Textos para campañas publicitarias</strong><br>
         Mensajes que destacan y convierten en redes o Google Ads.
-        <button class="open-modal" data-type="campañas">Ver precio</button>
-        <button class="open-modal" data-type="campañas" data-example="true">Ver ejemplo</button>
+        <button class="open-modal" data-type="campañas" aria-label="Ver precios y ejemplos de campañas">Ver precio</button>
+        <button class="open-modal" data-type="campañas" aria-label="Ver precios y ejemplos de campañas">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-solid fa-paintbrush"></i>
         <strong>Diseño de identidad visual</strong><br>
         Logotipos, colores y estilos para diferenciar tu marca.
-        <button class="open-modal" data-type="diseño">Ver precio</button>
-        <button class="open-modal" data-type="diseño" data-example="true">Ver ejemplo</button>
+        <button class="open-modal" data-type="diseño" aria-label="Ver precios y ejemplos de diseño">Ver precio</button>
+        <button class="open-modal" data-type="diseño" aria-label="Ver precios y ejemplos de diseño">Ver ejemplo</button>
       </li>
     </ul>
   </section>
@@ -393,11 +370,6 @@
     </form>
   </section>
 
-  <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?"
-     class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
   <footer>
     <p>© 2025 RPP Agency - Todos los derechos reservados.</p>
     <div class="social-icons" role="region" aria-label="Redes sociales">
@@ -407,12 +379,17 @@
     </div>
   </footer>
 
+  <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?" 
+     class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
       <h3 id="modal-title">Precios</h3>
-      <img id="modal-image" src="" alt="" style="display:none;">
+      <img id="modal-img" src="" alt="" style="display:none;">
       <ul id="modal-list"></ul>
-      <button class="goto-contact" onclick="location.href='#contacto'">Quiero un servicio así</button>
+      <button onclick="location.href='#contacto'">Quiero un servicio así</button>
       <button class="close-modal">Cerrar</button>
     </div>
   </div>
@@ -421,56 +398,54 @@
     const modal = document.querySelector('.modal');
     const modalList = document.getElementById('modal-list');
     const modalTitle = document.getElementById('modal-title');
-    const modalImage = document.getElementById('modal-image');
+    const modalImg = document.getElementById('modal-img');
     const closeModalBtn = document.querySelector('.close-modal');
     const openModalBtns = document.querySelectorAll('.open-modal');
 
-    const precios = {
-      articulos: [
-        "Artículo normal: <strong>7 €</strong>",
-        "Artículo avanzado: <strong>12 €</strong>",
-        "Artículo muy avanzado: <strong>15 €</strong>"
-      ],
-      guiones: [
-        "Guión normal: <strong>5 €</strong> + duración del vídeo",
-        "Guión avanzado: <strong>10 €</strong> + duración del vídeo",
-        "Guión muy avanzado: <strong>15 €</strong> + duración del vídeo"
-      ],
-      campañas: [
-        "Texto común: <strong>7 €</strong>",
-        "Texto avanzado: <strong>12 €</strong>",
-        "Texto muy avanzado: <strong>15 €</strong>"
-      ],
-      diseño: [
-        "Precio según proyecto. ¡Pide presupuesto!"
-      ]
-    };
-
-    const ejemplos = {
-      articulos: "https://via.placeholder.com/400x250?text=Ejemplo+Artículo",
-      guiones: "https://via.placeholder.com/400x250?text=Ejemplo+Guión",
-      campañas: "https://via.placeholder.com/400x250?text=Ejemplo+Campaña",
-      diseño: "https://via.placeholder.com/400x250?text=Ejemplo+Diseño"
+    const datos = {
+      articulos: {
+        titulo: "Artículos para Web o Blog",
+        precios: [
+          "Artículo normal: <strong>7 €</strong>",
+          "Artículo avanzado: <strong>12 €</strong>",
+          "Artículo muy avanzado: <strong>15 €</strong>"
+        ],
+        img: "https://via.placeholder.com/400x250?text=Ejemplo+Artículo"
+      },
+      guiones: {
+        titulo: "Guiones para Vídeos",
+        precios: [
+          "Guión normal: <strong>5 €</strong> + duración",
+          "Guión avanzado: <strong>10 €</strong> + duración",
+          "Guión muy avanzado: <strong>15 €</strong> + duración"
+        ],
+        img: "https://via.placeholder.com/400x250?text=Ejemplo+Guión"
+      },
+      campañas: {
+        titulo: "Textos para Campañas",
+        precios: [
+          "Texto común: <strong>7 €</strong>",
+          "Texto avanzado: <strong>12 €</strong>",
+          "Texto muy avanzado: <strong>15 €</strong>"
+        ],
+        img: "https://via.placeholder.com/400x250?text=Ejemplo+Campaña"
+      },
+      diseño: {
+        titulo: "Identidad Visual",
+        precios: [
+          "El precio varía según tu proyecto. ¡Consúltame!"
+        ],
+        img: "https://via.placeholder.com/400x250?text=Ejemplo+Identidad+Visual"
+      }
     };
 
     openModalBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         let tipo = btn.dataset.type || 'articulos';
-        let isExample = btn.dataset.example;
-
-        modalTitle.textContent = isExample
-          ? `Ejemplo de ${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`
-          : `Precios de ${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`;
-
-        if (isExample) {
-          modalImage.src = ejemplos[tipo];
-          modalImage.style.display = 'block';
-          modalList.innerHTML = "";
-        } else {
-          modalImage.style.display = 'none';
-          modalList.innerHTML = precios[tipo].map(item => `<li>${item}</li>`).join('');
-        }
-
+        modalTitle.textContent = datos[tipo].titulo;
+        modalList.innerHTML = datos[tipo].precios.map(p => `<li>${p}</li>`).join('');
+        modalImg.src = datos[tipo].img;
+        modalImg.style.display = "block";
         modal.style.display = 'flex';
       });
     });
@@ -480,14 +455,10 @@
     });
 
     window.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.style.display = 'none';
-      }
+      if (e.target === modal) modal.style.display = 'none';
     });
   </script>
 </body>
 </html>
-
-
 
 
