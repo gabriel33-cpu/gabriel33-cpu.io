@@ -2,9 +2,6 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="google-site-verification" content="I4vV_O4-e_jz382eO1W-n7roFTHmzQ7mi1udRNXoCIA" />
-  <meta name="google-site-verification" content="Byliq6bCY8axGepqw4pUIBES40ilo60vY1U3-iHCz6M" />
-  <meta name="google-site-verification" content="rHPuTDoYB8E25eZB9N8NMH9EYg80ojTbdTAmyz-rltY" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RPP Agency - Creación de Contenido</title>
   <link rel="icon" href="logotipo-web.ico" type="image/x-icon" />
@@ -282,58 +279,7 @@
       background-color: var(--color-accent);
     }
 
-    .modal {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-    }
-
-    .modal-content {
-      background: #fff;
-      padding: 2rem;
-      border-radius: var(--border-radius);
-      max-width: 400px;
-      width: 90%;
-      box-shadow: 0 8px 30px var(--shadow-dark);
-      text-align: center;
-    }
-
-    .modal-content h3 {
-      margin-bottom: 1rem;
-      color: var(--color-primary);
-    }
-
-    .modal-content ul {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 1.5rem;
-    }
-
-    .modal-content li {
-      margin: 0.5rem 0;
-      font-size: 1.1rem;
-    }
-
-    .close-modal {
-      background-color: var(--color-secondary);
-      color: var(--color-white);
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: var(--border-radius);
-      font-weight: 700;
-      cursor: pointer;
-      transition: background-color var(--transition-speed);
-    }
-
-    .close-modal:hover {
-      background-color: var(--color-accent);
-    }
-
+    /* Responsive Nav */
     @media (max-width: 768px) {
       nav .container {
         flex-direction: column;
@@ -344,7 +290,8 @@
   </style>
 </head>
 <body>
-<  <nav role="navigation" aria-label="Menú principal">
+<body>
+  <nav role="navigation" aria-label="Menú principal">
     <div class="container">
       <div class="logo" tabindex="0">RPP Agency</div>
       <ul>
@@ -372,25 +319,26 @@
         <i class="fa-solid fa-pen-nib"></i>
         <strong>Artículos para tu web o blog</strong><br>
         Textos claros y bien estructurados que posicionan tu negocio.
-        <button class="open-modal" data-type="articulos" aria-label="Ver precios y ejemplos de artículos">Ver precios</button>
+        <button class="open-modal" aria-label="Ver precios de artículos">Ver precios</button>
+        <a href="#ejemplo-articulo" style="margin-top:0.8rem; display:inline-block; color:#b8860b; font-weight:600;">Ver ejemplo</a>
       </li>
       <li>
         <i class="fa-brands fa-youtube"></i>
         <strong>Guiones para vídeos</strong><br>
         Ideas listas para grabar, adaptadas al tipo de contenido.
-        <button class="open-modal" data-type="guiones" aria-label="Ver precios y ejemplos de guiones">Ver precios</button>
+        <button class="open-modal" data-type="guiones" aria-label="Ver precios de guiones">Ver precios</button>
       </li>
       <li>
         <i class="fa-solid fa-bullhorn"></i>
         <strong>Textos para campañas publicitarias</strong><br>
         Mensajes que destacan y convierten en redes o Google Ads.
-        <button class="open-modal" data-type="campañas" aria-label="Ver precios y ejemplos de campañas">Ver precios</button>
+        <button class="open-modal" data-type="campañas" aria-label="Ver precios de campañas">Ver precios</button>
       </li>
       <li>
         <i class="fa-solid fa-paintbrush"></i>
         <strong>Diseño de identidad visual</strong><br>
         Logotipos, colores y estilos para diferenciar tu marca.
-        <button class="open-modal" data-type="diseño" aria-label="Ver precios y ejemplos de diseño">Ver precios</button>
+        <button class="open-modal" data-type="diseño" aria-label="Ver precios de diseño">Ver precios</button>
       </li>
     </ul>
   </section>
@@ -406,6 +354,91 @@
     </form>
   </section>
 
+  <!-- EJEMPLO ARTÍCULO -->
+  <section id="ejemplo-articulo" style="
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.05);
+    font-family: 'Montserrat', sans-serif;
+    color: #1a1a1a;
+    line-height: 1.6;
+  ">
+    <h1 style="
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      position: relative;
+      padding-bottom: 8px;
+    ">
+      ¿Por qué tu negocio necesita un blog para crecer en internet?
+      <span style="
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 70px;
+        background-color: #b8860b;
+        border-radius: 2px;
+        content: '';
+        display: block;
+      "></span>
+    </h1>
+
+    <p style="margin-bottom:1.5rem;">
+      Hoy en día, tener presencia online no se limita solo a una página web estática. Si quieres atraer más visitas, ganar autoridad y convertir lectores en clientes, un blog es tu mejor aliado. Te contamos por qué.
+    </p>
+
+    <h2 style="font-size: 2rem; margin-top:2rem; margin-bottom:1rem; position: relative; padding-bottom: 6px; font-weight:700;">
+      1. Aumenta tu visibilidad en Google
+      <span style="position: absolute; bottom: 0; left: 0; height: 3px; width: 50px; background-color: #b8860b; border-radius: 2px; display: block;"></span>
+    </h2>
+    <p>Cada artículo nuevo en tu blog es una oportunidad para aparecer en Google. Cuantos más temas relevantes publiques, más palabras clave tendrás posicionadas y más posibilidades de que nuevos usuarios encuentren tu negocio.</p>
+
+    <h2 style="font-size: 2rem; margin-top:2rem; margin-bottom:1rem; position: relative; padding-bottom: 6px; font-weight:700;">
+      2. Genera confianza y credibilidad
+      <span style="position: absolute; bottom: 0; left: 0; height: 3px; width: 50px; background-color: #b8860b; border-radius: 2px; display: block;"></span>
+    </h2>
+    <p>Un blog demuestra que eres experto en tu área. Al ofrecer contenido útil y resolver dudas de tus clientes potenciales, estás construyendo una relación de confianza que facilitará la venta más adelante.</p>
+
+    <h3 style="font-size: 1.6rem; margin-top:1.5rem; margin-bottom:1rem; font-weight:600; color:#b8860b;">
+      Ejemplo práctico
+    </h3>
+    <p>Si tienes un restaurante, puedes publicar recetas o curiosidades sobre ingredientes locales. Así, cuando alguien busque “receta de paella tradicional”, podrá llegar a tu web aunque no te conociera antes.</p>
+
+    <h2 style="font-size: 2rem; margin-top:2rem; margin-bottom:1rem; position: relative; padding-bottom: 6px; font-weight:700;">
+      3. Es contenido que se comparte
+      <span style="position: absolute; bottom: 0; left: 0; height: 3px; width: 50px; background-color: #b8860b; border-radius: 2px; display: block;"></span>
+    </h2>
+    <p>Los artículos interesantes o prácticos son compartidos en redes sociales. Esto significa tráfico gratis y visibilidad para tu marca sin pagar anuncios.</p>
+
+    <h2 style="font-size: 2rem; margin-top:2rem; margin-bottom:1rem; position: relative; padding-bottom: 6px; font-weight:700;">
+      Conclusión: Invierte en un blog profesional
+      <span style="position: absolute; bottom: 0; left: 0; height: 3px; width: 50px; background-color: #b8860b; border-radius: 2px; display: block;"></span>
+    </h2>
+    <p>No basta con escribir cualquier cosa. Los textos deben estar bien estructurados, con títulos atractivos, llamados a la acción y adaptados a SEO. Así aprovecharás al máximo cada visita.</p>
+
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="#contacto" style="
+        background-color: #b8860b;
+        color: #ffffff;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-decoration: none;
+        box-shadow: 0 6px 15px rgba(184,134,11,0.6);
+        transition: all 0.3s ease;
+        display: inline-block;
+      " onmouseover="this.style.background='#a37506'" onmouseout="this.style.background='#b8860b'">
+        Quiero un artículo así para mi negocio
+      </a>
+    </div>
+  </section>
+
+  <!-- WHATSAPP -->
   <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?" 
      class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
@@ -420,13 +453,11 @@
     </div>
   </footer>
 
-  <!-- Modal -->
+  <!-- MODAL -->
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
       <h3 id="modal-title">Precios</h3>
-      <ul id="modal-list">
-        <!-- dinámico -->
-      </ul>
+      <ul id="modal-list"></ul>
       <button class="close-modal" aria-label="Cerrar ventana">Cerrar</button>
     </div>
   </div>
@@ -439,61 +470,34 @@
     const openModalBtns = document.querySelectorAll('.open-modal');
 
     const precios = {
-      articulos: {
-        lista: [
-          "Artículo normal: <strong>7 €</strong>",
-          "Artículo avanzado: <strong>12 €</strong>",
-          "Artículo muy avanzado: <strong>15 €</strong>"
-        ],
-        ejemplos: "https://tusitio.com/ejemplos-articulos"
-      },
-      guiones: {
-        lista: [
-          "Guión normal: <strong>5 €</strong> + duración del vídeo",
-          "Guión avanzado: <strong>10 €</strong> + duración del vídeo",
-          "Guión muy avanzado: <strong>15 €</strong> + duración del vídeo"
-        ],
-        ejemplos: "https://tusitio.com/ejemplos-guiones"
-      },
-      campañas: {
-        lista: [
-          "Texto común: <strong>7 €</strong>",
-          "Texto avanzado: <strong>12 €</strong>",
-          "Texto muy avanzado: <strong>15 €</strong>"
-        ],
-        ejemplos: "https://tusitio.com/ejemplos-campanas"
-      },
-      diseño: {
-        lista: [
-          "El precio varía según tu proyecto. ¡Pregúntame para un presupuesto personalizado!"
-        ],
-        ejemplos: "https://tusitio.com/portafolio"
-      }
+      articulos: [
+        "Artículo normal: <strong>7 €</strong>",
+        "Artículo avanzado: <strong>12 €</strong>",
+        "Artículo muy avanzado: <strong>15 €</strong>"
+      ],
+      guiones: [
+        "Guión normal: <strong>5 €</strong> + duración del vídeo",
+        "Guión avanzado: <strong>10 €</strong> + duración del vídeo",
+        "Guión muy avanzado: <strong>15 €</strong> + duración del vídeo"
+      ],
+      campañas: [
+        "Texto común: <strong>7 €</strong>",
+        "Texto avanzado: <strong>12 €</strong>",
+        "Texto muy avanzado: <strong>15 €</strong>"
+      ],
+      diseño: [
+        "El precio varía según tu proyecto. ¡Pregúntame para un presupuesto personalizado!"
+      ]
     };
 
     openModalBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         let tipo = btn.dataset.type || 'articulos';
-
-        modalTitle.textContent = 
-          tipo === 'articulos' ? "Precios de Artículos"
-        : tipo === 'guiones' ? "Precios de Guiones"
-        : tipo === 'campañas' ? "Precios de Textos Publicitarios"
-        : "Precios de Diseño";
-
-        modalList.innerHTML = precios[tipo].lista.map(item => `<li>${item}</li>`).join('');
-
-        if (precios[tipo].ejemplos) {
-          modalList.innerHTML += `<li>
-            <a href="${precios[tipo].ejemplos}" target="_blank"
-               style="display:inline-block;margin-top:1rem;padding:0.6rem 1.2rem;
-               background:#b8860b;color:#fff;border-radius:8px;text-decoration:none;
-               font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,0.2);">
-               Ver ejemplos
-            </a>
-          </li>`;
-        }
-
+        modalTitle.textContent = tipo === 'articulos' ? "Precios de Artículos"
+                              : tipo === 'guiones' ? "Precios de Guiones"
+                              : tipo === 'campañas' ? "Precios de Textos Publicitarios"
+                              : "Precios de Diseño";
+        modalList.innerHTML = precios[tipo].map(item => `<li>${item}</li>`).join('');
         modal.style.display = 'flex';
       });
     });
@@ -510,5 +514,4 @@
   </script>
 </body>
 </html>
-!-- CONTINÚA ABAJO (mensaje límite) -->
 
