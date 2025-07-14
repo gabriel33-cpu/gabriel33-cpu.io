@@ -12,201 +12,292 @@
       --color-bg: #faf9f7;
       --color-primary: #1a1a1a;
       --color-secondary: #b8860b;
+      --color-accent: #c77f00;
       --color-white: #ffffff;
+      --transition-speed: 0.4s;
       --font-main: 'Montserrat', sans-serif;
       --border-radius: 10px;
       --shadow-light: rgba(0, 0, 0, 0.05);
       --shadow-dark: rgba(0, 0, 0, 0.15);
-      --transition-speed: 0.4s;
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: var(--font-main);
-      background: var(--color-bg);
+      background-color: var(--color-bg);
       color: var(--color-primary);
-      line-height:1.6;
-      scroll-behavior:smooth;
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
+
     nav {
-      position:fixed; top:0; width:100%;
-      background:var(--color-white);
-      box-shadow:0 4px 15px var(--shadow-light);
-      z-index:1000;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: var(--color-white);
+      box-shadow: 0 4px 15px var(--shadow-light);
+      z-index: 1000;
     }
+
     nav .container {
-      max-width:1200px; margin:0 auto;
-      padding:1rem 2rem;
-      display:flex; justify-content:space-between; align-items:center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
     nav .logo {
-      font-weight:700; font-size:1.8rem; color:var(--color-primary);
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: var(--color-primary);
+      cursor: pointer;
+      letter-spacing: 2px;
+      user-select: none;
     }
+
     nav ul {
-      list-style:none; display:flex; gap:2rem;
+      list-style: none;
+      display: flex;
+      gap: 2rem;
     }
+
     nav ul li a {
-      color:var(--color-primary);
-      font-weight:600; text-decoration:none; font-size:1rem;
-      position:relative; padding-bottom:3px;
+      color: var(--color-primary);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+      padding-bottom: 3px;
     }
+
     nav ul li a::after {
-      content:''; position:absolute; width:0; height:2px; bottom:0; left:0;
-      background:var(--color-secondary);
-      transition:width 0.3s ease;
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--color-secondary);
+      transition: width 0.3s ease;
+      border-radius: 2px;
     }
-    nav ul li a:hover::after, nav ul li a:focus::after { width:100%; }
-    nav ul li a:hover, nav ul li a:focus { color:var(--color-secondary); }
+
+    nav ul li a:hover::after,
+    nav ul li a:focus::after {
+      width: 100%;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+      color: var(--color-secondary);
+      outline: none;
+    }
 
     header {
-      background:linear-gradient(135deg, #1a1a1add 0%, #1a1a1aee 100%);
-      color:var(--color-white); text-align:center;
-      padding:7rem 1.5rem 4rem;
-      box-shadow:0 4px 20px var(--shadow-dark);
+      background: linear-gradient(135deg, #1a1a1add 0%, #1a1a1aee 100%);
+      color: var(--color-white);
+      padding: 7rem 1.5rem 4rem;
+      text-align: center;
+      box-shadow: 0 4px 20px var(--shadow-dark);
     }
+
     header h1 {
-      font-size:3.6rem; font-weight:700; letter-spacing:3px;
-      margin-bottom:0.5rem;
+      font-size: 3.6rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 0.5rem;
+      text-shadow: 1px 1px 10px rgba(184, 134, 11, 0.7);
     }
+
     header p {
-      font-size:1.4rem; font-style:italic;
-      max-width:700px; margin:0 auto;
-      color:#d6c58a;
+      font-size: 1.4rem;
+      font-style: italic;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #d6c58a;
+      text-shadow: 0 0 5px rgba(184, 134, 11, 0.4);
     }
 
     section {
-      max-width:900px; margin:3rem auto;
-      padding:2rem;
-      background:var(--color-white);
-      border-radius:var(--border-radius);
-      box-shadow:0 12px 40px var(--shadow-light);
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: var(--color-white);
+      border-radius: var(--border-radius);
+      box-shadow: 0 12px 40px var(--shadow-light);
     }
+
     h2 {
-      font-size:2.5rem; color:var(--color-primary);
-      margin-bottom:1.8rem; font-weight:700;
-      position:relative; padding-bottom:8px;
+      font-size: 2.5rem;
+      color: var(--color-primary);
+      margin-bottom: 1.8rem;
+      font-weight: 700;
+      position: relative;
+      padding-bottom: 8px;
     }
+
     h2::after {
-      content:''; position:absolute; bottom:0; left:0;
-      height:3px; width:70px;
-      background:var(--color-secondary); border-radius:2px;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 70px;
+      background-color: var(--color-secondary);
+      border-radius: 2px;
     }
 
     .services ul {
-      list-style:none;
-      display:grid;
+      list-style: none;
+      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap:2rem;
-    }
-    .services li {
-      background:#fcfbf8;
-      border-radius:var(--border-radius);
-      padding:1.8rem 2rem;
-      box-shadow:0 4px 18px var(--shadow-light);
-      border-left:6px solid var(--color-secondary);
-      display:flex; flex-direction:column; gap:1rem;
-      font-weight:500;
-    }
-    .services li i {
-      color:var(--color-secondary);
-      font-size:2rem;
-    }
-    .services li button {
-      background:var(--color-secondary);
-      color:var(--color-white);
-      border:none;
-      padding:0.8rem 1.2rem;
-      border-radius:var(--border-radius);
-      cursor:pointer;
-      font-weight:600;
-      transition:background var(--transition-speed), transform var(--transition-speed);
-    }
-    .services li button:hover {
-      background:#a37506;
-      transform:scale(1.05);
+      gap: 2rem;
     }
 
-    .contact-form {
-      max-width:600px; margin:0 auto;
-      display:flex; flex-direction:column; gap:1.5rem;
+    .services li {
+      background-color: #fcfbf8;
+      border-radius: var(--border-radius);
+      padding: 1.8rem 2rem;
+      box-shadow: 0 4px 18px var(--shadow-light);
+      border-left: 6px solid var(--color-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-weight: 500;
     }
-    .contact-form input, .contact-form textarea {
-      padding:1rem 1.2rem;
-      border:2px solid #ccc;
-      border-radius:var(--border-radius);
-      font-size:1rem;
-      background:#fff; color:var(--color-primary);
-      resize:vertical;
+
+    .services li i {
+      color: var(--color-secondary);
+      font-size: 2rem;
     }
-    .contact-form input:focus, .contact-form textarea:focus {
-      border-color:var(--color-secondary);
-      box-shadow:0 0 8px var(--color-secondary);
-      outline:none;
+
+    .services li button {
+      background: none;
+      border: 2px solid var(--color-secondary);
+      color: var(--color-secondary);
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
     }
+
+    .services li button:hover,
+    .services li button:focus {
+      background: var(--color-secondary);
+      color: var(--color-white);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1rem;
+      border: 2px solid #ccc;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      font-family: var(--font-main);
+      resize: vertical;
+      background-color: #fff;
+      color: var(--color-primary);
+    }
+
     .contact-form button {
-      background:var(--color-secondary);
-      color:var(--color-white);
-      padding:1.3rem 0;
-      border:none;
-      border-radius:var(--border-radius);
-      font-weight:700;
-      font-size:1.15rem;
-      cursor:pointer;
-      box-shadow:0 6px 15px rgba(184,134,11,0.6);
-      transition:background var(--transition-speed), transform var(--transition-speed);
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+      padding: 1.3rem 0;
+      border: none;
+      border-radius: var(--border-radius);
+      font-weight: 700;
+      font-size: 1.15rem;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(184, 134, 11, 0.6);
+      transition: background-color var(--transition-speed), transform var(--transition-speed);
+      width: 100%;
     }
+
     .contact-form button:hover {
-      background:#a37506;
-      transform:scale(1.05);
+      background-color: #a37506;
+      transform: scale(1.05);
+    }
+
+    .modal-content img {
+      max-width: 100%;
+      border-radius: var(--border-radius);
+      margin-top: 1rem;
     }
 
     footer {
-      background:var(--color-primary);
-      color:var(--color-white);
-      text-align:center;
-      padding:2rem 1rem;
-      font-size:0.95rem;
-      margin-top:4rem;
-      border-top:3px solid var(--color-secondary);
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.95rem;
+      margin-top: 4rem;
+      border-top: 3px solid var(--color-secondary);
     }
+
     footer .social-icons {
-      margin-top:1rem;
-      display:flex; justify-content:center; gap:1.5rem;
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
     }
+
     footer .social-icons a {
-      color:var(--color-white); font-size:1.5rem;
+      color: var(--color-white);
+      font-size: 1.5rem;
     }
-    footer .social-icons a:hover { color:var(--color-secondary); }
 
     .whatsapp-button {
-      position:fixed; bottom:25px; right:25px;
-      background:var(--color-secondary); color:var(--color-white);
-      border-radius:50%; width:65px; height:65px;
-      display:flex; justify-content:center; align-items:center;
-      font-size:2.8rem;
-      box-shadow:0 6px 15px rgba(184,134,11,0.7);
-      z-index:1100;
-      transition:background 0.3s ease;
-      cursor:pointer; text-decoration:none;
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+      border-radius: 50%;
+      width: 65px;
+      height: 65px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.8rem;
+      box-shadow: 0 6px 15px rgba(184, 134, 11, 0.7);
+      z-index: 1100;
+      cursor: pointer;
+      text-decoration: none;
     }
-    .whatsapp-button:hover { background:#a37506; }
+
+    .whatsapp-button:hover {
+      background-color: var(--color-accent);
+    }
 
     .modal {
-      position:fixed; top:0; left:0;
-      width:100%; height:100%;
-      background:rgba(0,0,0,0.6);
-      display:none; justify-content:center; align-items:center;
-      z-index:2000;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
     }
+
     .modal-content {
-      background:#fff;
-      padding:2rem;
-      border-radius:var(--border-radius);
-      max-width:400px; width:90%;
-      box-shadow:0 8px 30px var(--shadow-dark);
-      text-align:center;
-    }
-    .modal-content img {
-      max-width:100%; border-radius:8px; margin-top:1rem;
+      background: #fff;
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 8px 30px var(--shadow-dark);
+      text-align: center;
     }
   </style>
 </head>
@@ -229,7 +320,7 @@
 
   <section id="sobre-mi">
     <h2>Sobre mí</h2>
-    <p>Soy Gabriel Federico Romero Pérez, creador de RPP Agency. Me dedico a crear contenido que comunica, emociona y vende.</p>
+    <p>Soy Gabriel Federico Romero Pérez, creador de RPP Agency. Me dedico a crear contenido que comunica, emociona y vende. Trabajo para redes sociales, páginas web y campañas visuales, construyendo mensajes claros que representen a cada negocio.</p>
   </section>
 
   <section id="servicios" class="services">
@@ -239,40 +330,33 @@
         <i class="fa-solid fa-pen-nib"></i>
         <strong>Artículos para tu web o blog</strong><br>
         Textos claros y bien estructurados que posicionan tu negocio.
-        <div style="margin-top:1rem;">
-          <button class="open-modal" data-type="articulos">Ver precios</button>
-          <button class="open-example" data-example="articulos">Ver ejemplo</button>
-        </div>
+        <button class="open-modal" data-type="articulos">Ver precios</button>
+        <button class="open-example" data-example="articulos">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-brands fa-youtube"></i>
         <strong>Guiones para vídeos</strong><br>
         Ideas listas para grabar, adaptadas al tipo de contenido.
-        <div style="margin-top:1rem;">
-          <button class="open-modal" data-type="guiones">Ver precios</button>
-          <button class="open-example" data-example="guiones">Ver ejemplo</button>
-        </div>
+        <button class="open-modal" data-type="guiones">Ver precios</button>
+        <button class="open-example" data-example="guiones">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-solid fa-bullhorn"></i>
         <strong>Textos para campañas publicitarias</strong><br>
         Mensajes que destacan y convierten en redes o Google Ads.
-        <div style="margin-top:1rem;">
-          <button class="open-modal" data-type="campañas">Ver precios</button>
-          <button class="open-example" data-example="campañas">Ver ejemplo</button>
-        </div>
+        <button class="open-modal" data-type="campañas">Ver precios</button>
+        <button class="open-example" data-example="campañas">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-solid fa-paintbrush"></i>
         <strong>Diseño de identidad visual</strong><br>
         Logotipos, colores y estilos para diferenciar tu marca.
-        <div style="margin-top:1rem;">
-          <button class="open-modal" data-type="diseño">Ver precios</button>
-          <button class="open-example" data-example="diseño">Ver ejemplo</button>
-        </div>
+        <button class="open-modal" data-type="diseño">Ver precios</button>
+        <button class="open-example" data-example="diseño">Ver ejemplo</button>
       </li>
     </ul>
   </section>
+
   <section id="contacto">
     <h2>Contacto</h2>
     <form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST">
@@ -308,82 +392,3 @@
     </div>
   </div>
 
-  <script>
-    const modal = document.querySelector('.modal');
-    const modalList = document.getElementById('modal-list');
-    const modalTitle = document.getElementById('modal-title');
-    const exampleContainer = document.getElementById('example-container');
-    const closeModalBtn = document.querySelector('.close-modal');
-    const openModalBtns = document.querySelectorAll('.open-modal');
-    const openExampleBtns = document.querySelectorAll('.open-example');
-
-    const precios = {
-      articulos: [
-        "Artículo normal: <strong>7 €</strong>",
-        "Artículo avanzado: <strong>12 €</strong>",
-        "Artículo muy avanzado: <strong>15 €</strong>"
-      ],
-      guiones: [
-        "Guión normal: <strong>5 €</strong> + duración del vídeo",
-        "Guión avanzado: <strong>10 €</strong> + duración del vídeo",
-        "Guión muy avanzado: <strong>15 €</strong> + duración del vídeo"
-      ],
-      campañas: [
-        "Texto común: <strong>7 €</strong>",
-        "Texto avanzado: <strong>12 €</strong>",
-        "Texto muy avanzado: <strong>15 €</strong>"
-      ],
-      diseño: [
-        "El precio varía según tu proyecto. ¡Pregúntame para un presupuesto personalizado!"
-      ]
-    };
-
-    const ejemplos = {
-      articulos: "<p><strong>Título:</strong> Cómo aumentar tus ventas online con SEO.</p><p>Este artículo explica estrategias clave de posicionamiento orgánico para incrementar tus ingresos.</p>",
-      guiones: "<p><strong>Guión para Reel:</strong> 15 segundos mostrando el antes y después de un local reformado, con llamada a la acción final: '¿Quieres algo así para tu negocio? ¡Contáctame!'</p>",
-      campañas: "<p><strong>Ejemplo Google Ads:</strong> '¿Necesitas una web profesional? Incrementa tus clientes ahora. ¡Solicita tu diseño!'</p>",
-      diseño: `
-        <p><strong>Proyecto:</strong> Marca de café artesanal</p>
-        <p><strong>Logotipo:</strong> Tipografía vintage con un icono de grano minimalista.</p>
-        <p><strong>Paleta:</strong> Marrón café, beige y verde oliva suave.</p>
-        <p><strong>Aplicaciones:</strong> Mockups para tazas, bolsas y redes sociales.</p>
-        <img src="https://via.placeholder.com/400x250.png?text=Identidad+Visual" alt="Ejemplo Diseño Identidad Visual">
-      `
-    };
-
-    openModalBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        let tipo = btn.dataset.type || 'articulos';
-        modalTitle.textContent = tipo === 'articulos' ? "Precios de Artículos"
-                          : tipo === 'guiones' ? "Precios de Guiones"
-                          : tipo === 'campañas' ? "Precios de Textos Publicitarios"
-                          : "Precios de Diseño";
-        modalList.innerHTML = precios[tipo].map(item => `<li>${item}</li>`).join('');
-        exampleContainer.innerHTML = `<button onclick="scrollToContacto()" style="margin-top:1rem;background:var(--color-secondary);color:white;border:none;padding:0.8rem 1.2rem;border-radius:10px;cursor:pointer;">Quiero un ${tipo === 'articulos' ? 'artículo' : tipo === 'guiones' ? 'guión' : tipo === 'campañas' ? 'texto' : 'diseño'} así</button>`;
-        modal.style.display = 'flex';
-      });
-    });
-
-    openExampleBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        let tipo = btn.dataset.example || 'articulos';
-        modalTitle.textContent = tipo === 'articulos' ? "Ejemplo de Artículo"
-                          : tipo === 'guiones' ? "Ejemplo de Guión"
-                          : tipo === 'campañas' ? "Ejemplo de Texto Publicitario"
-                          : "Ejemplo de Diseño Visual";
-        modalList.innerHTML = '';
-        exampleContainer.innerHTML = ejemplos[tipo] + `<button onclick="scrollToContacto()" style="margin-top:1.5rem;background:var(--color-secondary);color:white;border:none;padding:0.8rem 1.2rem;border-radius:10px;cursor:pointer;">Quiero un ${tipo === 'articulos' ? 'artículo' : tipo === 'guiones' ? 'guión' : tipo === 'campañas' ? 'texto' : 'diseño'} así</button>`;
-        modal.style.display = 'flex';
-      });
-    });
-
-    closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
-    window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
-
-    function scrollToContacto() {
-      modal.style.display = 'none';
-      document.querySelector("#contacto").scrollIntoView({ behavior: 'smooth' });
-    }
-  </script>
-</body>
-</html>
