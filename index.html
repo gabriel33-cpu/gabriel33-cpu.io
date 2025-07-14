@@ -164,41 +164,10 @@
       background: var(--color-secondary);
       color: var(--color-white);
     }
-    .contact-text {
-      text-align: center;
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-    }
-    .contact-form input,
-    .contact-form textarea {
+    .contact p {
       font-family: var(--font-main);
-      padding: 1rem 1.2rem;
-      border: 2px solid #ccc;
-      border-radius: var(--border-radius);
-      font-size: 1rem;
-      resize: vertical;
-    }
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: var(--color-secondary);
-      box-shadow: 0 0 8px var(--color-secondary);
-      outline: none;
-    }
-    .contact-form button {
-      background-color: var(--color-secondary);
-      color: var(--color-white);
-      padding: 1.3rem 0;
-      border: none;
-      border-radius: var(--border-radius);
-      font-weight: 700;
-      font-size: 1.15rem;
-      cursor: pointer;
-      transition: background-color var(--transition-speed), transform var(--transition-speed);
-    }
-    .contact-form button:hover {
-      background-color: #a37506;
-      transform: scale(1.05);
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
     }
     .whatsapp-button {
       position: fixed;
@@ -322,22 +291,13 @@
     </ul>
   </section>
 
-  <section id="contacto">
+  <section id="contacto" class="contact">
     <h2>Contacto</h2>
-    <div class="contact-text">
-      <p>¿Tienes un proyecto en mente o necesitas más información?</p>
-      <p>Escríbeme sin compromiso y cuéntame cómo puedo ayudarte.</p>
-      <p>Responderé lo antes posible para que podamos empezar a trabajar juntos.</p>
-    </div>
-    <form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST">
-      <input type="hidden" name="_next" value="https://gabriel33-cpu.github.io/gabriel33-cpu.io/" />
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo electrónico" required>
-      <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
+    <p>Puedes escribirme a <strong>rppagencyy@gmail.com</strong> para solicitar presupuesto o resolver cualquier duda.</p>
+    <p>También puedes contactar directamente por <strong>WhatsApp</strong> haciendo clic en el botón flotante.</p>
+    <p>Estaré encantado de ayudarte a llevar tu marca al siguiente nivel.</p>
   </section>
-...  <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?" 
+  <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?" 
      class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
@@ -424,6 +384,7 @@
   </script>
 </body>
 </html>
+
 
 
 
