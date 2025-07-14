@@ -134,17 +134,18 @@
     }
 
     .services li button {
-      background: none;
+      background: transparent;
       color: var(--color-primary);
+      border: 2px solid var(--color-primary);
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
       font-weight: 600;
-      font-size: 1rem;
       cursor: pointer;
-      text-decoration: underline;
-      border: none;
-      padding: 0;
+      transition: all 0.3s ease;
     }
     .services li button:hover {
       color: var(--color-secondary);
+      border-color: var(--color-secondary);
     }
 
     .contact-form {
@@ -264,12 +265,14 @@
       border-radius: var(--border-radius);
       font-weight: 700;
       cursor: pointer;
+      transition: background-color var(--transition-speed);
     }
     .close-modal:hover, .go-contact:hover {
       background-color: #c77f00;
     }
   </style>
 </head>
+<body>
 <body>
   <nav role="navigation" aria-label="Menú principal">
     <div class="container">
@@ -299,28 +302,28 @@
         <i class="fa-solid fa-pen-nib"></i>
         <strong>Artículos para tu web o blog</strong><br>
         Textos claros y bien estructurados que posicionan tu negocio.<br>
-        <button class="open-modal" data-type="articulos">Ver precios</button> |
+        <button class="open-modal" data-type="articulos">Ver precios</button>
         <button class="open-modal" data-type="ejemplo-articulos">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-brands fa-youtube"></i>
         <strong>Guiones para vídeos</strong><br>
         Ideas listas para grabar, adaptadas al tipo de contenido.<br>
-        <button class="open-modal" data-type="guiones">Ver precios</button> |
+        <button class="open-modal" data-type="guiones">Ver precios</button>
         <button class="open-modal" data-type="ejemplo-guiones">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-solid fa-bullhorn"></i>
         <strong>Textos para campañas publicitarias</strong><br>
         Mensajes que destacan y convierten en redes o Google Ads.<br>
-        <button class="open-modal" data-type="campañas">Ver precios</button> |
+        <button class="open-modal" data-type="campañas">Ver precios</button>
         <button class="open-modal" data-type="ejemplo-campañas">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-solid fa-paintbrush"></i>
         <strong>Diseño de identidad visual</strong><br>
         Logotipos, colores y estilos para diferenciar tu marca.<br>
-        <button class="open-modal" data-type="diseño">Ver precios</button> |
+        <button class="open-modal" data-type="diseño">Ver precios</button>
         <button class="open-modal" data-type="ejemplo-diseño">Ver ejemplo</button>
       </li>
     </ul>
@@ -337,7 +340,7 @@
     </form>
   </section>
 
-  <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?"
+  <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?" 
      class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
@@ -370,13 +373,13 @@
 
     const data = {
       articulos: ["Artículo normal: <strong>7 €</strong>", "Artículo avanzado: <strong>12 €</strong>", "Artículo muy avanzado: <strong>15 €</strong>"],
-      'ejemplo-articulos': ["Título: Cómo mejorar tu web en 5 pasos", "Introducción clara con gancho.", "Subtítulos optimizados para SEO.", "Conclusión con llamada a la acción."],
+      'ejemplo-articulos': ["Título: Cómo mejorar tu web en 5 pasos", "Introducción con gancho para retener al lector.", "Subtítulos con keywords.", "Conclusión con CTA para que te contacten."],
       guiones: ["Guión normal: <strong>5 €</strong> + duración del vídeo", "Guión avanzado: <strong>10 €</strong> + duración del vídeo", "Guión muy avanzado: <strong>15 €</strong> + duración del vídeo"],
-      'ejemplo-guiones': ["Introducción breve con pregunta al espectador.", "Bloques con ejemplos y datos.", "Cierre con CTA para suscribirse."],
+      'ejemplo-guiones': ["Introducción con pregunta clave.", "Bloques con ejemplos visuales y argumentos.", "Cierre para invitar a suscribirse."],
       campañas: ["Texto común: <strong>7 €</strong>", "Texto avanzado: <strong>12 €</strong>", "Texto muy avanzado: <strong>15 €</strong>"],
-      'ejemplo-campañas': ["Título impactante para redes.", "Breve descripción orientada a conversión.", "Botón con oferta irresistible."],
-      diseño: ["El precio varía según tu proyecto. ¡Pregúntame para un presupuesto personalizado!"],
-      'ejemplo-diseño': ["Logotipo minimalista en dorado.", "Paleta de colores cálidos para transmitir confianza.", "Tipografía moderna y legible."]
+      'ejemplo-campañas': ["Título potente para captar clics.", "Descripción breve enfocada a la conversión.", "Botón con urgencia o descuento."],
+      diseño: ["El precio varía según el proyecto. ¡Solicita un presupuesto personalizado!"],
+      'ejemplo-diseño': ["Logo con iniciales en dorado.", "Colores que transmiten confianza.", "Tipografía elegante y moderna."]
     };
 
     openModalBtns.forEach(btn => {
@@ -399,4 +402,5 @@
   </script>
 </body>
 </html>
+
 
