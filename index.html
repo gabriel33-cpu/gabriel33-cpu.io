@@ -12,7 +12,6 @@
       --color-bg: #faf9f7;
       --color-primary: #1a1a1a;
       --color-secondary: #b8860b;
-      --color-accent: #c77f00;
       --color-white: #ffffff;
       --transition-speed: 0.4s;
       --font-main: 'Montserrat', sans-serif;
@@ -20,13 +19,7 @@
       --shadow-light: rgba(0, 0, 0, 0.05);
       --shadow-dark: rgba(0, 0, 0, 0.15);
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: var(--font-main);
       background-color: var(--color-bg);
@@ -34,7 +27,6 @@
       line-height: 1.6;
       scroll-behavior: smooth;
     }
-
     nav {
       position: fixed;
       top: 0;
@@ -43,7 +35,6 @@
       box-shadow: 0 4px 15px var(--shadow-light);
       z-index: 1000;
     }
-
     nav .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -52,31 +43,18 @@
       justify-content: space-between;
       align-items: center;
     }
-
     nav .logo {
       font-weight: 700;
       font-size: 1.8rem;
-      color: var(--color-primary);
-      cursor: pointer;
       letter-spacing: 2px;
-      user-select: none;
     }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-
+    nav ul { list-style: none; display: flex; gap: 2rem; }
     nav ul li a {
       color: var(--color-primary);
       font-weight: 600;
       text-decoration: none;
-      font-size: 1rem;
       position: relative;
-      padding-bottom: 3px;
     }
-
     nav ul li a::after {
       content: '';
       position: absolute;
@@ -86,43 +64,26 @@
       left: 0;
       background-color: var(--color-secondary);
       transition: width 0.3s ease;
-      border-radius: 2px;
     }
-
-    nav ul li a:hover::after,
-    nav ul li a:focus::after {
-      width: 100%;
-    }
-
-    nav ul li a:hover,
-    nav ul li a:focus {
-      color: var(--color-secondary);
-      outline: none;
-    }
+    nav ul li a:hover::after { width: 100%; }
+    nav ul li a:hover { color: var(--color-secondary); }
 
     header {
       background: linear-gradient(135deg, #1a1a1add 0%, #1a1a1aee 100%);
       color: var(--color-white);
       padding: 7rem 1.5rem 4rem;
       text-align: center;
-      box-shadow: 0 4px 20px var(--shadow-dark);
     }
-
     header h1 {
       font-size: 3.6rem;
-      font-weight: 700;
       letter-spacing: 3px;
-      margin-bottom: 0.5rem;
       text-shadow: 1px 1px 10px rgba(184, 134, 11, 0.7);
     }
-
     header p {
       font-size: 1.4rem;
-      font-style: italic;
+      color: #d6c58a;
       max-width: 700px;
       margin: 0 auto;
-      color: #d6c58a;
-      text-shadow: 0 0 5px rgba(184, 134, 11, 0.4);
     }
 
     section {
@@ -133,16 +94,12 @@
       border-radius: var(--border-radius);
       box-shadow: 0 12px 40px var(--shadow-light);
     }
-
     h2 {
       font-size: 2.5rem;
-      color: var(--color-primary);
       margin-bottom: 1.8rem;
-      font-weight: 700;
       position: relative;
       padding-bottom: 8px;
     }
-
     h2::after {
       content: '';
       position: absolute;
@@ -151,7 +108,6 @@
       height: 3px;
       width: 70px;
       background-color: var(--color-secondary);
-      border-radius: 2px;
     }
 
     .services ul {
@@ -160,107 +116,68 @@
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
     }
-
     .services li {
       background-color: #fcfbf8;
       border-radius: var(--border-radius);
       padding: 1.8rem 2rem;
       box-shadow: 0 4px 18px var(--shadow-light);
       border-left: 6px solid var(--color-secondary);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      font-weight: 500;
     }
-
     .services li i {
       color: var(--color-secondary);
       font-size: 2rem;
+      margin-bottom: 0.5rem;
     }
-
-    .services li button {
+    .services button {
+      margin-top: 1rem;
       background: none;
       border: 2px solid var(--color-secondary);
       color: var(--color-secondary);
       padding: 0.6rem 1rem;
-      font-size: 1rem;
+      font-weight: 600;
       border-radius: var(--border-radius);
       cursor: pointer;
-      transition: background 0.3s, color 0.3s;
+      transition: all 0.3s ease;
     }
-
-    .services li button:hover,
-    .services li button:focus {
+    .services button:hover {
       background: var(--color-secondary);
       color: var(--color-white);
     }
 
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
     .contact-form input,
     .contact-form textarea {
-      width: 100%;
-      padding: 1rem 1.2rem;
-      margin-bottom: 1rem;
+      padding: 1rem;
       border: 2px solid #ccc;
       border-radius: var(--border-radius);
       font-size: 1rem;
-      font-family: var(--font-main);
-      resize: vertical;
-      background-color: #fff;
-      color: var(--color-primary);
     }
-
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--color-secondary);
+      outline: none;
+    }
     .contact-form button {
-      background-color: var(--color-secondary);
+      background: var(--color-secondary);
       color: var(--color-white);
-      padding: 1.3rem 0;
+      padding: 1.2rem;
+      font-weight: 700;
       border: none;
       border-radius: var(--border-radius);
-      font-weight: 700;
-      font-size: 1.15rem;
       cursor: pointer;
-      box-shadow: 0 6px 15px rgba(184, 134, 11, 0.6);
-      transition: background-color var(--transition-speed), transform var(--transition-speed);
-      width: 100%;
-    }
-
-    .contact-form button:hover {
-      background-color: #a37506;
-      transform: scale(1.05);
-    }
-
-    .modal-content img {
-      max-width: 100%;
-      border-radius: var(--border-radius);
-      margin-top: 1rem;
-    }
-
-    footer {
-      background-color: var(--color-primary);
-      color: var(--color-white);
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.95rem;
-      margin-top: 4rem;
-      border-top: 3px solid var(--color-secondary);
-    }
-
-    footer .social-icons {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-
-    footer .social-icons a {
-      color: var(--color-white);
-      font-size: 1.5rem;
     }
 
     .whatsapp-button {
       position: fixed;
       bottom: 25px;
       right: 25px;
-      background-color: var(--color-secondary);
+      background: var(--color-secondary);
       color: var(--color-white);
       border-radius: 50%;
       width: 65px;
@@ -270,14 +187,9 @@
       align-items: center;
       font-size: 2.8rem;
       box-shadow: 0 6px 15px rgba(184, 134, 11, 0.7);
-      z-index: 1100;
-      cursor: pointer;
       text-decoration: none;
     }
-
-    .whatsapp-button:hover {
-      background-color: var(--color-accent);
-    }
+    .whatsapp-button:hover { background: #a37506; }
 
     .modal {
       position: fixed;
@@ -289,15 +201,28 @@
       align-items: center;
       z-index: 2000;
     }
-
     .modal-content {
       background: #fff;
       padding: 2rem;
       border-radius: var(--border-radius);
-      max-width: 400px;
+      max-width: 500px;
       width: 90%;
-      box-shadow: 0 8px 30px var(--shadow-dark);
       text-align: center;
+    }
+    .modal-content img {
+      width: 100%;
+      margin-top: 1rem;
+      border-radius: var(--border-radius);
+    }
+    .close-modal {
+      margin-top: 1.5rem;
+      background: var(--color-secondary);
+      color: var(--color-white);
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: var(--border-radius);
+      font-weight: 700;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -331,28 +256,28 @@
         <strong>Artículos para tu web o blog</strong><br>
         Textos claros y bien estructurados que posicionan tu negocio.
         <button class="open-modal" data-type="articulos">Ver precios</button>
-        <button class="open-example" data-example="articulos">Ver ejemplo</button>
+        <button class="open-modal" data-type="articulo-ejemplo">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-brands fa-youtube"></i>
         <strong>Guiones para vídeos</strong><br>
         Ideas listas para grabar, adaptadas al tipo de contenido.
         <button class="open-modal" data-type="guiones">Ver precios</button>
-        <button class="open-example" data-example="guiones">Ver ejemplo</button>
+        <button class="open-modal" data-type="guion-ejemplo">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-solid fa-bullhorn"></i>
         <strong>Textos para campañas publicitarias</strong><br>
         Mensajes que destacan y convierten en redes o Google Ads.
         <button class="open-modal" data-type="campañas">Ver precios</button>
-        <button class="open-example" data-example="campañas">Ver ejemplo</button>
+        <button class="open-modal" data-type="campaña-ejemplo">Ver ejemplo</button>
       </li>
       <li>
         <i class="fa-solid fa-paintbrush"></i>
         <strong>Diseño de identidad visual</strong><br>
         Logotipos, colores y estilos para diferenciar tu marca.
         <button class="open-modal" data-type="diseño">Ver precios</button>
-        <button class="open-example" data-example="diseño">Ver ejemplo</button>
+        <button class="open-modal" data-type="diseño-ejemplo">Ver ejemplo</button>
       </li>
     </ul>
   </section>
@@ -376,19 +301,63 @@
   <footer>
     <p>© 2025 RPP Agency - Todos los derechos reservados.</p>
     <div class="social-icons">
-      <a href="https://twitter.com/rppagency" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
-      <a href="https://facebook.com/rppagency" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
-      <a href="https://instagram.com/rppagency" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://twitter.com/rppagency" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+      <a href="https://facebook.com/rppagency" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://instagram.com/rppagency" target="_blank"><i class="fa-brands fa-instagram"></i></a>
     </div>
   </footer>
 
-  <!-- Modal -->
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
-      <h3 id="modal-title">Precios</h3>
-      <ul id="modal-list"></ul>
-      <div id="example-container"></div>
-      <button class="close-modal" style="margin-top:1.5rem;">Cerrar</button>
+      <h3 id="modal-title"></h3>
+      <div id="modal-body"></div>
+      <button class="close-modal">Cerrar</button>
     </div>
   </div>
 
+  <script>
+    const modal = document.querySelector('.modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+    const closeModalBtn = document.querySelector('.close-modal');
+
+    const precios = {
+      articulos: ["Artículo normal: <strong>7 €</strong>","Artículo avanzado: <strong>12 €</strong>","Artículo muy avanzado: <strong>15 €</strong>"],
+      guiones: ["Guión normal: <strong>5 €</strong> + duración del vídeo","Guión avanzado: <strong>10 €</strong> + duración del vídeo","Guión muy avanzado: <strong>15 €</strong> + duración del vídeo"],
+      campañas: ["Texto común: <strong>7 €</strong>","Texto avanzado: <strong>12 €</strong>","Texto muy avanzado: <strong>15 €</strong>"],
+      diseño: ["El precio varía según tu proyecto. ¡Pregúntame para un presupuesto personalizado!"]
+    };
+
+    const ejemplos = {
+      "articulo-ejemplo": "<p><strong>Título:</strong> Cómo aumentar tus ventas online con SEO.</p><p>Este artículo explica estrategias clave de posicionamiento orgánico para incrementar tus ingresos.</p>",
+      "guion-ejemplo": "<p><strong>Guión Reel:</strong> 15 segundos mostrando el antes y después de un local reformado, finalizando con: '¿Quieres algo así para tu negocio? ¡Contáctame!'</p>",
+      "campaña-ejemplo": "<p><strong>Google Ads:</strong> '¿Necesitas una web profesional? Incrementa tus clientes ahora. ¡Solicita tu diseño!'</p>",
+      "diseño-ejemplo": "<p><strong>Marca de café artesanal</strong></p><p>Logo: tipografía vintage + icono minimalista.</p><p>Paleta: marrón café, beige y verde oliva suave.</p><img src='https://via.placeholder.com/400x250.png?text=Identidad+Visual' alt='Ejemplo Identidad Visual'>"
+    };
+
+    document.querySelectorAll('.open-modal').forEach(btn => {
+      btn.addEventListener('click', () => {
+        let tipo = btn.getAttribute('data-type');
+        if (precios[tipo]) {
+          modalTitle.textContent = tipo === "articulos" ? "Precios de Artículos"
+                                : tipo === "guiones" ? "Precios de Guiones"
+                                : tipo === "campañas" ? "Precios de Textos Publicitarios"
+                                : "Precios de Diseño";
+          modalBody.innerHTML = "<ul style='list-style:none;padding:0'>" + 
+            precios[tipo].map(p => `<li style='margin:0.5rem 0;'>${p}</li>`).join('') + "</ul>";
+        } else if (ejemplos[tipo]) {
+          modalTitle.textContent = tipo === "articulo-ejemplo" ? "Ejemplo de Artículo"
+                                : tipo === "guion-ejemplo" ? "Ejemplo de Guión"
+                                : tipo === "campaña-ejemplo" ? "Ejemplo de Texto Publicitario"
+                                : "Ejemplo de Diseño Visual";
+          modalBody.innerHTML = ejemplos[tipo];
+        }
+        modal.style.display = 'flex';
+      });
+    });
+
+    closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
+  </script>
+</body>
+</html>
