@@ -127,6 +127,141 @@
       background-color: var(--color-secondary);
       border-radius: 2px;
     }
+    .services ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .services li {
+      background-color: #fcfbf8;
+      border-radius: var(--border-radius);
+      padding: 1.8rem 2rem;
+      box-shadow: 0 4px 18px var(--shadow-light);
+      border-left: 6px solid var(--color-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-weight: 500;
+    }
+    .services li i {
+      color: var(--color-secondary);
+      font-size: 2rem;
+    }
+    .services button {
+      background: var(--color-white);
+      color: var(--color-secondary);
+      border: 2px solid var(--color-secondary);
+      border-radius: var(--border-radius);
+      padding: 0.7rem 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-speed);
+      font-size: 0.95rem;
+    }
+    .services button:hover,
+    .services button:focus {
+      background: var(--color-secondary);
+      color: var(--color-white);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      font-family: var(--font-main);
+      padding: 1rem 1.2rem;
+      border: 2px solid #ccc;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      resize: vertical;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--color-secondary);
+      box-shadow: 0 0 8px var(--color-secondary);
+      outline: none;
+    }
+    .contact-form button {
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+      padding: 1.3rem 0;
+      border: none;
+      border-radius: var(--border-radius);
+      font-weight: 700;
+      font-size: 1.15rem;
+      cursor: pointer;
+      transition: background-color var(--transition-speed), transform var(--transition-speed);
+    }
+    .contact-form button:hover {
+      background-color: #a37506;
+      transform: scale(1.05);
+    }
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+      font-size: 2rem;
+      padding: 0.8rem 1rem;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 0 4px 15px var(--shadow-dark);
+      transition: all 0.4s;
+    }
+    .whatsapp-button:hover {
+      transform: scale(1.1);
+      background-color: #a37506;
+    }
+    footer {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.95rem;
+      margin-top: 4rem;
+    }
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 8px 30px var(--shadow-dark);
+      text-align: left;
+      font-family: var(--font-main);
+    }
+    .modal-content h3 {
+      margin-bottom: 1rem;
+    }
+    .modal-content ul li {
+      margin-bottom: 0.8rem;
+      font-size: 1.05rem;
+    }
+    .close-modal, .go-contact {
+      margin-top: 1rem;
+      background: var(--color-white);
+      color: var(--color-secondary);
+      border: 2px solid var(--color-secondary);
+      border-radius: var(--border-radius);
+      padding: 0.8rem 1.5rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--transition-speed);
+      display: inline-block;
+    }
+    .close-modal:hover, .go-contact:hover {
+      background: var(--color-secondary);
+      color: var(--color-white);
+    }
   </style>
 </head>
 <body>
@@ -150,6 +285,7 @@
     <h2>Sobre mí</h2>
     <p>Soy Gabriel Federico Romero Pérez, creador de RPP Agency. Me dedico a crear contenido que comunica, emociona y vende. Trabajo para redes sociales, páginas web y campañas visuales, construyendo mensajes claros que representen a cada negocio.</p>
   </section>
+
   <section id="servicios" class="services">
     <h2>Servicios</h2>
     <ul>
@@ -157,37 +293,37 @@
         <i class="fa-solid fa-pen-nib"></i>
         <strong>Artículos para tu web o blog</strong><br>
         Textos claros y bien estructurados que posicionan tu negocio.<br>
-        <button class="open-modal" data-type="articulos" aria-label="Ver precios y ejemplos de artículos">Ver precios / ejemplos</button>
+        <button class="open-modal" data-type="articulos">Ver precios / ejemplos</button>
       </li>
       <li>
         <i class="fa-brands fa-youtube"></i>
         <strong>Guiones para vídeos</strong><br>
         Ideas listas para grabar, adaptadas al tipo de contenido.<br>
-        <button class="open-modal" data-type="guiones" aria-label="Ver precios y ejemplos de guiones">Ver precios / ejemplos</button>
+        <button class="open-modal" data-type="guiones">Ver precios / ejemplos</button>
       </li>
       <li>
         <i class="fa-solid fa-bullhorn"></i>
         <strong>Textos para campañas publicitarias</strong><br>
         Mensajes que destacan y convierten en redes o Google Ads.<br>
-        <button class="open-modal" data-type="campañas" aria-label="Ver precios y ejemplos de campañas">Ver precios / ejemplos</button>
+        <button class="open-modal" data-type="campañas">Ver precios / ejemplos</button>
       </li>
       <li>
         <i class="fa-solid fa-paintbrush"></i>
         <strong>Diseño de identidad visual</strong><br>
         Logotipos, colores y estilos para diferenciar tu marca.<br>
-        <button class="open-modal" data-type="diseño" aria-label="Ver precios y ejemplos de diseño">Ver precios / ejemplos</button>
+        <button class="open-modal" data-type="diseño">Ver precios / ejemplos</button>
       </li>
     </ul>
   </section>
 
-  <section id="contacto" aria-labelledby="contacto-title">
-    <h2 id="contacto-title">Contacto</h2>
-    <form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST" aria-label="Formulario de contacto">
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST">
       <input type="hidden" name="_next" value="https://gabriel33-cpu.github.io/gabriel33-cpu.io/" />
-      <input type="text" name="nombre" placeholder="Tu nombre" required aria-label="Nombre" />
-      <input type="email" name="email" placeholder="Tu correo electrónico" required aria-label="Correo electrónico" />
-      <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required aria-label="Mensaje"></textarea>
-      <button type="submit" aria-label="Enviar mensaje">Enviar</button>
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+      <button type="submit">Enviar</button>
     </form>
   </section>
 
@@ -200,16 +336,15 @@
     <p>© 2025 RPP Agency - Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Modal -->
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
       <h3 id="modal-title">Precios y Ejemplo</h3>
       <ul id="modal-list"></ul>
-      <br>
       <button class="go-contact">Quiero un servicio así</button>
       <button class="close-modal">Cerrar</button>
     </div>
   </div>
+
   <script>
     const modal = document.querySelector('.modal');
     const modalList = document.getElementById('modal-list');
@@ -222,33 +357,33 @@
       articulos: {
         titulo: "Artículos para Web / Blog",
         lista: [
-          "<strong>Artículo estándar (400-600 palabras): 15 €</strong> — Ideal para posts informativos o noticias breves.",
-          "<strong>Artículo optimizado SEO (600-1000 palabras): 25 €</strong> — Perfecto para posicionar en Google.",
-          "<strong>Artículo premium (+1000 palabras): desde 35 €</strong> — Para guías completas o pilares de contenido."
+          "<strong>Artículo estándar (400-600 palabras): 15 €</strong> — Ideal para posts informativos o noticias.",
+          "<strong>Artículo SEO (600-1000 palabras): 25 €</strong> — Perfecto para mejorar tu posicionamiento.",
+          "<strong>Artículo premium (+1000 palabras): desde 35 €</strong> — Guías completas o casos prácticos."
         ]
       },
       guiones: {
         titulo: "Guiones para Vídeos",
         lista: [
-          "<strong>Guión básico (1-2 min): 12 €</strong> — Por ejemplo para reels o TikTok.",
-          "<strong>Guión avanzado (3-5 min): 20 €</strong> — Para vídeos explicativos en YouTube.",
-          "<strong>Guión premium (5+ min): desde 30 €</strong> — Según la duración y el tipo de vídeo."
+          "<strong>Guión corto (1-2 min): 12 €</strong> — Ejemplo reels / TikTok.",
+          "<strong>Guión medio (3-5 min): 20 €</strong> — Vídeos explicativos.",
+          "<strong>Guión largo (+5 min): desde 30 €</strong> — Precio varía según el vídeo y su duración."
         ]
       },
       campañas: {
         titulo: "Textos para Campañas Publicitarias",
         lista: [
-          "<strong>Copy simple para anuncios: 18 €</strong> — Ejemplo: texto corto para Facebook o Instagram Ads.",
-          "<strong>Copy avanzado A/B: 30 €</strong> — Incluye variaciones para testear diferentes públicos.",
-          "<strong>Copy estratégico (funnels / Google Ads): desde 40 €</strong>."
+          "<strong>Texto simple para anuncios: 18 €</strong>",
+          "<strong>Texto A/B testing: 30 €</strong>",
+          "<strong>Campaña estratégica: desde 40 €</strong> — Para funnels o Google Ads."
         ]
       },
       diseño: {
         titulo: "Diseño de Identidad Visual",
         lista: [
-          "<strong>Logotipo básico: desde 50 €</strong>",
-          "<strong>Manual de marca completo: desde 120 €</strong>",
-          "El precio final depende de tus necesidades y el número de elementos (tipografías, paleta, mockups, etc.)."
+          "<strong>Logo básico: desde 50 €</strong>",
+          "<strong>Manual de marca: desde 120 €</strong>",
+          "Incluye colores, tipografías y ejemplos adaptados."
         ]
       }
     };
