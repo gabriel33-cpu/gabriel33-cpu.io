@@ -253,6 +253,26 @@
       background: var(--color-secondary);
       color: var(--color-white);
     }
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      font-size: 2rem;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 1500;
+      transition: transform 0.3s;
+    }
+    .whatsapp-button:hover {
+      transform: scale(1.1);
+    }
     @media (max-width: 768px) {
       nav .container { flex-direction: column; gap: 1rem; }
       header h1 { font-size: 2.4rem; }
@@ -302,8 +322,11 @@
       <button type="submit">Enviar</button>
     </form>
   </section>
+  <a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?"
+     class="whatsapp-button" target="_blank" aria-label="Contactar vía WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
   <footer><p>© 2025 RPP Agency - Todos los derechos reservados.</p></footer>
-
   <div class="modal">
     <div class="modal-content">
       <h3 id="modal-title">Precios y Ejemplo</h3>
@@ -320,10 +343,10 @@
     const goContactBtn = document.querySelector('.go-contact');
     const openModalBtns = document.querySelectorAll('.open-modal');
     const data = {
-      articulos: { titulo: "Artículos para Web / Blog", lista: ["Artículo normal: <strong>7 €</strong>", "Avanzado: <strong>12 €</strong>", "Muy avanzado: <strong>15 €</strong>"] },
-      guiones: { titulo: "Guiones para Vídeos", lista: ["Guión normal: <strong>5 €</strong>", "Avanzado: <strong>10 €</strong>", "Muy avanzado: <strong>15 €</strong>"] },
-      campañas: { titulo: "Textos para Campañas", lista: ["Común: <strong>7 €</strong>", "Avanzado: <strong>12 €</strong>", "Muy avanzado: <strong>15 €</strong>"] },
-      diseño: { titulo: "Diseño Identidad Visual", lista: ["Precio depende del proyecto. ¡Consúltame!"] }
+      articulos: { titulo: "Artículos para Web / Blog", lista: ["Artículo normal: <strong>7 €</strong> - Ejemplo: cómo atraer clientes", "Avanzado: <strong>12 €</strong> - Ejemplo: estrategias SEO", "Muy avanzado: <strong>15 €</strong> - Ejemplo: estudios de mercado"] },
+      guiones: { titulo: "Guiones para Vídeos", lista: ["Guión normal: <strong>5 €</strong> - Ej: video introductorio", "Avanzado: <strong>10 €</strong> - Ej: storytelling", "Muy avanzado: <strong>15 €</strong> - Ej: guión técnico"] },
+      campañas: { titulo: "Textos para Campañas", lista: ["Común: <strong>7 €</strong> - Ej: anuncio Facebook", "Avanzado: <strong>12 €</strong> - Ej: campaña Google", "Muy avanzado: <strong>15 €</strong> - Ej: funnel email"] },
+      diseño: { titulo: "Diseño Identidad Visual", lista: ["Precio depende del proyecto. Ej: logos minimalistas, paletas personalizadas. ¡Consúltame!"] }
     };
     openModalBtns.forEach(btn => btn.addEventListener('click', () => {
       const tipo = btn.dataset.type;
