@@ -15,7 +15,7 @@
     "@type": "Organization",
     "name": "RPP Agency",
     "url": "https://gabriel33-cpu.github.io/gabriel33-cpu.io/",
-    "logo": "https://www.recraft.ai/community?imageId=5467c372-11bd-4894-a72b-1b021d159fbd"
+    "logo": "https://gabriel33-cpu.github.io/gabriel33-cpu.io/logo.png"
   }
   </script>
 
@@ -36,7 +36,7 @@
     body { font-family: var(--font-main); background-color: var(--color-bg); color: var(--color-primary); line-height: 1.6; scroll-behavior: smooth; }
     nav { position: fixed; top: 0; width: 100%; background-color: var(--color-white); box-shadow: 0 4px 15px var(--shadow-light); z-index: 1000; }
     nav .container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-    nav .logo { font-weight: 700; font-size: 1.8rem; color: var(--color-primary); letter-spacing: 2px; cursor: pointer; }
+    nav .logo img { height: 48px; cursor: pointer; }
     nav ul { list-style: none; display: flex; gap: 2rem; flex-wrap: wrap; }
     nav ul li a { color: var(--color-primary); font-weight: 600; text-decoration: none; font-size: 1rem; position: relative; padding-bottom: 3px; }
     nav ul li a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: var(--color-secondary); transition: width 0.3s ease; border-radius: 2px; }
@@ -71,7 +71,9 @@
 <body>
 <nav role="navigation" aria-label="Menú principal">
   <div class="container">
-    <div class="logo" tabindex="0">RPP Agency</div>
+    <div class="logo">
+      <img src="logo.png" alt="Logo de RPP Agency" />
+    </div>
     <ul>
       <li><a href="#sobre-mi">Sobre nosotros</a></li>
       <li><a href="#servicios">Servicios</a></li>
@@ -97,7 +99,6 @@
       <strong>Artículos para tu web o blog</strong><br>
       Textos claros y bien estructurados que posicionan tu negocio.<br>
       <button class="open-modal" data-type="articulos">Ver precios / ejemplos</button>
-...
     </li>
     <li><i class="fa-brands fa-youtube"></i>
       <strong>Guiones para vídeos</strong><br>
@@ -215,6 +216,7 @@ target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
 </script>
 </body>
 </html>
+
 
 
 
