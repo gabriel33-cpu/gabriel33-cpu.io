@@ -21,7 +21,7 @@
       --shadow-dark: rgba(0, 0, 0, 0.15);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: var(--font-main); background-color: var(--color-bg); color: var(--color-primary); line-height: 1.6; scroll-behavior: smooth; }
+    body { font-family: var(--font-main); background-color: var(--color-bg); color: var(--color-primary); line-height: 1.6; }
     nav { position: fixed; top: 0; width: 100%; background-color: var(--color-white); box-shadow: 0 4px 15px var(--shadow-light); z-index: 1000; }
     nav .container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
     nav .logo img { height: 48px; cursor: pointer; }
@@ -161,7 +161,7 @@
       modalList.innerHTML = data[tipo].lista.map(item => {
         return `<li>
                   <strong>${item.nombre}: ${item.precio} €</strong><br>
-                  <a href="pago.html?nombre=${encodeURIComponent(item.nombre)}&precio=${item.precio}">
+                  <a href="pago.html?nombre=${encodeURIComponent(item.nombre)}&precio=${item.precio}&tipo=${encodeURIComponent(tipo)}">
                     <button>Contratar servicio</button>
                   </a>
                 </li>`;
@@ -175,4 +175,3 @@
 </script>
 </body>
 </html>
-
