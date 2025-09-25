@@ -11,11 +11,14 @@
   header { background: #1a1a1a; color: #fff; text-align: center; padding: 3rem 1rem; }
   header h1 { margin-bottom: 0.5rem; }
   header p { color: #d6c58a; font-style: italic; }
-  main { max-width: 600px; margin: 3rem auto; padding: 2rem; background: #fff; border-radius: 10px; box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
-  h2 { text-align: center; color: #1a1a1a; margin-bottom: 1rem; }
-  p#servicio-nombre { text-align: center; font-weight: 600; font-size: 1.2rem; margin-bottom: 2rem; }
-  .pay-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .pay-buttons a, .pay-buttons form button { background-color: #1a1a1a; color: #fff; border: none; border-radius: 10px; padding: 1rem 2rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: 0.4s; display: inline-block; text-align: center; }
+  main { max-width: 900px; margin: 3rem auto; padding: 2rem; background: #fff; border-radius: 10px; box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+  h2 { text-align: center; color: #1a1a1a; margin-bottom: 2rem; }
+  ul { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+  li { background: #fcfbf8; padding: 1.5rem; border-radius: 10px; border-left: 6px solid #b8860b; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 0.5rem; }
+  li strong { font-size: 1.1rem; color: #1a1a1a; }
+  li p { margin: 0.3rem 0; }
+  .pay-buttons { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+  .pay-buttons a, .pay-buttons form button { background-color: #1a1a1a; color: #fff; border: none; border-radius: 10px; padding: 0.8rem 1.5rem; font-weight: 600; cursor: pointer; text-decoration: none; text-align: center; transition: 0.4s; }
   .pay-buttons a:hover, .pay-buttons form button:hover { background-color: #b8860b; }
   footer { text-align: center; padding: 2rem 1rem; color: #888; font-size: 0.9rem; margin-top: 2rem; }
   @media (max-width: 480px) {
@@ -28,54 +31,70 @@
 
 <header>
   <h1>RPP Agency</h1>
-  <p>Completa tu compra de manera segura</p>
+  <p>Selecciona el servicio que quieres contratar</p>
 </header>
 
 <main>
-  <h2>Servicio seleccionado</h2>
-  <p id="servicio-nombre">Cargando...</p>
+  <h2>Servicios Disponibles</h2>
+  <ul>
+    <li>
+      <strong>Artículo básico (400-600 palabras)</strong>
+      <p>Redacción y creación de contenido personalizado.</p>
+      <p>Precio: 25 €</p>
+      <div class="pay-buttons">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="rppagencyy@gmail.com">
+          <input type="hidden" name="item_name" value="Artículo básico (400-600 palabras)">
+          <input type="hidden" name="amount" value="25">
+          <input type="hidden" name="currency_code" value="EUR">
+          <button type="submit"><i class="fa-brands fa-paypal"></i> Pagar con PayPal</button>
+        </form>
+        <a href="https://buy.stripe.com/9B6bIT2Qma4d0k65aXafS00v" target="_blank"><i class="fa-brands fa-cc-stripe"></i> Pagar con Stripe</a>
+      </div>
+    </li>
 
-  <div class="pay-buttons">
-    <!-- PayPal -->
-    <form id="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-      <input type="hidden" name="cmd" value="_xclick">
-      <input type="hidden" name="business" value="rppagencyy@gmail.com">
-      <input type="hidden" name="item_name" value="">
-      <input type="hidden" name="amount" value="">
-      <input type="hidden" name="currency_code" value="EUR">
-      <button type="submit"><i class="fa-brands fa-paypal"></i> Pagar con PayPal</button>
-    </form>
+    <li>
+      <strong>Artículo avanzado (600-1000 palabras)</strong>
+      <p>Redacción más completa y detallada.</p>
+      <p>Precio: 40 €</p>
+      <div class="pay-buttons">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="rppagencyy@gmail.com">
+          <input type="hidden" name="item_name" value="Artículo avanzado (600-1000 palabras)">
+          <input type="hidden" name="amount" value="40">
+          <input type="hidden" name="currency_code" value="EUR">
+          <button type="submit"><i class="fa-brands fa-paypal"></i> Pagar con PayPal</button>
+        </form>
+        <a href="https://buy.stripe.com/eVq28j8aGa4dgj49rdafS01" target="_blank"><i class="fa-brands fa-cc-stripe"></i> Pagar con Stripe</a>
+      </div>
+    </li>
 
-    <!-- Stripe -->
-    <a id="stripe-btn" href="#" target="_blank"><i class="fa-brands fa-cc-stripe"></i> Pagar con Stripe</a>
-  </div>
+    <li>
+      <strong>Pack 5 publicaciones</strong>
+      <p>Contenido para redes sociales.</p>
+      <p>Precio: 35 €</p>
+      <div class="pay-buttons">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="rppagencyy@gmail.com">
+          <input type="hidden" name="item_name" value="Pack 5 publicaciones">
+          <input type="hidden" name="amount" value="35">
+          <input type="hidden" name="currency_code" value="EUR">
+          <button type="submit"><i class="fa-brands fa-paypal"></i> Pagar con PayPal</button>
+        </form>
+        <a href="https://buy.stripe.com/aFa6oz4Yu0tD6IueLxafS02" target="_blank"><i class="fa-brands fa-cc-stripe"></i> Pagar con Stripe</a>
+      </div>
+    </li>
+
+    <!-- Puedes añadir aquí el resto de servicios siguiendo el mismo patrón -->
+  </ul>
 </main>
 
 <footer>
   <p>© 2025 RPP Agency - Todos los derechos reservados.</p>
 </footer>
 
-<script>
-  // Tomamos los parámetros de la URL
-  const params = new URLSearchParams(window.location.search);
-  const nombre = params.get('nombre');
-  const precio = params.get('precio');
-  const stripeLink = params.get('stripe');
-
-  if(nombre && precio){
-    document.getElementById('servicio-nombre').textContent = `${nombre} - ${precio} €`;
-    document.querySelector('#paypal-form input[name="item_name"]').value = nombre;
-    document.querySelector('#paypal-form input[name="amount"]').value = precio;
-
-    const stripeBtn = document.getElementById('stripe-btn');
-    stripeBtn.href = stripeLink;
-  } else {
-    document.getElementById('servicio-nombre').textContent = 'No se ha seleccionado ningún servicio.';
-    document.querySelector('.pay-buttons').style.display = 'none';
-  }
-</script>
-
 </body>
 </html>
-
-
