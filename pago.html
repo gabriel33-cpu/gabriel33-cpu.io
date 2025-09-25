@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RPP Agency - Pago del Servicio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Montserrat', sans-serif; background: #faf9f7; text-align: center; padding: 3rem; }
+    h1 { color: #1a1a1a; }
+    #servicio-nombre { font-weight: 600; margin-top: 1rem; font-size: 1.2rem; }
+    .pay-buttons { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
+    .pay-buttons form button, .pay-buttons button { background-color: #1a1a1a; color: #fff; border: none; border-radius: 10px; padding: 1rem 2rem; font-weight: 600; cursor: pointer; transition: 0.4s; }
+    .pay-buttons form button:hover, .pay-buttons button:hover { background-color: #b8860b; }
+  </style>
+</head>
+<body>
+  <h1>Selecciona tu método de pago</h1>
+  <p id="servicio-nombre"></p>
+
+  <div class="pay-buttons">
+    <!-- PayPal -->
+    <form id="paypal-form" action="https://www.paypal.
