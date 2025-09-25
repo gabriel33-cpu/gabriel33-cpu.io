@@ -6,7 +6,6 @@
 <title>RPP Agency - Generación de Contenido con IA</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-
 <style>
 :root {
   --color-bg: #faf9f7;
@@ -17,38 +16,59 @@
   --font-main: 'Montserrat', sans-serif;
   --border-radius: 10px;
 }
-body { font-family: var(--font-main); background-color: var(--color-bg); color: var(--color-primary); line-height: 1.6; }
-nav { background-color: var(--color-white); box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-nav .logo img { height: 48px; }
-nav ul { list-style: none; display: flex; gap: 2rem; }
-nav ul li a { color: var(--color-primary); font-weight: 600; text-decoration: none; }
-header { background: linear-gradient(135deg, #1a1a1add 0%, #1a1a1aee 100%); color: var(--color-white); padding: 7rem 1.5rem 4rem; text-align: center; }
-header h1 { font-size: 3.6rem; margin-bottom: 0.5rem; }
+body { font-family: var(--font-main); background-color: var(--color-bg); color: var(--color-primary); line-height: 1.6; scroll-behavior: smooth; }
+nav { position: fixed; top: 0; width: 100%; background-color: var(--color-white); box-shadow: 0 4px 15px rgba(0,0,0,0.05); z-index: 1000; }
+nav .container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+nav .logo img { height: 48px; cursor: pointer; }
+nav ul { list-style: none; display: flex; gap: 2rem; flex-wrap: wrap; }
+nav ul li a { color: var(--color-primary); font-weight: 600; text-decoration: none; font-size: 1rem; position: relative; padding-bottom: 3px; }
+nav ul li a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: var(--color-secondary); transition: width 0.3s ease; border-radius: 2px; }
+nav ul li a:hover::after, nav ul li a:focus::after { width: 100%; }
+header { background: linear-gradient(135deg, #1a1a1add 0%, #1a1a1aee 100%); color: var(--color-white); padding: 7rem 1.5rem 4rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+header h1 { font-size: 3.6rem; font-weight: 700; letter-spacing: 3px; margin-bottom: 0.5rem; }
 header p { font-size: 1.4rem; font-style: italic; max-width: 700px; margin: 0 auto; color: #d6c58a; }
 section { max-width: 900px; margin: 3rem auto; padding: 2rem; background-color: var(--color-white); border-radius: var(--border-radius); box-shadow: 0 12px 40px rgba(0,0,0,0.05); }
-h2 { font-size: 2.5rem; margin-bottom: 1.8rem; }
+h2 { font-size: 2.5rem; margin-bottom: 1.8rem; position: relative; padding-bottom: 8px; }
+h2::after { content: ''; position: absolute; bottom: 0; left: 0; height: 3px; width: 70px; background-color: var(--color-secondary); border-radius: 2px; }
 .services ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.services li { background-color: #fcfbf8; border-radius: var(--border-radius); padding: 1.8rem 2rem; box-shadow: 0 4px 18px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; min-height: 300px; }
+.services li { background-color: #fcfbf8; border-radius: var(--border-radius); padding: 1.8rem 2rem; box-shadow: 0 4px 18px rgba(0,0,0,0.05); border-left: 6px solid var(--color-secondary); display: flex; flex-direction: column; justify-content: space-between; min-height: 300px; }
 .services li i { color: var(--color-secondary); font-size: 2rem; }
 .services button { background: var(--color-white); color: var(--color-secondary); border: 2px solid var(--color-secondary); border-radius: var(--border-radius); padding: 0.7rem 1rem; font-weight: 600; cursor: pointer; transition: all var(--transition-speed); font-size: 0.95rem; margin-top: 1rem; align-self: flex-start; }
-.services button:hover { background: var(--color-secondary); color: var(--color-white); }
+.services button:hover, .services button:focus { background: var(--color-secondary); color: var(--color-white); }
+.contact-form input, .contact-form textarea { width: 100%; font-family: var(--font-main); padding: 1rem 1.2rem; border: 2px solid #ccc; border-radius: var(--border-radius); font-size: 1rem; resize: vertical; margin-bottom: 1rem; }
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--color-secondary); box-shadow: 0 0 8px var(--color-secondary); outline: none; }
+.contact-form button { background-color: var(--color-secondary); color: var(--color-white); padding: 1.2rem 0; border: none; border-radius: var(--border-radius); font-weight: 700; font-size: 1.1rem; cursor: pointer; width: 100%; transition: background-color var(--transition-speed), transform var(--transition-speed); }
+.contact-form button:hover { background-color: #a37506; transform: scale(1.05); }
+.whatsapp-button { position: fixed; bottom: 20px; right: 20px; background-color: var(--color-secondary); color: var(--color-white); font-size: 2rem; padding: 0.8rem 1rem; border-radius: 50%; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: all 0.4s; }
+.whatsapp-button:hover { transform: scale(1.1); background-color: #a37506; }
+footer { background-color: var(--color-primary); color: var(--color-white); text-align: center; padding: 2rem 1rem; font-size: 0.95rem; margin-top: 4rem; }
 .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 2000; }
-.modal-content { background: #fff; padding: 2rem; border-radius: var(--border-radius); max-width: 600px; width: 90%; box-shadow: 0 8px 30px rgba(0,0,0,0.15); text-align: left; }
+.modal-content { background: #fff; padding: 2rem; border-radius: var(--border-radius); max-width: 500px; width: 90%; box-shadow: 0 8px 30px rgba(0,0,0,0.15); text-align: left; }
 .modal-content h3 { margin-bottom: 1rem; }
 .modal-content ul li { margin-bottom: 1.2rem; font-size: 1.05rem; }
 .close-modal { margin-top: 1rem; background: var(--color-white); color: var(--color-secondary); border: 2px solid var(--color-secondary); border-radius: var(--border-radius); padding: 0.8rem 1.5rem; font-weight: 700; cursor: pointer; display: inline-block; }
 .close-modal:hover { background: var(--color-secondary); color: var(--color-white); }
+
+@media (max-width: 768px) {
+  header h1 { font-size: 2.5rem; } 
+  header p { font-size: 1.1rem; }
+  nav .container { flex-direction: column; gap: 1rem; align-items: center; }
+  nav ul { gap: 1rem; flex-direction: column; align-items: center; }
+  h2 { font-size: 2rem; }
+}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo"><img src="logo.png" alt="Logo RPP" /></div>
+<div class="container">
+  <div class="logo"><img src="logo.png" alt="Logo de RPP Agency" /></div>
   <ul>
     <li><a href="#sobre-mi">Sobre nosotros</a></li>
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
+</div>
 </nav>
 
 <header>
@@ -98,11 +118,15 @@ h2 { font-size: 2.5rem; margin-bottom: 1.8rem; }
 </form>
 </section>
 
+<a href="https://wa.me/34681044146?text=Hola,%20quiero%20información%20sobre%20los%20servicios%20de%20contenido%20con%20IA." class="whatsapp-button"
+target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
 <footer>
 <p>© 2025 RPP Agency - Todos los derechos reservados.</p>
 </footer>
 
-<!-- Modal -->
 <div class="modal">
   <div class="modal-content">
     <h3 id="modal-title">Precios y Ejemplo</h3>
@@ -118,38 +142,26 @@ const modalTitle = document.getElementById('modal-title');
 const closeModalBtn = document.querySelector('.close-modal');
 
 const data = {
-contenido: {
-titulo: "Redacción y creación de contenido personalizado",
-lista: [
+contenido: { titulo: "Redacción y creación de contenido personalizado", lista: [
 {name:"Artículo básico (400-600 palabras)", precio:25},
 {name:"Artículo avanzado (600-1000 palabras)", precio:40},
 {name:"Pack 5 publicaciones para redes sociales", precio:35}
-]
-},
-redes: {
-titulo: "Contenido para redes sociales",
-lista: [
+]},
+redes: { titulo: "Contenido para redes sociales", lista: [
 {name:"Pack 5 publicaciones", precio:25},
 {name:"Pack 10 publicaciones", precio:45},
 {name:"Pack 20 publicaciones", precio:80}
-]
-},
-imagenes: {
-titulo: "Creatividades visuales con IA",
-lista: [
+]},
+imagenes: { titulo: "Creatividades visuales con IA", lista: [
 {name:"Imagen única", precio:15},
 {name:"Pack 5 imágenes", precio:50},
 {name:"Pack 10 imágenes", precio:90}
-]
-},
-packs: {
-titulo: "Packs de contenido mensual",
-lista: [
+]},
+packs: { titulo: "Packs de contenido mensual", lista: [
 {name:"Básico: 8 posts + 2 artículos", precio:75},
 {name:"Profesional: 20 posts + 4 artículos + 5 imágenes", precio:140},
 {name:"Premium: 40 posts + 6 artículos + 10 imágenes", precio:250}
-]
-}
+]}
 };
 
 document.querySelectorAll('.open-modal').forEach(btn => {
@@ -169,11 +181,8 @@ btn.addEventListener('click', () => {
 });
 
 closeModalBtn.addEventListener('click', () => { modal.style.display = 'none'; });
-window.addEventListener('click', e => { if(e.target === modal) modal.style.display = 'none'; });
+window.addEventListener('click', e => { if(e.target===modal) modal.style.display='none'; });
 </script>
 
 </body>
 </html>
-
-
-
