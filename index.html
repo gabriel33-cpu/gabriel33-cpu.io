@@ -84,38 +84,37 @@
 
 <header>
   <h1>RPP Agency</h1>
-  <p>Especialistas en generación de contenido con Inteligencia Artificial para impulsar tu marca.</p>
+  <p>Generamos contenido de calidad para tu negocio con el poder de la inteligencia artificial.</p>
 </header>
 
 <section id="sobre-mi">
   <h2>Sobre nosotros</h2>
-  <p>En RPP Agency transformamos la manera en que las marcas crean y comparten contenido. 
-  Utilizamos Inteligencia Artificial combinada con creatividad humana para ofrecer textos, imágenes y estrategias únicas, 
-  ayudando a negocios a destacar y conectar con su audiencia.</p>
+  <p>En RPP Agency ayudamos a marcas, emprendedores y negocios a tener siempre contenido fresco, atractivo y profesional. 
+  Usamos la inteligencia artificial como herramienta creativa para entregar resultados más rápidos y efectivos, sin perder la calidad que tu marca merece.</p>
 </section>
 
 <section id="servicios" class="services">
   <h2>Servicios</h2>
   <ul>
-    <li><i class="fa-solid fa-newspaper"></i>
-      <strong>Generación de Artículos con IA</strong><br>
-      Contenido optimizado para SEO que atrae tráfico y mejora tu visibilidad.<br>
+    <li><i class="fa-solid fa-pen-nib"></i>
+      <strong>Artículos optimizados con IA</strong><br>
+      Publicaciones para blogs y páginas web, con SEO básico incluido.<br>
       <button class="open-modal" data-type="articulos">Ver precios / ejemplos</button>
     </li>
     <li><i class="fa-brands fa-instagram"></i>
-      <strong>Posts para Redes Sociales</strong><br>
-      Copies creativos e imágenes generadas con IA listas para publicar.<br>
-      <button class="open-modal" data-type="posts">Ver precios / ejemplos</button>
+      <strong>Contenido para redes sociales</strong><br>
+      Copies, textos y posts listos para publicar en Instagram, Facebook o LinkedIn.<br>
+      <button class="open-modal" data-type="redes">Ver precios / ejemplos</button>
     </li>
-    <li><i class="fa-solid fa-box-archive"></i>
-      <strong>Packs de Contenido Mensual</strong><br>
-      Planes de suscripción de contenido para que nunca te falten publicaciones.<br>
+    <li><i class="fa-solid fa-image"></i>
+      <strong>Creatividades visuales con IA</strong><br>
+      Imágenes, banners y diseños generados con IA y ajustados a tu marca.<br>
+      <button class="open-modal" data-type="imagenes">Ver precios / ejemplos</button>
+    </li>
+    <li><i class="fa-solid fa-box-open"></i>
+      <strong>Packs de contenido mensual</strong><br>
+      Suscripción para que nunca te falte contenido nuevo.<br>
       <button class="open-modal" data-type="packs">Ver precios / ejemplos</button>
-    </li>
-    <li><i class="fa-solid fa-robot"></i>
-      <strong>Consultoría Creativa con IA</strong><br>
-      Te enseñamos a usar IA para crear y automatizar contenido en tu negocio.<br>
-      <button class="open-modal" data-type="consultoria">Ver precios / ejemplos</button>
     </li>
   </ul>
 </section>
@@ -131,7 +130,7 @@
   </form>
 </section>
 
-<a href="https://wa.me/34681044146?text=Hola,%20me%20interesa%20un%20servicio%20de%20IA.%20¿Podemos%20hablar?" class="whatsapp-button"
+<a href="https://wa.me/34681044146?text=Hola,%20quiero%20información%20sobre%20los%20servicios%20de%20contenido%20con%20IA." class="whatsapp-button"
 target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
@@ -159,35 +158,35 @@ target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
 
   const data = {
     articulos: {
-      titulo: "Artículos con IA",
+      titulo: "Artículos optimizados con IA",
       lista: [
-        "<strong>Artículo básico (400-600 palabras): 12 €</strong>",
-        "<strong>Artículo SEO (600-1000 palabras): 20 €</strong>",
-        "<strong>Artículo premium (+1000 palabras): desde 30 €</strong>"
+        "<strong>Artículo básico (400-600 palabras): 15 €</strong>",
+        "<strong>Artículo SEO (600-1000 palabras): 25 €</strong>",
+        "<strong>Artículo premium (+1000 palabras): desde 35 €</strong>"
       ]
     },
-    posts: {
-      titulo: "Posts para Redes Sociales",
+    redes: {
+      titulo: "Contenido para redes sociales",
       lista: [
-        "<strong>Pack 5 posts: 20 €</strong> — Incluye copy + imagen IA.",
-        "<strong>Pack 10 posts: 35 €</strong>",
-        "<strong>Pack 20 posts: 60 €</strong>"
+        "<strong>Pack 5 publicaciones: 20 €</strong>",
+        "<strong>Pack 10 publicaciones: 35 €</strong>",
+        "<strong>Pack 20 publicaciones: 60 €</strong>"
+      ]
+    },
+    imagenes: {
+      titulo: "Creatividades visuales con IA",
+      lista: [
+        "<strong>Imagen única: 10 €</strong>",
+        "<strong>Pack 5 imágenes: 35 €</strong>",
+        "<strong>Pack 10 imágenes: 60 €</strong>"
       ]
     },
     packs: {
-      titulo: "Packs de Contenido Mensual",
+      titulo: "Packs de contenido mensual",
       lista: [
-        "<strong>Básico: 50 €/mes</strong> — 8 posts + 2 artículos.",
-        "<strong>Profesional: 90 €/mes</strong> — 20 posts + 4 artículos + imágenes.",
-        "<strong>Premium: 150 €/mes</strong> — Todo lo anterior + asesoría de publicación."
-      ]
-    },
-    consultoria: {
-      titulo: "Consultoría Creativa con IA",
-      lista: [
-        "<strong>Sesión de 1h: 30 €</strong> — Aprende a usar IA en tu negocio.",
-        "<strong>Pack 3 sesiones: 75 €</strong>",
-        "Incluye guías de prompts, automatización y soporte básico."
+        "<strong>Básico: 8 posts + 2 artículos → 60 €/mes</strong>",
+        "<strong>Profesional: 20 posts + 4 artículos + 5 imágenes → 120 €/mes</strong>",
+        "<strong>Premium: 40 posts + 6 artículos + 10 imágenes → 200 €/mes</strong>"
       ]
     }
   };
