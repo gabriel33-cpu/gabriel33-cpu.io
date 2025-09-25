@@ -147,38 +147,26 @@
     const openModalBtns = document.querySelectorAll('.open-modal');
 
     const data = {
-      contenido: {
-        titulo: "Redacción y creación de contenido personalizado",
-        lista: [
-          {nombre:"Artículo básico (400-600 palabras)", precio:25},
-          {nombre:"Artículo avanzado (600-1000 palabras)", precio:40},
-          {nombre:"Pack 5 publicaciones para redes sociales", precio:35}
-        ]
-      },
-      redes: {
-        titulo: "Contenido para redes sociales",
-        lista: [
-          {nombre:"Pack 5 publicaciones", precio:25},
-          {nombre:"Pack 10 publicaciones", precio:45},
-          {nombre:"Pack 20 publicaciones", precio:80}
-        ]
-      },
-      imagenes: {
-        titulo: "Creatividades visuales con IA",
-        lista: [
-          {nombre:"Imagen única", precio:15},
-          {nombre:"Pack 5 imágenes", precio:50},
-          {nombre:"Pack 10 imágenes", precio:90}
-        ]
-      },
-      packs: {
-        titulo: "Packs de contenido mensual",
-        lista: [
-          {nombre:"Básico: 8 posts + 2 artículos", precio:75},
-          {nombre:"Profesional: 20 posts + 4 artículos + 5 imágenes", precio:140},
-          {nombre:"Premium: 40 posts + 6 artículos + 10 imágenes", precio:250}
-        ]
-      }
+      contenido: { titulo: "Redacción y creación de contenido personalizado", lista: [
+        {nombre:"Artículo básico (400-600 palabras)", precio:25},
+        {nombre:"Artículo avanzado (600-1000 palabras)", precio:40},
+        {nombre:"Pack 5 publicaciones para redes sociales", precio:35}
+      ]},
+      redes: { titulo: "Contenido para redes sociales", lista: [
+        {nombre:"Pack 5 publicaciones", precio:25},
+        {nombre:"Pack 10 publicaciones", precio:45},
+        {nombre:"Pack 20 publicaciones", precio:80}
+      ]},
+      imagenes: { titulo: "Creatividades visuales con IA", lista: [
+        {nombre:"Imagen única", precio:15},
+        {nombre:"Pack 5 imágenes", precio:50},
+        {nombre:"Pack 10 imágenes", precio:90}
+      ]},
+      packs: { titulo: "Packs de contenido mensual", lista: [
+        {nombre:"Básico: 8 posts + 2 artículos", precio:75},
+        {nombre:"Profesional: 20 posts + 4 artículos + 5 imágenes", precio:140},
+        {nombre:"Premium: 40 posts + 6 artículos + 10 imágenes", precio:250}
+      ]}
     };
 
     openModalBtns.forEach(btn => {
@@ -188,7 +176,12 @@
         modalList.innerHTML = data[tipo].lista.map(item => {
           return `<li>
                     <strong>${item.nombre}: ${item.precio} €</strong><br>
-                    <button class="show-pay" onclick="window.location='pago.html?nombre=${encodeURIComponent(item.nombre)}&precio=${item.precio}'">Contratar servicio</button>
+                    <button class="show-pay" style="background: var(--color-white); color: var(--color-secondary); border: 2px solid var(--color-secondary); border-radius: var(--border-radius); padding: 0.7rem 1rem; font-weight: 600; cursor: pointer; transition: all var(--transition-speed);" 
+                      onmouseover="this.style.backgroundColor='var(--color-secondary)'; this.style.color='var(--color-white)';" 
+                      onmouseout="this.style.backgroundColor='var(--color-white)'; this.style.color='var(--color-secondary)';"
+                      onclick="window.location='pago.html?nombre=${encodeURIComponent(item.nombre)}&precio=${item.precio}'">
+                      Contratar servicio
+                    </button>
                   </li>`;
         }).join('');
         modal.style.display = 'flex';
@@ -204,6 +197,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
