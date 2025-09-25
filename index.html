@@ -38,8 +38,8 @@ h2::after { content: ''; position: absolute; bottom: 0; left: 0; height: 3px; wi
 .services ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
 .services li { background-color: #fcfbf8; border-radius: var(--border-radius); padding: 1.8rem 2rem; box-shadow: 0 4px 18px var(--shadow-light); border-left: 6px solid var(--color-secondary); display: flex; flex-direction: column; justify-content: space-between; min-height: 250px; }
 .services li i { color: var(--color-secondary); font-size: 2rem; }
-.services a { background: var(--color-white); color: var(--color-secondary); border: 2px solid var(--color-secondary); border-radius: var(--border-radius); padding: 0.7rem 1rem; font-weight: 600; cursor: pointer; transition: all var(--transition-speed); font-size: 0.95rem; margin-top: 1rem; text-align: center; text-decoration:none; display:inline-block; }
-.services a:hover { background: var(--color-secondary); color: var(--color-white); }
+.services button { background: var(--color-white); color: var(--color-secondary); border: 2px solid var(--color-secondary); border-radius: var(--border-radius); padding: 0.7rem 1rem; font-weight: 600; cursor: pointer; transition: all var(--transition-speed); font-size: 0.95rem; margin-top: 1rem; align-self: flex-start; }
+.services button:hover, .services button:focus { background: var(--color-secondary); color: var(--color-white); }
 .contact-form input, .contact-form textarea { width: 100%; font-family: var(--font-main); padding: 1rem 1.2rem; border: 2px solid #ccc; border-radius: var(--border-radius); font-size: 1rem; resize: vertical; margin-bottom: 1rem; }
 .contact-form input:focus, .contact-form textarea:focus { border-color: var(--color-secondary); box-shadow: 0 0 8px var(--color-secondary); outline: none; }
 .contact-form button { background-color: var(--color-secondary); color: var(--color-white); padding: 1.2rem 0; border: none; border-radius: var(--border-radius); font-weight: 700; font-size: 1.1rem; cursor: pointer; width: 100%; transition: background-color var(--transition-speed), transform var(--transition-speed); }
@@ -47,19 +47,21 @@ h2::after { content: ''; position: absolute; bottom: 0; left: 0; height: 3px; wi
 .whatsapp-button { position: fixed; bottom: 20px; right: 20px; background-color: var(--color-secondary); color: var(--color-white); font-size: 2rem; padding: 0.8rem 1rem; border-radius: 50%; text-align: center; box-shadow: 0 4px 15px var(--shadow-dark); transition: all 0.4s; }
 .whatsapp-button:hover { transform: scale(1.1); background-color: #a37506; }
 footer { background-color: var(--color-primary); color: var(--color-white); text-align: center; padding: 2rem 1rem; font-size: 0.95rem; margin-top: 4rem; }
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 2000; }
+.modal-content { background: #fff; padding: 2rem; border-radius: var(--border-radius); max-width: 500px; width: 90%; box-shadow: 0 8px 30px var(--shadow-dark); text-align: left; }
+.modal-content h3 { margin-bottom: 1rem; }
+.modal-content ul li { margin-bottom: 1.2rem; font-size: 1.05rem; }
+.pay-options { display: none; flex-direction: column; gap: 1rem; margin-top: 0.8rem; }
+.pay-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.pay-buttons form button { background-color: #1a1a1a; color: #fff; border: none; border-radius: var(--border-radius); padding: 0.7rem 1.2rem; cursor: pointer; font-weight: 600; transition: all var(--transition-speed); }
+.pay-buttons form button:hover { background-color: var(--color-secondary); }
+.close-modal, .go-contact, .show-pay { margin-top: 1rem; background: var(--color-white); color: var(--color-secondary); border: 2px solid var(--color-secondary); border-radius: var(--border-radius); padding: 0.8rem 1.5rem; font-weight: 700; cursor: pointer; transition: all var(--transition-speed); display: inline-block; }
+.close-modal:hover, .go-contact:hover, .show-pay:hover { background: var(--color-secondary); color: var(--color-white); }
 @media (max-width: 768px) {
   header h1 { font-size: 2.5rem; } 
   header p { font-size: 1.1rem; }
-  nav .container {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-  }
-  nav ul {
-    gap: 1rem;
-    flex-direction: column;
-    align-items: center;
-  }
+  nav .container { flex-direction: column; gap: 1rem; align-items: center; }
+  nav ul { gap: 1rem; flex-direction: column; align-items: center; }
   nav ul li a { text-align: center; }
   h2 { font-size: 2rem; }
 }
@@ -94,54 +96,24 @@ footer { background-color: var(--color-primary); color: var(--color-white); text
   <h2>Servicios</h2>
   <ul>
     <li><i class="fa-solid fa-pen-nib"></i>
-      <strong>Redacción básica (400-600 palabras)</strong><br>
-      Artículo adaptado a tu marca.<br>
-      <a href="pago.html?nombre=Redaccion+básica&precio=25&stripe=https://buy.stripe.com/9B6bIT2Qma4d0k65aXafS00v">Contratar servicio</a>
+      <strong>Redacción y creación de contenido personalizado</strong><br>
+      Publicaciones para blogs, webs y newsletters, adaptadas a tu marca y con enfoque profesional.<br>
+      <button class="open-modal" data-type="contenido">Ver precios / ejemplos</button>
     </li>
-    <li><i class="fa-solid fa-pen-nib"></i>
-      <strong>Redacción avanzada (600-1000 palabras)</strong><br>
-      Artículo con investigación y optimización SEO.<br>
-      <a href="pago.html?nombre=Redaccion+avanzada&precio=40&stripe=https://buy.stripe.com/eVq28j8aGa4dgj49rdafS01">Contratar servicio</a>
-    </li>
-    <li><i class="fa-solid fa-pen-nib"></i>
-      <strong>Pack 5 publicaciones</strong><br>
-      Contenido para redes sociales.<br>
-      <a href="pago.html?nombre=Pack+5+publicaciones&precio=35&stripe=https://buy.stripe.com/aFa6oz4Yu0tD6IueLxafS02">Contratar servicio</a>
-    </li>
-    <li><i class="fa-solid fa-pen-nib"></i>
-      <strong>Pack 10 publicaciones</strong><br>
-      Contenido extendido para redes sociales.<br>
-      <a href="pago.html?nombre=Pack+10+publicaciones&precio=60&stripe=https://buy.stripe.com/fZu5kv3UqgsB5Eq6f1afS03">Contratar servicio</a>
+    <li><i class="fa-brands fa-instagram"></i>
+      <strong>Contenido para redes sociales</strong><br>
+      Textos y publicaciones diseñadas para captar la atención de tu audiencia y aumentar la interacción en Instagram, Facebook y LinkedIn.<br>
+      <button class="open-modal" data-type="redes">Ver precios / ejemplos</button>
     </li>
     <li><i class="fa-solid fa-image"></i>
-      <strong>Creatividad visual única</strong><br>
-      Imagen generada con IA adaptada a tu marca.<br>
-      <a href="pago.html?nombre=Creatividad+visual+unica&precio=15&stripe=https://buy.stripe.com/3cIcMXaiOfox9UG9rdafS04">Contratar servicio</a>
-    </li>
-    <li><i class="fa-solid fa-image"></i>
-      <strong>Pack 5 imágenes</strong><br>
-      Cinco creatividades visuales con IA.<br>
-      <a href="pago.html?nombre=Pack+5+imagenes&precio=50&stripe=https://buy.stripe.com/00wbITez45NXff09rdafS05">Contratar servicio</a>
-    </li>
-    <li><i class="fa-solid fa-image"></i>
-      <strong>Pack 10 imágenes</strong><br>
-      Diez creatividades visuales con IA.<br>
-      <a href="pago.html?nombre=Pack+10+imagenes&precio=90&stripe=https://buy.stripe.com/cNi4gr3Uq5NX9UG1YLafS06">Contratar servicio</a>
+      <strong>Creatividades visuales con IA</strong><br>
+      Imágenes, banners y diseños generados con IA y ajustados a tu marca.<br>
+      <button class="open-modal" data-type="imagenes">Ver precios / ejemplos</button>
     </li>
     <li><i class="fa-solid fa-box-open"></i>
-      <strong>Pack mensual básico</strong><br>
-      8 posts + 2 artículos.<br>
-      <a href="pago.html?nombre=Pack+mensual+básico&precio=75&stripe=https://buy.stripe.com/5kQ3cn8aG5NX5EqfPBafS07">Contratar servicio</a>
-    </li>
-    <li><i class="fa-solid fa-box-open"></i>
-      <strong>Pack mensual profesional</strong><br>
-      20 posts + 4 artículos + 5 imágenes.<br>
-      <a href="pago.html?nombre=Pack+mensual+profesional&precio=140&stripe=https://buy.stripe.com/14A6oz76Cb8h8QCdHtafS08">Contratar servicio</a>
-    </li>
-    <li><i class="fa-solid fa-box-open"></i>
-      <strong>Pack mensual premium</strong><br>
-      40 posts + 6 artículos + 10 imágenes.<br>
-      <a href="pago.html?nombre=Pack+mensual+premium&precio=250&stripe=https://buy.stripe.com/aFa6oz1Mi4JT5EqfPBafS09">Contratar servicio</a>
+      <strong>Packs de contenido mensual</strong><br>
+      Suscripción para que nunca te falte contenido nuevo.<br>
+      <button class="open-modal" data-type="packs">Ver precios / ejemplos</button>
     </li>
   </ul>
 </section>
@@ -157,15 +129,98 @@ footer { background-color: var(--color-primary); color: var(--color-white); text
   </form>
 </section>
 
-<a href="https://wa.me/34681044146?text=Hola,%20quiero%20información%20sobre%20los%20servicios%20de%20contenido%20con%20IA." class="whatsapp-button"
-target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
+<a href="https://wa.me/34681044146?text=Hola,%20quiero%20información%20sobre%20los%20servicios%20de%20contenido%20con%20IA." class="whatsapp-button" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
 
 <footer>
   <p>© 2025 RPP Agency - Todos los derechos reservados.</p>
 </footer>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h3>Contratar servicio</h3>
+    <ul id="modal-list">
+      <!-- Lista de precios / ejemplos dinámicos -->
+    </ul>
+    <button class="close-modal">Cerrar</button>
+    <div class="pay-options" id="pay-options">
+      <div class="pay-buttons">
+        <form id="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="rppagencyy@gmail.com">
+          <input type="hidden" name="item_name" value="">
+          <input type="hidden" name="amount" value="">
+          <input type="hidden" name="currency_code" value="EUR">
+          <button type="submit">Pagar con PayPal</button>
+        </form>
+        <a href="#" id="stripe-link" target="_blank">Pagar con Stripe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const modal = document.getElementById('modal');
+const modalList = document.getElementById('modal-list');
+const payOptions = document.getElementById('pay-options');
+const stripeLink = document.getElementById('stripe-link');
+
+document.querySelectorAll('.open-modal').forEach(btn => {
+  btn.addEventListener('click', () => {
+    modal.style.display = 'flex';
+    const type = btn.dataset.type;
+    modalList.innerHTML = '';
+
+    let items = [];
+    let paypalItem = '';
+    let paypalPrice = '';
+    let stripeUrl = '';
+
+    switch(type){
+      case 'contenido':
+        items = ['Artículo básico 400-600 palabras: 25€', 'Artículo avanzado 600-1000 palabras: 40€'];
+        paypalItem = 'Artículo básico';
+        paypalPrice = '25';
+        stripeUrl = 'https://buy.stripe.com/9B6bIT2Qma4d0k65aXafS00v';
+        break;
+      case 'redes':
+        items = ['Pack 5 publicaciones: 35€', 'Pack 10 publicaciones: 60€'];
+        paypalItem = 'Pack 5 publicaciones';
+        paypalPrice = '35';
+        stripeUrl = 'https://buy.stripe.com/eVq28j8aGa4dgj49rdafS01';
+        break;
+      case 'imagenes':
+        items = ['Imagen IA individual: 15€', 'Pack 5 imágenes IA: 60€'];
+        paypalItem = 'Imagen IA individual';
+        paypalPrice = '15';
+        stripeUrl = 'https://buy.stripe.com/aFa6oz4Yu0tD6IueLxafS02';
+        break;
+      case 'packs':
+        items = ['Pack mensual básico: 80€', 'Pack mensual avanzado: 150€'];
+        paypalItem = 'Pack mensual básico';
+        paypalPrice = '80';
+        stripeUrl = 'https://buy.stripe.com/fZu5kv3UqgsB5Eq6f1afS03';
+        break;
+    }
+
+    items.forEach(i => {
+      const li = document.createElement('li');
+      li.textContent = i;
+      modalList.appendChild(li);
+    });
+
+    document.querySelector('#paypal-form input[name="item_name"]').value = paypalItem;
+    document.querySelector('#paypal-form input[name="amount"]').value = paypalPrice;
+    stripeLink.href = stripeUrl;
+
+    payOptions.style.display = 'flex';
+  });
+});
+
+document.querySelector('.close-modal').addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+</script>
+
 </body>
 </html>
-
-
