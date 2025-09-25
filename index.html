@@ -1,209 +1,171 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>RPP Agency - Generación de Contenido con IA</title>
-<link rel="icon" href="logotipo-web.ico" type="image/x-icon">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link rel="icon" href="logotipo-web.ico" type="image/x-icon" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 <style>
 :root {
-  --color-bg:#faf9f7;
-  --color-primary:#1a1a1a;
-  --color-secondary:#b8860b;
-  --color-accent:#c77f00;
-  --color-white:#ffffff;
-  --transition-speed:0.4s;
-  --font-main:'Montserrat', sans-serif;
-  --border-radius:10px;
-  --shadow-light:rgba(0,0,0,0.05);
-  --shadow-dark:rgba(0,0,0,0.15);
+  --color-bg: #faf9f7;
+  --color-primary: #1a1a1a;
+  --color-secondary: #b8860b;
+  --color-accent: #c77f00;
+  --color-white: #ffffff;
+  --transition-speed: 0.4s;
+  --font-main: 'Montserrat', sans-serif;
+  --border-radius: 10px;
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  --shadow-dark: rgba(0, 0, 0, 0.15);
 }
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:var(--font-main);background-color:var(--color-bg);color:var(--color-primary);line-height:1.6;scroll-behavior:smooth;}
-nav{position:fixed;top:0;width:100%;background-color:var(--color-white);box-shadow:0 4px 15px var(--shadow-light);z-index:1000;}
-nav .container{max-width:1200px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
-nav .logo img{height:48px;cursor:pointer;}
-nav ul{list-style:none;display:flex;gap:2rem;flex-wrap:wrap;}
-nav ul li a{color:var(--color-primary);font-weight:600;text-decoration:none;font-size:1rem;position:relative;padding-bottom:3px;}
-nav ul li a::after{content:'';position:absolute;width:0;height:2px;bottom:0;left:0;background-color:var(--color-secondary);transition:width 0.3s ease;border-radius:2px;}
-nav ul li a:hover::after, nav ul li a:focus::after{width:100%;}
-header{background:linear-gradient(135deg,#1a1a1add 0%,#1a1a1aee 100%);color:var(--color-white);padding:7rem 1.5rem 4rem;text-align:center;box-shadow:0 4px 20px var(--shadow-dark);}
-header h1{font-size:3.6rem;font-weight:700;letter-spacing:3px;margin-bottom:0.5rem;}
-header p{font-size:1.4rem;font-style:italic;max-width:700px;margin:0 auto;color:#d6c58a;}
-section{max-width:900px;margin:3rem auto;padding:2rem;background-color:var(--color-white);border-radius:var(--border-radius);box-shadow:0 12px 40px var(--shadow-light);}
-h2{font-size:2.5rem;margin-bottom:1.8rem;position:relative;padding-bottom:8px;}
-h2::after{content:'';position:absolute;bottom:0;left:0;height:3px;width:70px;background-color:var(--color-secondary);border-radius:2px;}
-.services ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;}
-.services li{background-color:#fcfbf8;border-radius:var(--border-radius);padding:1.8rem 2rem;box-shadow:0 4px 18px var(--shadow-light);border-left:6px solid var(--color-secondary);display:flex;flex-direction:column;justify-content:space-between;min-height:250px;}
-.services li i{color:var(--color-secondary);font-size:2rem;}
-.services button{background:var(--color-white);color:var(--color-secondary);border:2px solid var(--color-secondary);border-radius:var(--border-radius);padding:0.7rem 1rem;font-weight:600;cursor:pointer;transition:all var(--transition-speed);font-size:0.95rem;margin-top:1rem;align-self:flex-start;}
-.services button:hover, .services button:focus{background:var(--color-secondary);color:var(--color-white);}
-.contact-form input, .contact-form textarea{width:100%;font-family:var(--font-main);padding:1rem 1.2rem;border:2px solid #ccc;border-radius:var(--border-radius);font-size:1rem;resize:vertical;margin-bottom:1rem;}
-.contact-form input:focus, .contact-form textarea:focus{border-color:var(--color-secondary);box-shadow:0 0 8px var(--color-secondary);outline:none;}
-.contact-form button{background-color:var(--color-secondary);color:var(--color-white);padding:1.2rem 0;border:none;border-radius:var(--border-radius);font-weight:700;font-size:1.1rem;cursor:pointer;width:100%;transition:background-color var(--transition-speed), transform var(--transition-speed);}
-.contact-form button:hover{background-color:#a37506;transform:scale(1.05);}
-.whatsapp-button{position:fixed;bottom:20px;right:20px;background-color:var(--color-secondary);color:var(--color-white);font-size:2rem;padding:0.8rem 1rem;border-radius:50%;text-align:center;box-shadow:0 4px 15px var(--shadow-dark);transition:all 0.4s;}
-.whatsapp-button:hover{transform:scale(1.1);background-color:#a37506;}
-footer{background-color:var(--color-primary);color:var(--color-white);text-align:center;padding:2rem 1rem;font-size:0.95rem;margin-top:4rem;}
-.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);display:none;justify-content:center;align-items:center;z-index:2000;}
-.modal-content{background:#fff;padding:2rem;border-radius:var(--border-radius);max-width:500px;width:90%;box-shadow:0 8px 30px var(--shadow-dark);text-align:left;}
-.modal-content h3{margin-bottom:1rem;}
-.modal-content ul li{margin-bottom:1.2rem;font-size:1.05rem;}
-.close-modal, .go-contact, .show-pay{margin-top:1rem;background:var(--color-white);color:var(--color-secondary);border:2px solid var(--color-secondary);border-radius:var(--border-radius);padding:0.8rem 1.5rem;font-weight:700;cursor:pointer;transition:all var(--transition-speed);display:inline-block;}
-.close-modal:hover, .go-contact:hover, .show-pay:hover{background:var(--color-secondary);color:var(--color-white);}
-@media(max-width:768px){header h1{font-size:2.5rem;} header p{font-size:1.1rem;} nav .container{flex-direction:column;gap:1rem;align-items:center;} nav ul{gap:1rem;flex-direction:column;align-items:center;} nav ul li a{text-align:center;} h2{font-size:2rem;}}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-main); background-color: var(--color-bg); color: var(--color-primary); line-height: 1.6; scroll-behavior: smooth; }
+nav { position: fixed; top: 0; width: 100%; background-color: var(--color-white); box-shadow: 0 4px 15px var(--shadow-light); z-index: 1000; }
+nav .container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+nav .logo img { height: 48px; cursor: pointer; }
+nav ul { list-style: none; display: flex; gap: 2rem; flex-wrap: wrap; }
+nav ul li a { color: var(--color-primary); font-weight: 600; text-decoration: none; font-size: 1rem; position: relative; padding-bottom: 3px; }
+nav ul li a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: var(--color-secondary); transition: width 0.3s ease; border-radius: 2px; }
+nav ul li a:hover::after, nav ul li a:focus::after { width: 100%; }
+header { background: linear-gradient(135deg, #1a1a1add 0%, #1a1a1aee 100%); color: var(--color-white); padding: 7rem 1.5rem 4rem; text-align: center; box-shadow: 0 4px 20px var(--shadow-dark); }
+header h1 { font-size: 3.6rem; font-weight: 700; letter-spacing: 3px; margin-bottom: 0.5rem; }
+header p { font-size: 1.4rem; font-style: italic; max-width: 700px; margin: 0 auto; color: #d6c58a; }
+section { max-width: 900px; margin: 3rem auto; padding: 2rem; background-color: var(--color-white); border-radius: var(--border-radius); box-shadow: 0 12px 40px var(--shadow-light); }
+h2 { font-size: 2.5rem; margin-bottom: 1.8rem; position: relative; padding-bottom: 8px; }
+h2::after { content: ''; position: absolute; bottom: 0; left: 0; height: 3px; width: 70px; background-color: var(--color-secondary); border-radius: 2px; }
+.services ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.services li { background-color: #fcfbf8; border-radius: var(--border-radius); padding: 1.8rem 2rem; box-shadow: 0 4px 18px var(--shadow-light); border-left: 6px solid var(--color-secondary); display: flex; flex-direction: column; justify-content: space-between; min-height: 250px; }
+.services li i { color: var(--color-secondary); font-size: 2rem; }
+.services a { background: var(--color-white); color: var(--color-secondary); border: 2px solid var(--color-secondary); border-radius: var(--border-radius); padding: 0.7rem 1rem; font-weight: 600; cursor: pointer; transition: all var(--transition-speed); font-size: 0.95rem; margin-top: 1rem; text-align: center; text-decoration:none; display:inline-block; }
+.services a:hover { background: var(--color-secondary); color: var(--color-white); }
+.contact-form input, .contact-form textarea { width: 100%; font-family: var(--font-main); padding: 1rem 1.2rem; border: 2px solid #ccc; border-radius: var(--border-radius); font-size: 1rem; resize: vertical; margin-bottom: 1rem; }
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--color-secondary); box-shadow: 0 0 8px var(--color-secondary); outline: none; }
+.contact-form button { background-color: var(--color-secondary); color: var(--color-white); padding: 1.2rem 0; border: none; border-radius: var(--border-radius); font-weight: 700; font-size: 1.1rem; cursor: pointer; width: 100%; transition: background-color var(--transition-speed), transform var(--transition-speed); }
+.contact-form button:hover { background-color: #a37506; transform: scale(1.05); }
+.whatsapp-button { position: fixed; bottom: 20px; right: 20px; background-color: var(--color-secondary); color: var(--color-white); font-size: 2rem; padding: 0.8rem 1rem; border-radius: 50%; text-align: center; box-shadow: 0 4px 15px var(--shadow-dark); transition: all 0.4s; }
+.whatsapp-button:hover { transform: scale(1.1); background-color: #a37506; }
+footer { background-color: var(--color-primary); color: var(--color-white); text-align: center; padding: 2rem 1rem; font-size: 0.95rem; margin-top: 4rem; }
+@media (max-width: 768px) {
+  header h1 { font-size: 2.5rem; } 
+  header p { font-size: 1.1rem; }
+  nav .container {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  nav ul {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  nav ul li a { text-align: center; }
+  h2 { font-size: 2rem; }
+}
 </style>
 </head>
 <body>
-
 <nav role="navigation" aria-label="Menú principal">
-<div class="container">
-<div class="logo"><img src="logo.png" alt="Logo de RPP Agency" /></div>
-<ul>
-<li><a href="#sobre-mi">Sobre nosotros</a></li>
-<li><a href="#servicios">Servicios</a></li>
-<li><a href="#contacto">Contacto</a></li>
-</ul>
-</div>
+  <div class="container">
+    <div class="logo">
+      <img src="logo.png" alt="Logo de RPP Agency" />
+    </div>
+    <ul>
+      <li><a href="#sobre-mi">Sobre nosotros</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
 </nav>
 
 <header>
-<h1>RPP Agency</h1>
-<p>Generamos contenido de calidad para tu negocio con el poder de la inteligencia artificial.</p>
+  <h1>RPP Agency</h1>
+  <p>Generamos contenido de calidad para tu negocio con el poder de la inteligencia artificial.</p>
 </header>
 
 <section id="sobre-mi">
-<h2>Sobre nosotros</h2>
-<p>En RPP Agency ayudamos a marcas, emprendedores y negocios a tener siempre contenido fresco, atractivo y profesional. 
-Usamos la inteligencia artificial como herramienta creativa para entregar resultados más rápidos y efectivos, sin perder la calidad que tu marca merece.</p>
+  <h2>Sobre nosotros</h2>
+  <p>En RPP Agency ayudamos a marcas, emprendedores y negocios a tener siempre contenido fresco, atractivo y profesional. 
+  Usamos la inteligencia artificial como herramienta creativa para entregar resultados más rápidos y efectivos, sin perder la calidad que tu marca merece.</p>
 </section>
 
 <section id="servicios" class="services">
-<h2>Servicios</h2>
-<ul>
-<li><i class="fa-solid fa-pen-nib"></i>
-<strong>Redacción y creación de contenido personalizado</strong><br>
-Publicaciones para blogs, webs y newsletters, adaptadas a tu marca y con enfoque profesional.<br>
-<button class="open-modal" data-type="contenido">Ver precios / ejemplos</button>
-</li>
-<li><i class="fa-brands fa-instagram"></i>
-<strong>Contenido para redes sociales</strong><br>
-Textos y publicaciones diseñadas para captar la atención de tu audiencia y aumentar la interacción en Instagram, Facebook y LinkedIn.<br>
-<button class="open-modal" data-type="redes">Ver precios / ejemplos</button>
-</li>
-<li><i class="fa-solid fa-image"></i>
-<strong>Creatividades visuales con IA</strong><br>
-Imágenes, banners y diseños generados con IA y ajustados a tu marca.<br>
-<button class="open-modal" data-type="imagenes">Ver precios / ejemplos</button>
-</li>
-<li><i class="fa-solid fa-box-open"></i>
-<strong>Packs de contenido mensual</strong><br>
-Suscripción para que nunca te falte contenido nuevo.<br>
-<button class="open-modal" data-type="packs">Ver precios / ejemplos</button>
-</li>
-</ul>
+  <h2>Servicios</h2>
+  <ul>
+    <li><i class="fa-solid fa-pen-nib"></i>
+      <strong>Redacción básica (400-600 palabras)</strong><br>
+      Artículo adaptado a tu marca.<br>
+      <a href="pago.html?nombre=Redaccion+básica&precio=25&stripe=https://buy.stripe.com/9B6bIT2Qma4d0k65aXafS00v">Contratar servicio</a>
+    </li>
+    <li><i class="fa-solid fa-pen-nib"></i>
+      <strong>Redacción avanzada (600-1000 palabras)</strong><br>
+      Artículo con investigación y optimización SEO.<br>
+      <a href="pago.html?nombre=Redaccion+avanzada&precio=40&stripe=https://buy.stripe.com/eVq28j8aGa4dgj49rdafS01">Contratar servicio</a>
+    </li>
+    <li><i class="fa-solid fa-pen-nib"></i>
+      <strong>Pack 5 publicaciones</strong><br>
+      Contenido para redes sociales.<br>
+      <a href="pago.html?nombre=Pack+5+publicaciones&precio=35&stripe=https://buy.stripe.com/aFa6oz4Yu0tD6IueLxafS02">Contratar servicio</a>
+    </li>
+    <li><i class="fa-solid fa-pen-nib"></i>
+      <strong>Pack 10 publicaciones</strong><br>
+      Contenido extendido para redes sociales.<br>
+      <a href="pago.html?nombre=Pack+10+publicaciones&precio=60&stripe=https://buy.stripe.com/fZu5kv3UqgsB5Eq6f1afS03">Contratar servicio</a>
+    </li>
+    <li><i class="fa-solid fa-image"></i>
+      <strong>Creatividad visual única</strong><br>
+      Imagen generada con IA adaptada a tu marca.<br>
+      <a href="pago.html?nombre=Creatividad+visual+unica&precio=15&stripe=https://buy.stripe.com/3cIcMXaiOfox9UG9rdafS04">Contratar servicio</a>
+    </li>
+    <li><i class="fa-solid fa-image"></i>
+      <strong>Pack 5 imágenes</strong><br>
+      Cinco creatividades visuales con IA.<br>
+      <a href="pago.html?nombre=Pack+5+imagenes&precio=50&stripe=https://buy.stripe.com/00wbITez45NXff09rdafS05">Contratar servicio</a>
+    </li>
+    <li><i class="fa-solid fa-image"></i>
+      <strong>Pack 10 imágenes</strong><br>
+      Diez creatividades visuales con IA.<br>
+      <a href="pago.html?nombre=Pack+10+imagenes&precio=90&stripe=https://buy.stripe.com/cNi4gr3Uq5NX9UG1YLafS06">Contratar servicio</a>
+    </li>
+    <li><i class="fa-solid fa-box-open"></i>
+      <strong>Pack mensual básico</strong><br>
+      8 posts + 2 artículos.<br>
+      <a href="pago.html?nombre=Pack+mensual+básico&precio=75&stripe=https://buy.stripe.com/5kQ3cn8aG5NX5EqfPBafS07">Contratar servicio</a>
+    </li>
+    <li><i class="fa-solid fa-box-open"></i>
+      <strong>Pack mensual profesional</strong><br>
+      20 posts + 4 artículos + 5 imágenes.<br>
+      <a href="pago.html?nombre=Pack+mensual+profesional&precio=140&stripe=https://buy.stripe.com/14A6oz76Cb8h8QCdHtafS08">Contratar servicio</a>
+    </li>
+    <li><i class="fa-solid fa-box-open"></i>
+      <strong>Pack mensual premium</strong><br>
+      40 posts + 6 artículos + 10 imágenes.<br>
+      <a href="pago.html?nombre=Pack+mensual+premium&precio=250&stripe=https://buy.stripe.com/aFa6oz1Mi4JT5EqfPBafS09">Contratar servicio</a>
+    </li>
+  </ul>
 </section>
 
 <section id="contacto">
-<h2>Contacto</h2>
-<form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST">
-<input type="hidden" name="_next" value="https://gabriel33-cpu.github.io/gabriel33-cpu.io/"/>
-<input type="text" name="nombre" placeholder="Tu nombre" required>
-<input type="email" name="email" placeholder="Tu correo electrónico" required>
-<textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
-<button type="submit">Enviar</button>
-</form>
+  <h2>Contacto</h2>
+  <form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST">
+    <input type="hidden" name="_next" value="https://gabriel33-cpu.github.io/gabriel33-cpu.io/" />
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
+    <input type="email" name="email" placeholder="Tu correo electrónico" required>
+    <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
 </section>
 
 <a href="https://wa.me/34681044146?text=Hola,%20quiero%20información%20sobre%20los%20servicios%20de%20contenido%20con%20IA." class="whatsapp-button"
 target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
-<i class="fa-brands fa-whatsapp"></i>
+  <i class="fa-brands fa-whatsapp"></i>
 </a>
 
 <footer>
-<p>© 2025 RPP Agency - Todos los derechos reservados.</p>
+  <p>© 2025 RPP Agency - Todos los derechos reservados.</p>
 </footer>
-
-<div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-<div class="modal-content">
-<h3 id="modal-title">Precios y Ejemplo</h3>
-<ul id="modal-list"></ul>
-<button class="go-contact">Quiero un servicio así</button>
-<button class="close-modal">Cerrar</button>
-</div>
-</div>
-
-<script>
-const modal = document.querySelector('.modal');
-const modalList = document.getElementById('modal-list');
-const modalTitle = document.getElementById('modal-title');
-const closeModalBtn = document.querySelector('.close-modal');
-const goContactBtn = document.querySelector('.go-contact');
-const openModalBtns = document.querySelectorAll('.open-modal');
-
-const data = {
-contenido:{titulo:"Redacción y creación de contenido personalizado", lista:[
-{nombre:"Artículo básico (400-600 palabras)", precio:25},
-{nombre:"Artículo avanzado (600-1000 palabras)", precio:40},
-{nombre:"Pack 5 publicaciones para redes sociales", precio:35}
-]},
-redes:{titulo:"Contenido para redes sociales", lista:[
-{nombre:"Pack 5 publicaciones", precio:25},
-{nombre:"Pack 10 publicaciones", precio:45},
-{nombre:"Pack 20 publicaciones", precio:80}
-]},
-imagenes:{titulo:"Creatividades visuales con IA", lista:[
-{nombre:"Imagen única", precio:15},
-{nombre:"Pack 5 imágenes", precio:50},
-{nombre:"Pack 10 imágenes", precio:90}
-]},
-packs:{titulo:"Packs de contenido mensual", lista:[
-{nombre:"Básico: 8 posts + 2 artículos", precio:75},
-{nombre:"Profesional: 20 posts + 4 artículos + 5 imágenes", precio:140},
-{nombre:"Premium: 40 posts + 6 artículos + 10 imágenes", precio:250}
-]}
-};
-
-openModalBtns.forEach(btn=>{
-btn.addEventListener('click', ()=>{
-const tipo = btn.dataset.type;
-modalTitle.textContent = data[tipo].titulo;
-modalList.innerHTML = data[tipo].lista.map(item=>{
-return `<li>
-<strong>${item.nombre}: ${item.precio} €</strong><br>
-<button class="show-pay" data-nombre="${item.nombre}" data-precio="${item.precio}">Contratar servicio</button>
-</li>`;
-}).join('');
-
-// Redirigir a pago.html con parámetros
-modalList.querySelectorAll('.show-pay').forEach(btn=>{
-btn.addEventListener('click', ()=>{
-const nombre = btn.getAttribute('data-nombre');
-const precio = btn.getAttribute('data-precio');
-window.location.href = `pago.html?nombre=${encodeURIComponent(nombre)}&precio=${encodeURIComponent(precio)}`;
-});
-});
-
-modal.style.display='flex';
-});
-});
-
-closeModalBtn.addEventListener('click',()=>{modal.style.display='none';});
-goContactBtn.addEventListener('click',()=>{
-modal.style.display='none';
-document.querySelector('#contacto').scrollIntoView({behavior:'smooth'});
-});
-window.addEventListener('click',e=>{if(e.target===modal)modal.style.display='none';});
-</script>
-
 </body>
 </html>
-
-
-
-
-
 
 
