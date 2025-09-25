@@ -179,10 +179,12 @@ return `<li>
 </li>`;
 }).join('');
 
+// Redirigir a pago.html con parámetros
 modalList.querySelectorAll('.show-pay').forEach(btn=>{
 btn.addEventListener('click', ()=>{
-const nombre = btn.previousElementSibling.textContent.split(':')[0];
-const precio = btn.previousElementSibling.textContent.split(':')[1].replace('€','').trim();
+const itemText = btn.previousElementSibling.textContent;
+const nombre = itemText.split(':')[0].trim();
+const precio = itemText.split(':')[1].replace('€','').trim();
 window.location.href = `pago.html?nombre=${encodeURIComponent(nombre)}&precio=${encodeURIComponent(precio)}`;
 });
 });
@@ -201,6 +203,8 @@ window.addEventListener('click',e=>{if(e.target===modal)modal.style.display='non
 
 </body>
 </html>
+
+
 
 
 
