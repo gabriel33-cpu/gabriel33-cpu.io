@@ -1,81 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RPP Agency - Pago del Servicio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
     body {
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #faf9f7 0%, #fffaf0 100%);
-      margin: 0;
-      padding: 0;
+      background: linear-gradient(120deg, #fefefe, #fff5e6);
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
+      justify-content: center;
+      animation: gradientShift 15s ease infinite;
+    }
+    @keyframes gradientShift {
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
     }
     header {
+      width: 100%;
+      padding: 2rem 1rem;
       background-color: #1a1a1a;
       color: #fff;
-      width: 100%;
-      padding: 2rem;
       text-align: center;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-    header h1 { margin: 0; font-size: 2.2rem; }
-    main {
-      max-width: 600px;
-      background: #fff;
-      margin: 3rem 1rem;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    #servicio-nombre {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 1rem;
-    }
-    #precio {
-      font-size: 1.2rem;
-      color: #b8860b;
       margin-bottom: 2rem;
     }
-    .pay-buttons {
+    header h1 { font-size: 2.2rem; }
+    main {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+    }
+    #servicio-nombre { font-size: 1.5rem; font-weight: 700; color:#1a1a1a; margin-bottom:0.5rem;}
+    #precio { font-size:1.3rem; font-weight:600; color:#b8860b; margin-bottom:2rem; }
+    .pay-buttons { display: flex; gap:1rem; flex-wrap: wrap; justify-content: center; }
+    .pay-buttons button, .pay-buttons form button {
       display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .pay-buttons form button, .pay-buttons button {
+      align-items: center;
+      gap:0.5rem;
       background-color: #1a1a1a;
-      color: #fff;
-      border: none;
-      border-radius: 12px;
-      padding: 1rem 2rem;
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.4s;
+      color:#fff;
+      border:none;
+      border-radius:12px;
+      padding:1rem 2rem;
+      font-weight:700;
+      font-size:1rem;
+      cursor:pointer;
+      transition: transform 0.3s, background-color 0.3s;
     }
-    .pay-buttons form button:hover, .pay-buttons button:hover {
+    .pay-buttons button:hover, .pay-buttons form button:hover {
       background-color: #b8860b;
+      transform: scale(1.05);
     }
+    .pay-buttons i { font-size:1.3rem; }
     .info-adicional {
-      margin-top: 2rem;
-      font-size: 0.95rem;
-      color: #555;
+      margin-top:2rem;
+      font-size:0.95rem;
+      color:#555;
     }
     footer {
-      margin-top: auto;
-      padding: 1.5rem;
-      text-align: center;
-      color: #fff;
-      background-color: #1a1a1a;
+      margin-top: 3rem;
+      padding:1.5rem;
+      text-align:center;
+      color:#fff;
+      background-color:#1a1a1a;
+      width:100%;
     }
   </style>
 </head>
@@ -86,7 +86,7 @@
 </header>
 
 <main>
-  <p id="servicio-nombre"></p>
+  <p id="servicio-nombre">Cargando...</p>
   <p id="precio"></p>
 
   <div class="pay-buttons">
@@ -97,11 +97,11 @@
       <input type="hidden" name="item_name" value="">
       <input type="hidden" name="amount" value="">
       <input type="hidden" name="currency_code" value="EUR">
-      <button type="submit">Pagar con PayPal</button>
+      <button type="submit"><i class="fab fa-paypal"></i> Pagar con PayPal</button>
     </form>
 
     <!-- Stripe -->
-    <button id="stripe-btn">Pagar con Stripe</button>
+    <button id="stripe-btn"><i class="fas fa-credit-card"></i> Pagar con Stripe</button>
   </div>
 
   <p class="info-adicional">Después de completar el pago serás redirigido a una página de confirmación.</p>
@@ -128,14 +128,12 @@
 
   document.getElementById('stripe-btn').addEventListener('click', async () => {
     if(!nombre || !precio) { alert('No hay información del servicio'); return; }
-
     try {
       const res = await fetch('http://localhost:4242/create-checkout-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nombre, precio })
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({ nombre, precio })
       });
-
       const data = await res.json();
       if(data.id){
         stripe.redirectToCheckout({ sessionId: data.id });
