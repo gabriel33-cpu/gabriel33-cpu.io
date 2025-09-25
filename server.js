@@ -1,18 +1,17 @@
 // server.js
+// server.js
 const express = require('express');
 const Stripe = require('stripe');
-const bodyParser = require('body-parser');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const app = express();
-
-// Tu clave secreta de prueba de Stripe
-const stripe = Stripe('sk_test_51SBLtI0gX3Yktc5tvvSwyIq3TfHynuTPTeQsnQ1fI4TvQaCD3YSD1ZTeTOouS8KfO9PIfqsHAyszVbGmDuyMDJoA00fA7sEof8');
+const stripe = Stripe('sk_test_51SBLtI0gX3Yktc5tvvSwyIq3TfHynuTPTeQsnQ1fI4TvQaCD3YSD1ZTeTOouS8KfO9PIfqsHAyszVbGmDuyMDJoA00fA7sEof8'); // Tu clave secreta
 
 app.use(cors());
 app.use(bodyParser.json());
 
-// Endpoint para crear sesión de Stripe
+// Endpoint para crear sesión de pago
 app.post('/create-checkout-session', async (req, res) => {
   const { nombre, precio } = req.body;
 
@@ -38,9 +37,11 @@ app.post('/create-checkout-session', async (req, res) => {
 
     res.json({ id: session.id });
   } catch (error) {
-    console.log(error);
-    res.status(500).json({ error: 'Error al crear la sesión' });
+    console.error(error);
+    res.status(500).json({ error: 'Error al crear la sesión de pago' });
   }
 });
 
-app.listen(4242, () => console.log('Servidor Stripe corriendo en puerto 4242'));
+const PORT = process.env.PORT || 4242;
+app.listen(PORT, () => console.log(`Servidor Stripe corriendo en puerto ${PORT}`));
+
