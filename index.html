@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RPP Agency - Creación de Contenido</title>
+  <title>RPP Agency - Generación de Contenido con IA</title>
   <link rel="icon" href="logotipo-web.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
@@ -84,36 +84,38 @@
 
 <header>
   <h1>RPP Agency</h1>
-  <p>Ayudamos a marcas y emprendedores a conectar con su audiencia a través de contenido profesional.</p>
+  <p>Especialistas en generación de contenido con Inteligencia Artificial para impulsar tu marca.</p>
 </header>
 
 <section id="sobre-mi">
   <h2>Sobre nosotros</h2>
-  <p>En RPP Agency nos dedicamos a crear contenido que comunica, emociona y vende. Trabajo para redes sociales, páginas web y campañas visuales, construyendo mensajes claros que representen a cada negocio.</p>
+  <p>En RPP Agency transformamos la manera en que las marcas crean y comparten contenido. 
+  Utilizamos Inteligencia Artificial combinada con creatividad humana para ofrecer textos, imágenes y estrategias únicas, 
+  ayudando a negocios a destacar y conectar con su audiencia.</p>
 </section>
 
 <section id="servicios" class="services">
   <h2>Servicios</h2>
   <ul>
-    <li><i class="fa-solid fa-pen-nib"></i>
-      <strong>Artículos para tu web o blog</strong><br>
-      Textos claros y bien estructurados que posicionan tu negocio.<br>
+    <li><i class="fa-solid fa-newspaper"></i>
+      <strong>Generación de Artículos con IA</strong><br>
+      Contenido optimizado para SEO que atrae tráfico y mejora tu visibilidad.<br>
       <button class="open-modal" data-type="articulos">Ver precios / ejemplos</button>
     </li>
-    <li><i class="fa-brands fa-youtube"></i>
-      <strong>Guiones para vídeos</strong><br>
-      Ideas listas para grabar, adaptadas al tipo de contenido.<br>
-      <button class="open-modal" data-type="guiones">Ver precios / ejemplos</button>
+    <li><i class="fa-brands fa-instagram"></i>
+      <strong>Posts para Redes Sociales</strong><br>
+      Copies creativos e imágenes generadas con IA listas para publicar.<br>
+      <button class="open-modal" data-type="posts">Ver precios / ejemplos</button>
     </li>
-    <li><i class="fa-solid fa-bullhorn"></i>
-      <strong>Textos para campañas publicitarias</strong><br>
-      Mensajes que destacan y convierten en redes o Google Ads.<br>
-      <button class="open-modal" data-type="campañas">Ver precios / ejemplos</button>
+    <li><i class="fa-solid fa-box-archive"></i>
+      <strong>Packs de Contenido Mensual</strong><br>
+      Planes de suscripción de contenido para que nunca te falten publicaciones.<br>
+      <button class="open-modal" data-type="packs">Ver precios / ejemplos</button>
     </li>
-    <li><i class="fa-solid fa-paintbrush"></i>
-      <strong>Diseño de identidad visual</strong><br>
-      Logotipos, colores y estilos para diferenciar tu marca.<br>
-      <button class="open-modal" data-type="diseño">Ver precios / ejemplos</button>
+    <li><i class="fa-solid fa-robot"></i>
+      <strong>Consultoría Creativa con IA</strong><br>
+      Te enseñamos a usar IA para crear y automatizar contenido en tu negocio.<br>
+      <button class="open-modal" data-type="consultoria">Ver precios / ejemplos</button>
     </li>
   </ul>
 </section>
@@ -129,7 +131,7 @@
   </form>
 </section>
 
-<a href="https://wa.me/34681044146?text=Hola,%20encantado%20de%20conocerte.%20¿En%20qué%20puedo%20ayudarte?" class="whatsapp-button"
+<a href="https://wa.me/34681044146?text=Hola,%20me%20interesa%20un%20servicio%20de%20IA.%20¿Podemos%20hablar?" class="whatsapp-button"
 target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
@@ -157,35 +159,35 @@ target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
 
   const data = {
     articulos: {
-      titulo: "Artículos para Web / Blog",
+      titulo: "Artículos con IA",
       lista: [
-        "<strong>Artículo estándar (400-600 palabras): 15 €</strong> — Ideal para posts informativos o noticias.",
-        "<strong>Artículo SEO (600-1000 palabras): 25 €</strong> — Perfecto para mejorar tu posicionamiento.",
-        "<strong>Artículo premium (+1000 palabras): desde 35 €</strong> — Guías completas o casos prácticos."
+        "<strong>Artículo básico (400-600 palabras): 12 €</strong>",
+        "<strong>Artículo SEO (600-1000 palabras): 20 €</strong>",
+        "<strong>Artículo premium (+1000 palabras): desde 30 €</strong>"
       ]
     },
-    guiones: {
-      titulo: "Guiones para Vídeos",
+    posts: {
+      titulo: "Posts para Redes Sociales",
       lista: [
-        "<strong>Guión corto (1-2 min): 12 €</strong> — Ejemplo reels / TikTok.",
-        "<strong>Guión medio (3-5 min): 20 €</strong> — Vídeos explicativos.",
-        "<strong>Guión largo (+5 min): desde 30 €</strong> — Precio varía según el vídeo y su duración."
+        "<strong>Pack 5 posts: 20 €</strong> — Incluye copy + imagen IA.",
+        "<strong>Pack 10 posts: 35 €</strong>",
+        "<strong>Pack 20 posts: 60 €</strong>"
       ]
     },
-    campañas: {
-      titulo: "Textos para Campañas Publicitarias",
+    packs: {
+      titulo: "Packs de Contenido Mensual",
       lista: [
-        "<strong>Texto simple para anuncios: 18 €</strong>",
-        "<strong>Texto A/B testing: 30 €</strong>",
-        "<strong>Campaña estratégica: desde 40 €</strong> — Para funnels o Google Ads."
+        "<strong>Básico: 50 €/mes</strong> — 8 posts + 2 artículos.",
+        "<strong>Profesional: 90 €/mes</strong> — 20 posts + 4 artículos + imágenes.",
+        "<strong>Premium: 150 €/mes</strong> — Todo lo anterior + asesoría de publicación."
       ]
     },
-    diseño: {
-      titulo: "Diseño de Identidad Visual",
+    consultoria: {
+      titulo: "Consultoría Creativa con IA",
       lista: [
-        "<strong>Logo básico: desde 50 €</strong>",
-        "<strong>Manual de marca: desde 120 €</strong>",
-        "Incluye colores, tipografías y ejemplos adaptados."
+        "<strong>Sesión de 1h: 30 €</strong> — Aprende a usar IA en tu negocio.",
+        "<strong>Pack 3 sesiones: 75 €</strong>",
+        "Incluye guías de prompts, automatización y soporte básico."
       ]
     }
   };
