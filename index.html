@@ -58,8 +58,24 @@
     .services ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
     .services li { background-color: #fcfbf8; border-radius: var(--border-radius); padding: 1.8rem 2rem; box-shadow: 0 4px 18px var(--shadow-light); border-left: 6px solid var(--color-secondary); display: flex; flex-direction: column; justify-content: space-between; min-height: 250px; }
     .services li i { color: var(--color-secondary); font-size: 2rem; }
-    .services button { background: var(--color-secondary); color: var(--color-white); border: none; border-radius: var(--border-radius); padding: 0.7rem 1rem; font-weight: 600; cursor: pointer; transition: all var(--transition-speed); font-size: 0.95rem; margin-top: 1rem; align-self: flex-start; }
-    .services button:hover, .services button:focus { background: var(--color-white); color: var(--color-secondary); border: 2px solid var(--color-secondary); }
+    .services button {
+      background: var(--color-white);
+      color: var(--color-secondary);
+      border: 2px solid var(--color-secondary);
+      border-radius: var(--border-radius);
+      padding: 0.7rem 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-speed);
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      align-self: flex-start;
+    }
+    .services button:hover,
+    .services button:focus {
+      background: var(--color-secondary);
+      color: var(--color-white);
+    }
 
     /* Formulario de contacto */
     .contact-form input, .contact-form textarea { width: 100%; font-family: var(--font-main); padding: 1rem 1.2rem; border: 2px solid #ccc; border-radius: var(--border-radius); font-size: 1rem; resize: vertical; margin-bottom: 1rem; }
@@ -167,7 +183,6 @@ target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
 </script>
 </body>
 </html>
-
 
 
 
