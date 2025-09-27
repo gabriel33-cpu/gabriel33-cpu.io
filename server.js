@@ -1,22 +1,26 @@
 // server.js
 const express = require('express');
 const Stripe = require('stripe');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
 
 // Usa la variable de entorno STRIPE_SECRET_KEY
+if (!process.env.STRIPE_SECRET_KEY) {
+  console.error("ERROR: Debes definir STRIPE_SECRET_KEY en variables de entorno");
+  process.exit(1);
+}
+
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json()); // bodyParser integrado en Express
 
 // Endpoint para crear sesión de Stripe
 app.post('/create-checkout-session', async (req, res) => {
   const { nombre, precio } = req.body;
 
-  if(!nombre || !precio){
+  if (!nombre || !precio) {
     return res.status(400).json({ error: 'Faltan datos del servicio' });
   }
 
@@ -38,7 +42,7 @@ app.post('/create-checkout-session', async (req, res) => {
 
     res.json({ url: session.url });
   } catch (error) {
-    console.error(error);
+    console.error('Error creando sesión Stripe:', error);
     res.status(500).json({ error: 'Error al crear la sesión' });
   }
 });
@@ -46,4 +50,5 @@ app.post('/create-checkout-session', async (req, res) => {
 // Railway asigna un puerto dinámico
 const PORT = process.env.PORT || 4242;
 app.listen(PORT, () => console.log(`Servidor Stripe corriendo en puerto ${PORT}`));
+
 
