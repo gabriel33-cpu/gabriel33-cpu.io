@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RPP Agency - Contenido con IA que Vende</title>
-  <meta name="description" content="Creamos contenido profesional con inteligencia artificial para marcas, emprendedores y negocios. Rápido, fresco y 100% alineado a tu voz.">
-  <link rel="icon" href="logotipo-web.ico" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RPP Agency - Contenido con IA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
       --color-bg: #fcfaf6;
@@ -23,7 +19,7 @@
       --shadow-light: rgba(0, 0, 0, 0.05);
     }
 
-    * {margin: 0;padding: 0;box-sizing: border-box;}
+    * {margin:0;padding:0;box-sizing:border-box;}
     body {
       font-family: var(--font-body);
       background-color: var(--color-bg);
@@ -32,164 +28,217 @@
       scroll-behavior: smooth;
     }
 
-    /* NAVBAR */
+    /* NAV */
     nav {
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-      z-index: 1000;
-      position: fixed;
-      top: 0;
-      left: 0;
+      width:100%;
+      background:rgba(255,255,255,0.95);
+      backdrop-filter:blur(12px);
+      box-shadow:0 2px 16px rgba(0,0,0,0.08);
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
     }
     nav .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      max-width:1200px;
+      margin:0 auto;
+      padding:1rem 2rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
-    nav .logo img {height: 42px;}
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-top: 0.8rem;
+    .logo img {height:42px;}
+    .nav-links {
+      list-style:none;
+      display:flex;
+      gap:2rem;
     }
-    nav ul li a {
-      color: var(--color-primary);
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 1.05rem;
-      position: relative;
-      padding-bottom: 4px;
+    .nav-links li a {
+      color:var(--color-primary);
+      font-weight:600;
+      text-decoration:none;
+      font-size:1.05rem;
+      position:relative;
+      padding-bottom:4px;
     }
-    nav ul li a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
-      transition: width var(--transition-speed) ease;
-      border-radius: 2px;
+    .nav-links li a::after {
+      content:'';
+      position:absolute;
+      width:0;
+      height:2px;
+      bottom:0;
+      left:0;
+      background:linear-gradient(to right,var(--color-secondary),var(--color-accent));
+      transition:width var(--transition-speed) ease;
+      border-radius:2px;
     }
-    nav ul li a:hover::after {width: 100%;}
+    .nav-links li a:hover::after {width:100%;}
 
-    /* NAV - MOBILE */
-    @media (max-width: 768px) {
-      nav .container {flex-direction: column;padding: 1.2rem;}
-      nav ul {gap: 1.2rem;justify-content: center;}
-      nav ul li a {font-size: 1rem;}
+    /* HAMBURGER */
+    .hamburger {display:none;flex-direction:column;cursor:pointer;}
+    .hamburger span {
+      height:3px;
+      width:25px;
+      background:var(--color-primary);
+      margin:4px 0;
+      border-radius:2px;
+      transition:all 0.3s;
+    }
+
+    @media (max-width:768px){
+      .hamburger {display:flex;}
+      .nav-links {
+        position:absolute;
+        top:70px;
+        right:0;
+        background:var(--color-white);
+        flex-direction:column;
+        width:220px;
+        padding:1rem;
+        box-shadow:0 4px 20px rgba(0,0,0,0.1);
+        transform:translateX(100%);
+        transition:transform 0.3s ease-in-out;
+      }
+      .nav-links.active {transform:translateX(0);}
     }
 
     /* HEADER */
     header {
-      background: linear-gradient(120deg, #0f0f0f 0%, #1a1a1a 100%);
-      color: var(--color-white);
-      padding: 9rem 1.5rem 6rem;
-      text-align: center;
-      margin-top: 65px;
+      background:linear-gradient(120deg,#0f0f0f 0%,#1a1a1a 100%);
+      color:var(--color-white);
+      padding:9rem 1.5rem 6rem;
+      text-align:center;
+      margin-top:65px;
     }
     header h1 {
-      font-family: var(--font-title);
-      font-size: 3.8rem;
-      font-weight: 800;
-      margin-bottom: 1.4rem;
+      font-family:var(--font-title);
+      font-size:3.8rem;
+      font-weight:800;
+      margin-bottom:1.4rem;
     }
     header p {
-      font-size: 1.4rem;
-      max-width: 700px;
-      margin: 0 auto;
-      color: #e8d5a0;
-      font-weight: 500;
+      font-size:1.4rem;
+      max-width:700px;
+      margin:0 auto;
+      color:#e8d5a0;
+      font-weight:500;
     }
 
     /* SECCIONES */
     section {
-      max-width: 1000px;
-      margin: 5rem auto;
-      padding: 2.8rem;
-      background-color: var(--color-white);
-      border-radius: var(--border-radius);
-      box-shadow: 0 10px 40px var(--shadow-light);
+      max-width:1000px;
+      margin:5rem auto;
+      padding:2.8rem;
+      background:var(--color-white);
+      border-radius:var(--border-radius);
+      box-shadow:0 10px 40px var(--shadow-light);
     }
-    #sobre-mi {margin-top: 8rem;}
+    #sobre-mi {margin-top:10rem;} /* más espacio */
     h2 {
-      font-family: var(--font-title);
-      font-size: 2.4rem;
-      margin-bottom: 2rem;
-      position: relative;
+      font-family:var(--font-title);
+      font-size:2.4rem;
+      margin-bottom:2rem;
+      position:relative;
     }
     h2::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      height: 4px;
-      width: 90px;
-      background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
-      border-radius: 2px;
+      content:'';
+      position:absolute;
+      bottom:-8px;
+      left:0;
+      height:4px;
+      width:90px;
+      background:linear-gradient(to right,var(--color-secondary),var(--color-accent));
+      border-radius:2px;
     }
 
     /* CARDS */
-    .cards {display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));gap: 1.5rem;}
-    .card {
-      background: var(--color-white);
-      border-radius: var(--border-radius);
-      box-shadow: 0 5px 20px var(--shadow-light);
-      padding: 1.8rem;
-      text-align: center;
-      transition: transform 0.3s ease;
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.5rem;
     }
-    .card:hover {transform: translateY(-5px);}
-    .card i {font-size: 2.5rem;color: var(--color-secondary);margin-bottom: 1rem;}
+    .card {
+      background:var(--color-white);
+      border-radius:var(--border-radius);
+      box-shadow:0 5px 20px var(--shadow-light);
+      padding:1.8rem;
+      text-align:center;
+      transition:transform 0.3s ease;
+    }
+    .card:hover {transform:translateY(-5px);}
+    .card i {font-size:2.5rem;color:var(--color-secondary);margin-bottom:1rem;}
 
     /* TESTIMONIOS */
-    .testimonial {background: #f9f9f9;border-left: 4px solid var(--color-secondary);padding: 1.5rem;margin-bottom: 1.5rem;border-radius: 12px;}
+    .testimonial {
+      background:#f9f9f9;
+      border-left:4px solid var(--color-secondary);
+      padding:1.5rem;
+      margin-bottom:1.5rem;
+      border-radius:12px;
+    }
 
     /* PLANES */
-    .pricing {display: grid;grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));gap: 1.5rem;}
-    .plan {border: 2px solid #ddd;padding: 2rem;border-radius: var(--border-radius);text-align: center;}
-    .plan h3 {margin-bottom: 1rem;}
-    .plan button {margin-top: 1rem;padding: 0.7rem 1.2rem;border: none;background: linear-gradient(to right, var(--color-secondary), var(--color-accent));color: var(--color-white);border-radius: 10px;cursor: pointer;}
+    .pricing {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:1.5rem;
+    }
+    .plan {
+      border:2px solid #ddd;
+      padding:2rem;
+      border-radius:var(--border-radius);
+      text-align:center;
+    }
+    .plan h3 {margin-bottom:1rem;}
+    .plan .price {font-size:1.5rem;font-weight:700;margin:0.5rem 0;}
+    .plan button {
+      margin-top:1rem;
+      padding:0.7rem 1.2rem;
+      border:none;
+      background:linear-gradient(to right,var(--color-secondary),var(--color-accent));
+      color:var(--color-white);
+      border-radius:10px;
+      cursor:pointer;
+    }
 
     /* FORMULARIO */
-    form {display: flex;flex-direction: column;gap: 1rem;}
+    form {display:flex;flex-direction:column;gap:1rem;}
     form input, form textarea {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      font-size: 1rem;
+      padding:0.8rem;
+      border:1px solid #ccc;
+      border-radius:10px;
+      font-size:1rem;
     }
     form button {
-      background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
-      border: none;
-      padding: 0.9rem;
-      border-radius: 12px;
-      color: var(--color-white);
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
+      background:linear-gradient(to right,var(--color-secondary),var(--color-accent));
+      border:none;
+      padding:0.9rem;
+      border-radius:12px;
+      color:var(--color-white);
+      font-size:1rem;
+      font-weight:600;
+      cursor:pointer;
     }
 
     /* FOOTER */
     footer {
-      text-align: center;
-      padding: 2rem;
-      background: #0f0f0f;
-      color: var(--color-white);
-      margin-top: 3rem;
+      text-align:center;
+      padding:2rem;
+      background:#0f0f0f;
+      color:var(--color-white);
+      margin-top:3rem;
     }
 
     /* EFECTOS */
-    .fade-in {opacity:0;transform:translateY(20px);transition:opacity 0.8s,transform 0.8s;}
-    .fade-in.appear {opacity:1;transform:translateY(0);}
+    .fade-in {
+      opacity:0;
+      transform:translateY(20px);
+      transition:opacity 0.8s,transform 0.8s;
+    }
+    .fade-in.appear {
+      opacity:1;
+      transform:translateY(0);
+    }
   </style>
 </head>
 <body>
@@ -197,7 +246,7 @@
   <nav>
     <div class="container">
       <div class="logo"><img src="logo.png" alt="RPP Agency"></div>
-      <ul>
+      <ul class="nav-links">
         <li><a href="#sobre-mi">Sobre nosotros</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#portafolio">Portafolio</a></li>
@@ -205,9 +254,9 @@
         <li><a href="#precios">Planes</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
+      <div class="hamburger"><span></span><span></span><span></span></div>
     </div>
   </nav>
-
   <!-- HEADER -->
   <header>
     <h1>Contenido con IA que Vende</h1>
@@ -217,44 +266,81 @@
   <!-- SOBRE NOSOTROS -->
   <section id="sobre-mi" class="fade-in">
     <h2>Sobre nosotros</h2>
-    <p>En RPP Agency creemos que la inteligencia artificial puede ser la herramienta perfecta para potenciar tu marca. Nuestro equipo combina creatividad, tecnología y estrategia para crear contenido que conecta con tu audiencia y genera resultados reales.</p>
+    <p>
+      En RPP Agency creemos que la inteligencia artificial puede ser la herramienta perfecta para potenciar tu marca.
+      Nuestro equipo combina creatividad, tecnología y estrategia para crear contenido que conecta con tu audiencia
+      y genera resultados reales.
+    </p>
   </section>
 
   <!-- SERVICIOS -->
   <section id="servicios" class="fade-in">
     <h2>Servicios</h2>
     <div class="cards">
-      <div class="card"><i class="fa-solid fa-pen-nib"></i><h3>Redacción</h3><p>Textos atractivos y optimizados para tus redes o web.</p></div>
-      <div class="card"><i class="fa-solid fa-image"></i><h3>Diseño con IA</h3><p>Visuales generados con inteligencia artificial para diferenciarte.</p></div>
-      <div class="card"><i class="fa-solid fa-bullhorn"></i><h3>Campañas</h3><p>Estrategias digitales que atraen clientes y generan ventas.</p></div>
+      <div class="card">
+        <i class="fa-solid fa-pen-nib"></i>
+        <h3>Redacción</h3>
+        <p>Textos atractivos y optimizados para tus redes o web.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-image"></i>
+        <h3>Diseño con IA</h3>
+        <p>Visuales generados con inteligencia artificial para diferenciarte.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-bullhorn"></i>
+        <h3>Campañas</h3>
+        <p>Estrategias digitales que atraen clientes y generan ventas.</p>
+      </div>
     </div>
   </section>
 
   <!-- PORTAFOLIO -->
   <section id="portafolio" class="fade-in">
     <h2>Portafolio</h2>
-    <p>Algunos proyectos recientes creados con inteligencia artificial para clientes de distintos sectores.</p>
+    <p>
+      Algunos proyectos recientes creados con inteligencia artificial para clientes de distintos sectores.
+    </p>
     <div class="cards">
-      <div class="card"><img src="https://source.unsplash.com/400x250/?business,office" alt="Proyecto 1" style="width:100%;border-radius:12px;margin-bottom:1rem;"><h3>Proyecto A</h3></div>
-      <div class="card"><img src="https://source.unsplash.com/400x250/?technology,marketing" alt="Proyecto 2" style="width:100%;border-radius:12px;margin-bottom:1rem;"><h3>Proyecto B</h3></div>
-      <div class="card"><img src="https://source.unsplash.com/400x250/?team,work" alt="Proyecto 3" style="width:100%;border-radius:12px;margin-bottom:1rem;"><h3>Proyecto C</h3></div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x250/?business,office"
+             alt="Proyecto 1"
+             style="width:100%;border-radius:12px;margin-bottom:1rem;">
+        <h3>Proyecto A</h3>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x250/?technology,marketing"
+             alt="Proyecto 2"
+             style="width:100%;border-radius:12px;margin-bottom:1rem;">
+        <h3>Proyecto B</h3>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x250/?team,work"
+             alt="Proyecto 3"
+             style="width:100%;border-radius:12px;margin-bottom:1rem;">
+        <h3>Proyecto C</h3>
+      </div>
     </div>
   </section>
 
   <!-- TESTIMONIOS -->
   <section id="testimonios" class="fade-in">
     <h2>Testimonios</h2>
-    <div class="testimonial"><p>"Gracias a RPP Agency duplicamos la interacción en redes sociales en solo un mes."</p><strong>- Cliente 1</strong></div>
-    <div class="testimonial"><p>"El contenido generado con IA superó nuestras expectativas, se siente natural y auténtico."</p><strong>- Cliente 2</strong></div>
+    <div class="testimonial">
+      <p>"Gracias a RPP Agency duplicamos la interacción en redes sociales en solo un mes."</p>
+      <strong>- Cliente 1</strong>
+    </div>
+    <div class="testimonial">
+      <p>"El contenido generado con IA superó nuestras expectativas, se siente natural y auténtico."</p>
+      <strong>- Cliente 2</strong>
+    </div>
   </section>
 
   <!-- PLANES -->
   <section id="precios" class="fade-in">
     <h2>Planes</h2>
-    <div class="pricing">
-      <div class="plan"><h3>Básico</h3><p>Ideal para emprendedores que comienzan.</p><p><strong>49€/mes</strong></p><button>Elegir</button></div>
-      <div class="plan"><h3>Profesional</h3><p>Para marcas que buscan crecer.</p><p><strong>99€/mes</strong></p><button>Elegir</button></div>
-      <div class="plan"><h3>Premium</h3><p>Contenido y gestión total de campañas.</p><p><strong>199€/mes</strong></p><button>Elegir</button></div>
+    <div class="pricing" id="pricing-cards">
+      <!-- Los planes se llenan dinámicamente con JS -->
     </div>
   </section>
 
@@ -273,18 +359,72 @@
   <footer>
     <p>© 2025 RPP Agency - Todos los derechos reservados</p>
   </footer>
-
   <script>
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = {threshold:0.2, rootMargin:"0px 0px -50px 0px"};
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('appear');
-        observer.unobserve(entry.target);
+    // === Animación al hacer scroll (fade-in) ===
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("appear");
+        }
       });
-    }, appearOptions);
-    faders.forEach(fader => {appearOnScroll.observe(fader);});
+    });
+    document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+
+    // === Menú hamburguesa ===
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navUl = document.querySelector("nav ul");
+    menuToggle.addEventListener("click", () => {
+      navUl.classList.toggle("showing");
+    });
+
+    // === Data de planes ===
+    const data = {
+      basico: {
+        nombre: "Plan Básico",
+        precio: "49€ / mes",
+        beneficios: [
+          "4 publicaciones en redes sociales",
+          "1 artículo de blog",
+          "1 banner con IA",
+        ],
+      },
+      pro: {
+        nombre: "Plan Pro",
+        precio: "99€ / mes",
+        beneficios: [
+          "12 publicaciones en redes sociales",
+          "3 artículos de blog",
+          "5 imágenes con IA",
+        ],
+      },
+      premium: {
+        nombre: "Plan Premium",
+        precio: "199€ / mes",
+        beneficios: [
+          "30 publicaciones en redes sociales",
+          "6 artículos de blog",
+          "15 imágenes con IA",
+          "Asesoría personalizada",
+        ],
+      },
+    };
+
+    // === Render dinámico de planes ===
+    const pricingContainer = document.getElementById("pricing-cards");
+    pricingContainer.innerHTML = Object.values(data)
+      .map(
+        (plan) => `
+      <div class="card">
+        <h3>${plan.nombre}</h3>
+        <p class="price">${plan.precio}</p>
+        <ul>
+          ${plan.beneficios.map((b) => `<li>${b}</li>`).join("")}
+        </ul>
+        <button>Elegir</button>
+      </div>
+    `
+      )
+      .join("");
   </script>
 </body>
 </html>
