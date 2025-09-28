@@ -174,8 +174,9 @@
       position: relative;
     }
 
+    /* ✅ Corrección clave: ajustar el scroll-margin para que no quede tapado */
     section[id] {
-      scroll-margin-top: 85px;
+      scroll-margin-top: 100px; /* Aumentado para compensar el nav + padding */
     }
 
     h2 {
@@ -249,7 +250,7 @@
       align-self: flex-start;
       position: relative;
       overflow: hidden;
-      min-height: 44px; /* Tamaño táctil mínimo */
+      min-height: 44px;
     }
 
     .services button::before {
@@ -310,7 +311,7 @@
       width: 100%;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 4px 15px rgba(184, 134, 11, 0.2);
-      min-height: 56px; /* Tamaño táctil cómodo */
+      min-height: 56px;
     }
 
     .contact-form button:hover {
@@ -370,6 +371,7 @@
       justify-content: center;
       align-items: center;
       z-index: 2000;
+      padding: 1rem; /* ✅ Añadido para evitar que toque los bordes */
     }
 
     .modal-content {
@@ -377,7 +379,9 @@
       padding: 2.5rem;
       border-radius: var(--border-radius);
       max-width: 540px;
-      width: 94%;
+      width: 100%;
+      max-height: 85vh; /* ✅ Limitar altura */
+      overflow-y: auto; /* ✅ Permitir scroll interno */
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
       text-align: left;
       animation: modalFadeIn 0.5s ease;
@@ -424,7 +428,7 @@
       cursor: pointer;
       transition: all var(--transition-speed);
       font-size: 1.05rem;
-      min-height: 48px; /* Tamaño táctil */
+      min-height: 48px;
     }
 
     .close-modal:hover,
@@ -441,7 +445,6 @@
       width: 100%;
     }
 
-    /* === Responsive === */
     @media (max-width: 768px) {
       header {
         padding: 7rem 1.5rem 5rem;
@@ -469,7 +472,7 @@
         gap: 1.2rem;
       }
       #sobre-mi {
-        margin-top: 120px; /* Evita que quede oculto tras nav fijo */
+        margin-top: 130px; /* Ajustado */
       }
       section {
         margin: 4rem auto;
@@ -488,6 +491,13 @@
         width: 60px;
         height: 60px;
         font-size: 1.7rem;
+      }
+      .modal-content {
+        padding: 1.8rem;
+        max-height: 80vh; /* ✅ Más espacio en móvil */
+      }
+      .modal-content h3 {
+        font-size: 1.6rem;
       }
     }
 
@@ -509,10 +519,17 @@
         font-size: 1.5rem;
       }
       .modal-content {
-        padding: 1.8rem;
+        padding: 1.4rem;
+        font-size: 0.95rem;
       }
       .modal-content h3 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+      }
+      .modal-content .show-pay,
+      .close-modal,
+      .go-contact {
+        padding: 0.8rem 1.4rem;
+        font-size: 1rem;
       }
     }
   </style>
