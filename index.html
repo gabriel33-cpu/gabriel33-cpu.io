@@ -588,7 +588,7 @@
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  // --- Datos con ejemplos mejorados ---
+  // --- Datos con ejemplos claros y breves ---
   const modal = document.querySelector('.modal');
   const modalList = document.getElementById('modal-list');
   const modalEjemplo = document.getElementById('modal-ejemplo');
@@ -623,7 +623,7 @@
         {nombre:"Pack 5 imágenes", precio:50},
         {nombre:"Pack 10 imágenes", precio:90}
       ],
-      ejemplo: "Ejemplo real: Banner para LinkedIn con fondo minimalista en negro y dorado, tipografía elegante y el texto: “Tu estrategia de contenido, potenciada por IA”. Incluye variante para feed (1080x1080) y story (1080x1920), con paleta de colores alineada a tu marca."
+      ejemplo: "Una imagen para Instagram con tus colores, un diseño moderno y un mensaje claro como: “Contenido que conecta, hecho con inteligencia artificial”. Listo para publicar en segundos."
     },
     packs: {
       titulo: "Packs de contenido mensual",
@@ -632,7 +632,7 @@
         {nombre:"Profesional: 20 posts + 4 artículos + 5 imágenes", precio:140},
         {nombre:"Premium: 40 posts + 6 artículos + 10 imágenes", precio:250}
       ],
-      ejemplo: "Ejemplo de entrega (Pack Profesional):\n• Post para Instagram: “¿Sabías que el 68% de los compradores investigan en redes antes de decidir? Nosotros creamos el contenido que guía esa decisión.”\n• Artículo de blog: “Cómo usar la IA sin perder la esencia de tu marca” (950 palabras, SEO optimizado).\n• Imagen para story: fondo abstracto dorado con ícono de cerebro digital y CTA: “Agenda tu estrategia hoy”.\nTodo listo para programar en una semana."
+      ejemplo: "Cada mes recibes: publicaciones para redes, artículos de blog e imágenes listas para usar. Todo pensado para ahorrarte tiempo y que tu marca siempre esté activa."
     }
   };
 
@@ -650,7 +650,6 @@
                 </li>`;
       }).join('');
 
-      // Mostrar ejemplo
       modalEjemplo.textContent = servicio.ejemplo;
 
       modalList.querySelectorAll('.show-pay').forEach((btn2, index) => {
@@ -677,3 +676,4 @@
 </script>
 </body>
 </html>
+
