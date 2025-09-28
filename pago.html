@@ -6,13 +6,67 @@
 <title>RPP Agency - Pago del Servicio</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 <style>
-  body { font-family: 'Montserrat', sans-serif; background: #faf9f7; text-align: center; padding: 3rem; }
-  h1 { color: #1a1a1a; font-size:2.5rem; margin-bottom:0.5rem; }
-  #servicio-nombre { font-weight: 600; margin-top: 1rem; font-size:1.2rem; color:#1a1a1a; }
-  .pay-buttons { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
-  .pay-buttons form button, .pay-buttons button { background-color: #1a1a1a; color: #fff; border: none; border-radius: 10px; padding: 1rem 2rem; font-weight: 600; cursor: pointer; transition: 0.4s; font-size:1rem; }
-  .pay-buttons form button:hover, .pay-buttons button:hover { background-color: #b8860b; }
-  p.info { margin-top:1rem; color:#555; font-size:0.95rem; }
+  body { 
+    font-family: 'Montserrat', sans-serif; 
+    background: #faf9f7; 
+    text-align: center; 
+    padding: 2rem 1.2rem; 
+    margin: 0;
+  }
+  h1 { 
+    color: #1a1a1a; 
+    font-size: 1.8rem; 
+    margin-bottom: 0.5rem; 
+    line-height: 1.3;
+  }
+  #servicio-nombre { 
+    font-weight: 600; 
+    margin-top: 1rem; 
+    font-size: 1.1rem; 
+    color: #1a1a1a; 
+  }
+  .pay-buttons { 
+    display: flex; 
+    gap: 1rem; 
+    justify-content: center; 
+    margin-top: 1.5rem; 
+    flex-wrap: wrap; 
+  }
+  .pay-buttons form button, 
+  .pay-buttons button { 
+    background-color: #1a1a1a; 
+    color: #fff; 
+    border: none; 
+    border-radius: 10px; 
+    padding: 0.9rem 1.6rem; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: 0.4s; 
+    font-size: 1rem; 
+    min-width: 180px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .pay-buttons form button:hover, 
+  .pay-buttons button:hover { 
+    background-color: #b8860b; 
+  }
+  p.info { 
+    margin-top: 1.2rem; 
+    color: #555; 
+    font-size: 0.9rem; 
+    padding: 0 1rem;
+  }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 1.6rem; }
+    .pay-buttons { flex-direction: column; align-items: center; gap: 0.8rem; }
+    .pay-buttons form button,
+    .pay-buttons button {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
 </style>
 </head>
 <body>
