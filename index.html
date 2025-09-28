@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RPP Agency - Generación de Contenido con IA</title>
+  <title>RPP Agency - Contenido con IA que Vende</title>
+  <meta name="description" content="Creamos contenido profesional con inteligencia artificial para marcas, emprendedores y negocios. Rápido, fresco y 100% alineado a tu voz.">
   <link rel="icon" href="logotipo-web.ico" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Fuentes modernas: Montserrat para títulos, Inter para cuerpo -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
   <script type="application/ld+json">
@@ -21,15 +23,16 @@
   <style>
     :root {
       --color-bg: #fcfaf6;
-      --color-primary: #1a1a1a;
+      --color-primary: #121212;
       --color-secondary: #b8860b;
-      --color-accent: #c77f00;
+      --color-accent: #d4af37;
       --color-white: #ffffff;
       --transition-speed: 0.35s;
-      --font-main: 'Montserrat', sans-serif;
-      --border-radius: 16px;
-      --shadow-light: rgba(0, 0, 0, 0.04);
-      --shadow-medium: rgba(0, 0, 0, 0.08);
+      --font-title: 'Montserrat', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --border-radius: 20px;
+      --shadow-light: rgba(0, 0, 0, 0.03);
+      --shadow-medium: rgba(0, 0, 0, 0.07);
       --shadow-hover: rgba(0, 0, 0, 0.12);
     }
 
@@ -40,21 +43,24 @@
     }
 
     body {
-      font-family: var(--font-main);
+      font-family: var(--font-body);
       background-color: var(--color-bg);
       color: var(--color-primary);
       line-height: 1.7;
       scroll-behavior: smooth;
+      /* Fondo con textura sutil de partículas de IA (SVG inline, 0KB extra) */
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23b8860b' fill-opacity='0.015'/%3E%3C/svg%3E");
     }
 
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: var(--color-white);
-      box-shadow: 0 2px 12px var(--shadow-medium);
+      background-color: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
       z-index: 1000;
-      backdrop-filter: blur(8px);
     }
 
     nav .container {
@@ -64,19 +70,21 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
     }
 
     nav .logo img {
-      height: 44px;
-      cursor: pointer;
+      height: 42px;
+      transition: transform 0.3s ease;
+    }
+
+    nav .logo img:hover {
+      transform: scale(1.03);
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
+      gap: 2.2rem;
     }
 
     nav ul li a {
@@ -95,81 +103,99 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: var(--color-secondary);
+      background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
       transition: width var(--transition-speed) ease;
       border-radius: 2px;
     }
 
-    nav ul li a:hover::after,
-    nav ul li a:focus::after {
+    nav ul li a:hover::after {
       width: 100%;
     }
 
     header {
-      background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+      background: linear-gradient(120deg, #0f0f0f 0%, #1a1a1a 100%);
       color: var(--color-white);
-      padding: 8rem 1.5rem 5rem;
+      padding: 9rem 1.5rem 6rem;
       text-align: center;
-      box-shadow: 0 6px 24px var(--shadow-medium);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Elemento decorativo flotante */
+    header::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184,134,11,0.08) 0%, transparent 70%);
+      z-index: 0;
     }
 
     header h1 {
-      font-size: 3.8rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 1.2rem;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      font-family: var(--font-title);
+      font-size: 4.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 1.4rem;
+      position: relative;
+      z-index: 2;
+      line-height: 1.1;
     }
 
     header p {
-      font-size: 1.35rem;
-      max-width: 720px;
+      font-size: 1.45rem;
+      max-width: 700px;
       margin: 0 auto;
-      color: #e0cda0;
-      font-weight: 400;
+      color: #e8d5a0;
+      font-weight: 500;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Animación de entrada suave */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.appear {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     section {
-      max-width: 920px;
-      margin: 4rem auto;
-      padding: 2.5rem;
+      max-width: 940px;
+      margin: 5rem auto;
+      padding: 2.8rem;
       background-color: var(--color-white);
       border-radius: var(--border-radius);
-      box-shadow: 0 10px 30px var(--shadow-light);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 10px 40px var(--shadow-light);
+      position: relative;
     }
 
-    section:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px var(--shadow-medium);
-    }
-
-    /* 🔑 CORRECCIÓN CLAVE: evita que la navbar tape el contenido al hacer scroll */
     section[id] {
-      scroll-margin-top: 80px;
-    }
-
-    @media (max-width: 768px) {
-      section[id] {
-        scroll-margin-top: 70px;
-      }
+      scroll-margin-top: 85px;
     }
 
     h2 {
-      font-size: 2.4rem;
-      margin-bottom: 2rem;
+      font-family: var(--font-title);
+      font-size: 2.6rem;
+      margin-bottom: 2.2rem;
       position: relative;
-      padding-bottom: 10px;
       color: var(--color-primary);
     }
 
     h2::after {
       content: '';
       position: absolute;
-      bottom: 0;
+      bottom: -8px;
       left: 0;
       height: 4px;
-      width: 80px;
+      width: 90px;
       background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
       border-radius: 2px;
     }
@@ -177,143 +203,161 @@
     .services ul {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 1.5rem;
+      gap: 2.2rem;
+      margin-top: 1.8rem;
     }
 
     .services li {
       background: #fdfdfd;
       border-radius: var(--border-radius);
-      padding: 2rem;
-      box-shadow: 0 6px 18px var(--shadow-light);
-      border-left: 5px solid var(--color-secondary);
+      padding: 2.2rem;
+      box-shadow: 0 6px 20px var(--shadow-light);
       transition: all var(--transition-speed) ease;
-      min-height: 240px;
+      min-height: 250px;
       display: flex;
       flex-direction: column;
+      position: relative;
     }
 
-    .services li:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 25px var(--shadow-hover);
+    /* Tarjeta 2 ligeramente inclinada para dinamismo */
+    .services li:nth-child(2) {
+      transform: rotate(-1.5deg);
+    }
+    .services li:nth-child(2):hover {
+      transform: rotate(-1.5deg) translateY(-6px);
     }
 
     .services li i {
       color: var(--color-secondary);
-      font-size: 2.2rem;
-      margin-bottom: 1.2rem;
+      font-size: 2.3rem;
+      margin-bottom: 1.3rem;
     }
 
     .services li strong {
-      font-size: 1.25rem;
-      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
+      margin-bottom: 0.9rem;
       display: block;
-    }
-
-    .services li br + button {
-      margin-top: auto;
+      font-weight: 700;
     }
 
     .services button {
-      background: var(--color-white);
+      background: transparent;
       color: var(--color-secondary);
       border: 2px solid var(--color-secondary);
-      border-radius: var(--border-radius);
-      padding: 0.75rem 1.2rem;
+      border-radius: 50px;
+      padding: 0.8rem 1.6rem;
       font-weight: 600;
       cursor: pointer;
       transition: all var(--transition-speed);
       font-size: 1rem;
       align-self: flex-start;
+      position: relative;
+      overflow: hidden;
     }
 
-    .services button:hover,
-    .services button:focus {
+    .services button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
       background: var(--color-secondary);
+      transition: left 0.4s ease;
+      z-index: -1;
+    }
+
+    .services button:hover::before {
+      left: 0;
+    }
+
+    .services button:hover {
       color: var(--color-white);
       transform: translateY(-2px);
     }
 
     .contact-form {
-      max-width: 600px;
+      max-width: 620px;
       margin: 0 auto;
     }
 
     .contact-form input,
     .contact-form textarea {
       width: 100%;
-      font-family: var(--font-main);
-      padding: 1rem 1.2rem;
-      border: 2px solid #e0e0e0;
-      border-radius: var(--border-radius);
-      font-size: 1rem;
+      font-family: var(--font-body);
+      padding: 1.1rem 1.3rem;
+      border: 2px solid #eaeaea;
+      border-radius: 14px;
+      font-size: 1.05rem;
       resize: vertical;
-      margin-bottom: 1.2rem;
-      transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+      margin-bottom: 1.4rem;
+      transition: all 0.3s ease;
     }
 
     .contact-form input:focus,
     .contact-form textarea:focus {
       border-color: var(--color-secondary);
-      box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.15);
+      box-shadow: 0 0 0 4px rgba(184, 134, 11, 0.12);
       outline: none;
     }
 
     .contact-form button {
-      background-color: var(--color-secondary);
+      background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
       color: var(--color-white);
-      padding: 1.2rem 0;
+      padding: 1.3rem 0;
       border: none;
-      border-radius: var(--border-radius);
+      border-radius: 14px;
       font-weight: 700;
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       cursor: pointer;
       width: 100%;
-      transition: background-color var(--transition-speed), transform var(--transition-speed);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(184, 134, 11, 0.2);
     }
 
     .contact-form button:hover {
-      background-color: #a37506;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(184, 134, 11, 0.3);
     }
 
     .whatsapp-button {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background-color: #25D366;
+      bottom: 28px;
+      right: 28px;
+      background: #25D366;
       color: white;
-      font-size: 1.8rem;
-      width: 60px;
-      height: 60px;
+      width: 64px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
       transition: all 0.3s ease;
-      animation: pulse 2s infinite;
+      animation: gentlePulse 2.5s infinite;
+      font-size: 1.9rem;
     }
 
     .whatsapp-button:hover {
-      transform: scale(1.15);
-      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+      transform: scale(1.18) rotate(10deg);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
       animation: none;
     }
 
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-      70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+    @keyframes gentlePulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+      70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
       100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
 
     footer {
       background-color: var(--color-primary);
-      color: #d0c8b0;
+      color: #b8a57a;
       text-align: center;
-      padding: 2.2rem 1rem;
+      padding: 2.5rem 1rem;
       font-size: 0.95rem;
-      margin-top: 5rem;
+      margin-top: 6rem;
+      font-family: var(--font-body);
     }
 
     /* Modal */
@@ -323,7 +367,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.75);
       display: none;
       justify-content: center;
       align-items: center;
@@ -332,36 +376,37 @@
 
     .modal-content {
       background: var(--color-white);
-      padding: 2.2rem;
+      padding: 2.5rem;
       border-radius: var(--border-radius);
-      max-width: 520px;
-      width: 92%;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+      max-width: 540px;
+      width: 94%;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
       text-align: left;
-      animation: fadeIn 0.4s ease;
+      animation: modalFadeIn 0.5s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
     }
 
     .modal-content h3 {
-      margin-bottom: 1.4rem;
+      font-family: var(--font-title);
+      margin-bottom: 1.6rem;
       color: var(--color-primary);
-      font-size: 1.8rem;
+      font-size: 1.9rem;
     }
 
     .modal-content ul {
       list-style: none;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.6rem;
     }
 
     .modal-content ul li {
-      margin-bottom: 1.3rem;
-      font-size: 1.1rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 1px dashed #eee;
+      margin-bottom: 1.4rem;
+      font-size: 1.15rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid #f0f0f0;
     }
 
     .modal-content ul li:last-child {
@@ -371,17 +416,16 @@
     .close-modal,
     .go-contact,
     .show-pay {
-      margin-top: 0.8rem;
-      background: var(--color-white);
+      margin-top: 0.9rem;
+      background: transparent;
       color: var(--color-secondary);
       border: 2px solid var(--color-secondary);
-      border-radius: var(--border-radius);
-      padding: 0.85rem 1.5rem;
+      border-radius: 50px;
+      padding: 0.9rem 1.8rem;
       font-weight: 700;
       cursor: pointer;
       transition: all var(--transition-speed);
-      display: inline-block;
-      font-size: 1rem;
+      font-size: 1.05rem;
     }
 
     .close-modal:hover,
@@ -393,7 +437,7 @@
     }
 
     .go-contact {
-      margin-top: 1.2rem;
+      margin-top: 1.4rem;
       display: block;
       width: 100%;
     }
@@ -401,55 +445,58 @@
     /* Responsive */
     @media (max-width: 768px) {
       header {
-        padding: 6rem 1.2rem 4rem;
+        padding: 7rem 1.5rem 5rem;
       }
       header h1 {
-        font-size: 2.6rem;
+        font-size: 2.9rem;
       }
       header p {
-        font-size: 1.15rem;
+        font-size: 1.25rem;
       }
       nav .container {
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 1rem;
-        align-items: center;
       }
       nav ul {
-        gap: 1.2rem;
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
       }
       section {
-        margin: 3rem auto;
-        padding: 2rem 1.8rem;
+        margin: 4rem auto;
+        padding: 2.2rem;
       }
       h2 {
-        font-size: 2rem;
+        font-size: 2.1rem;
       }
       .services ul {
         grid-template-columns: 1fr;
       }
+      .services li:nth-child(2) {
+        transform: none;
+      }
       .whatsapp-button {
-        width: 55px;
-        height: 55px;
-        font-size: 1.6rem;
+        width: 60px;
+        height: 60px;
+        font-size: 1.7rem;
       }
     }
 
     @media (max-width: 480px) {
       header h1 {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
       }
       header p {
-        font-size: 1rem;
+        font-size: 1.15rem;
       }
       h2 {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
       }
     }
   </style>
 </head>
 <body>
+
 <nav role="navigation" aria-label="Menú principal">
   <div class="container">
     <div class="logo">
@@ -465,16 +512,15 @@
 
 <header>
   <h1>RPP Agency</h1>
-  <p>Generamos contenido de calidad para tu negocio con el poder de la inteligencia artificial.</p>
+  <p>Contenido que vende, escrito por humanos, potenciado por IA.</p>
 </header>
 
-<section id="sobre-mi">
+<section id="sobre-mi" class="fade-in">
   <h2>Sobre nosotros</h2>
-  <p>En RPP Agency ayudamos a marcas, emprendedores y negocios a tener siempre contenido fresco, atractivo y profesional. 
-  Usamos la inteligencia artificial como herramienta creativa para entregar resultados más rápidos y efectivos, sin perder la calidad que tu marca merece.</p>
+  <p>En RPP Agency ayudamos a marcas, emprendedores y negocios a tener siempre contenido fresco, atractivo y profesional. Usamos la inteligencia artificial como herramienta creativa para entregar resultados más rápidos y efectivos, sin perder la calidad que tu marca merece.</p>
 </section>
 
-<section id="servicios" class="services">
+<section id="servicios" class="services fade-in">
   <h2>Servicios</h2>
   <ul>
     <li><i class="fa-solid fa-pen-nib"></i>
@@ -500,7 +546,7 @@
   </ul>
 </section>
 
-<section id="contacto">
+<section id="contacto" class="fade-in">
   <h2>Contacto</h2>
   <form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST">
     <input type="hidden" name="_next" value="https://gabriel33-cpu.github.io/gabriel33-cpu.io/" />
@@ -512,12 +558,12 @@
 </section>
 
 <a href="https://wa.me/34681044146?text=Hola,%20quiero%20información%20sobre%20los%20servicios%20de%20contenido%20con%20IA." class="whatsapp-button"
-target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
+   target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
 <footer>
-  <p>© 2025 RPP Agency - Todos los derechos reservados.</p>
+  <p>© 2025 RPP Agency — Contenido inteligente para marcas que crecen.</p>
 </footer>
 
 <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
@@ -530,6 +576,18 @@ target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
 </div>
 
 <script>
+  // Activar animaciones al hacer scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('appear');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // --- Resto de tu lógica de modal (sin cambios) ---
   const modal = document.querySelector('.modal');
   const modalList = document.getElementById('modal-list');
   const modalTitle = document.getElementById('modal-title');
