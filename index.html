@@ -570,6 +570,7 @@
   <div class="modal-content">
     <h3 id="modal-title">Precios y Ejemplo</h3>
     <ul id="modal-list"></ul>
+    <div id="modal-ejemplo" style="margin-top: 1.2rem; padding: 1.2rem; background: #fcfaf6; border-radius: 12px; font-style: italic; font-size: 1.05rem;"></div>
     <button class="go-contact">Quiero un servicio así</button>
     <button class="close-modal">Cerrar</button>
   </div>
@@ -587,9 +588,10 @@
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  // --- Resto de tu lógica de modal (sin cambios) ---
+  // --- Datos con ejemplos reales ---
   const modal = document.querySelector('.modal');
   const modalList = document.getElementById('modal-list');
+  const modalEjemplo = document.getElementById('modal-ejemplo');
   const modalTitle = document.getElementById('modal-title');
   const closeModalBtn = document.querySelector('.close-modal');
   const goContactBtn = document.querySelector('.go-contact');
@@ -602,7 +604,8 @@
         {nombre:"Artículo básico (400-600 palabras)", precio:25},
         {nombre:"Artículo avanzado (600-1000 palabras)", precio:40},
         {nombre:"Pack 5 publicaciones para redes sociales", precio:35}
-      ]
+      ],
+      ejemplo: "¿Sabías que el 78% de los consumidores confían más en marcas que publican contenido útil y constante? En este artículo, exploramos cómo construir una estrategia de contenido que no solo atrae, sino que convierte."
     },
     redes: {
       titulo: "Contenido para redes sociales",
@@ -610,7 +613,8 @@
         {nombre:"Pack 5 publicaciones", precio:25},
         {nombre:"Pack 10 publicaciones", precio:45},
         {nombre:"Pack 20 publicaciones", precio:80}
-      ]
+      ],
+      ejemplo: "✨ ¡NUEVO LANZAMIENTO! ✨\n¿Cansado de perder horas creando contenido? Con nuestro pack mensual, recibes publicaciones listas para programar, con tono fresco y enfoque en resultados. ¡Tu audiencia lo notará! 💡 #ContenidoQueVende"
     },
     imagenes: {
       titulo: "Creatividades visuales con IA",
@@ -618,7 +622,8 @@
         {nombre:"Imagen única", precio:15},
         {nombre:"Pack 5 imágenes", precio:50},
         {nombre:"Pack 10 imágenes", precio:90}
-      ]
+      ],
+      ejemplo: "(Ejemplo visual: banner para Instagram con fondo dorado abstracto, tipografía moderna y frase: “Tu marca, potenciada por IA”)"
     },
     packs: {
       titulo: "Packs de contenido mensual",
@@ -626,24 +631,30 @@
         {nombre:"Básico: 8 posts + 2 artículos", precio:75},
         {nombre:"Profesional: 20 posts + 4 artículos + 5 imágenes", precio:140},
         {nombre:"Premium: 40 posts + 6 artículos + 10 imágenes", precio:250}
-      ]
+      ],
+      ejemplo: "📦 Pack Profesional entregado:\n- 20 textos para redes (temas variados)\n- 4 artículos de blog optimizados para SEO\n- 5 imágenes únicas generadas con IA\nTodo listo para un mes completo de presencia digital profesional."
     }
   };
 
   openModalBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const tipo = btn.dataset.type;
-      modalTitle.textContent = data[tipo].titulo;
-      modalList.innerHTML = data[tipo].lista.map((item, index) => {
+      const servicio = data[tipo];
+      
+      modalTitle.textContent = servicio.titulo;
+      
+      modalList.innerHTML = servicio.lista.map((item, index) => {
         return `<li data-tipo="${tipo}">
                   <strong>${item.nombre}: ${item.precio} €</strong><br>
                   <button class="show-pay">Contratar servicio</button>
                 </li>`;
       }).join('');
 
+      // Mostrar ejemplo
+      modalEjemplo.textContent = servicio.ejemplo;
+
       modalList.querySelectorAll('.show-pay').forEach((btn2, index) => {
         btn2.addEventListener('click', () => {
-          const servicio = data[btn2.closest('li').dataset.tipo];
           const nombre = servicio.lista[index].nombre;
           const precio = servicio.lista[index].precio;
           window.location.href = `pago.html?nombre=${encodeURIComponent(nombre)}&precio=${encodeURIComponent(precio)}`;
