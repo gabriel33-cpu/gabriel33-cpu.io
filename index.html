@@ -138,7 +138,7 @@
     header {
       background: linear-gradient(120deg, #0b0b0b 0%, #151515 100%);
       color: var(--color-white);
-      padding: 6rem 1.2rem 3.5rem;
+      padding: 6rem 1.2rem 2rem; /* Reducido el padding inferior para eliminar espacio */
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -226,7 +226,7 @@
 
     .wrap {
       max-width: 1100px;
-      margin: -2.8rem auto 2.5rem;
+      margin: -1.8rem auto 2.5rem; /* Ajustado para eliminar espacio extra */
       padding: 0 1.2rem;
     }
 
@@ -631,7 +631,7 @@
 
     @media (max-width: 768px) {
       header {
-        padding: 5rem 1rem 2.8rem;
+        padding: 5rem 1rem 1.5rem;
       }
 
       header h1 {
@@ -643,7 +643,7 @@
       }
 
       .wrap {
-        margin-top: -1.5rem;
+        margin-top: -1rem;
         padding: 0 1rem;
       }
 
@@ -917,7 +917,7 @@
             <div class="price">45 € / mes</div>
             <ul>
               <li>1 automatización simple</li>
-              <li>Hasta 50 ejecuciones/mes</li>
+              <li>Funciona hasta 50 veces al mes</li>
               <li>Soporte por WhatsApp</li>
             </ul>
           </div>
@@ -929,7 +929,7 @@
             <div class="price">85 € / mes</div>
             <ul>
               <li>Hasta 3 automatizaciones</li>
-              <li>Hasta 200 ejecuciones/mes</li>
+              <li>Funciona hasta 200 veces al mes</li>
               <li>Actualizaciones mensuales</li>
               <li>Soporte prioritario</li>
             </ul>
@@ -942,7 +942,7 @@
             <div class="price">140 € / mes</div>
             <ul>
               <li>Automatizaciones ilimitadas</li>
-              <li>Ejecuciones ilimitadas</li>
+              <li>Sin límite de uso</li>
               <li>Llamada mensual de revisión</li>
               <li>Prioridad absoluta</li>
             </ul>
@@ -954,7 +954,7 @@
 
     <section id="contacto" class="card fade-in">
       <h2>Contacto</h2>
-      <p class="lead">Escríbenos y te proponemos la automatización ideal para tu negocio, sin compromiso.</p>
+      <p class="lead">Cuéntanos qué tarea repetitiva te quita tiempo. Nosotros te decimos cómo automatizarla, sin tecnicismos.</p>
       <form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="https://gabriel33-cpu.github.io/gabriel33-cpu.io/">
@@ -1049,13 +1049,13 @@
       },
       estandar: {
         titulo: "Plan Estándar",
-        lista: [{nombre:"Hasta 3 automatizaciones + 200 ejecuciones/mes", precio:85}],
-        ejemplo: "Perfecto para quienes ya tienen varias tareas que quieren delegar a la automatización."
+        lista: [{nombre:"Hasta 3 automatizaciones + 200 usos/mes", precio:85}],
+        ejemplo: "Perfecto si ya tienes varias tareas que quieres dejar en automático."
       },
       todo: {
         titulo: "Plan Todo incluido",
         lista: [{nombre:"Automatizaciones ilimitadas + soporte prioritario", precio:140}],
-        ejemplo: "Para negocios que quieren escalar sin preocuparse por tareas repetitivas."
+        ejemplo: "Para quienes quieren escalar sin preocuparse por tareas repetitivas."
       }
     };
 
@@ -1066,10 +1066,8 @@
         if (!servicio) return;
 
         modalTitle.textContent = servicio.titulo;
-        modalList.innerHTML = servicio.lista.map((item, index) => {
-          return `<li>
-            <strong>${item.nombre}: ${item.precio} €</strong>
-          </li>`;
+        modalList.innerHTML = servicio.lista.map(item => {
+          return `<li><strong>${item.nombre}: ${item.precio} €</strong></li>`;
         }).join('');
         modalEjemplo.textContent = servicio.ejemplo;
 
@@ -1114,7 +1112,6 @@
   </script>
 </body>
 </html>
-
 
 
 
