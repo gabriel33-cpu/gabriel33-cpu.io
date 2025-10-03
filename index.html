@@ -1,11 +1,13 @@
-```html
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RPP Agency - Contenido con IA que Vende</title>
-  <meta name="description" content="Creamos contenido profesional con inteligencia artificial para marcas, emprendedores y negocios. Rápido, fresco y 100% alineado a tu voz.">
+  <title>RPP Agency - Automatizaciones Simples para tu Negocio</title>
+  <meta name="description" content="Automatizamos tareas repetitivas para emprendedores y pequeños negocios: recordatorios, respuestas automáticas, formularios y más. Sin tecnicismos, sin complicaciones.">
   <link rel="icon" href="logotipo-web.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <script type="application/ld+json">
@@ -55,7 +57,6 @@
       background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23b8860b' fill-opacity='0.015'/%3E%3C/svg%3E");
     }
 
-    /* === Menú de navegación === */
     nav {
       width: 100%;
       background-color: rgba(255, 255, 255, 0.94);
@@ -134,7 +135,6 @@
       white-space: nowrap;
     }
 
-    /* Header hero */
     header {
       background: linear-gradient(120deg, #0b0b0b 0%, #151515 100%);
       color: var(--color-white);
@@ -224,7 +224,6 @@
       z-index: 1;
     }
 
-    /* Section base */
     .wrap {
       max-width: 1100px;
       margin: -2.8rem auto 2.5rem;
@@ -246,18 +245,12 @@
       color: var(--color-primary);
     }
 
-    h2.small {
-      font-size: 1.5rem;
-      margin-bottom: 0.9rem;
-    }
-
     p.lead {
       color: var(--muted);
       font-size: 1rem;
       margin-bottom: 1.2rem;
     }
 
-    /* Services grid */
     .services ul {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -321,7 +314,6 @@
       box-shadow: 0 10px 30px rgba(212,175,55,0.12);
     }
 
-    /* Portafolio grid */
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -345,6 +337,7 @@
       height: 150px;
       object-fit: cover;
       display: block;
+      loading: lazy;
     }
 
     .port-item .meta {
@@ -371,7 +364,6 @@
       box-shadow: 0 18px 50px rgba(12,12,12,0.07);
     }
 
-    /* Planes / precios */
     .pricing {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -440,7 +432,6 @@
       font-size: 0.95rem;
     }
 
-    /* Testimonios */
     .testimonials {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -465,6 +456,7 @@
       border-radius: 999px;
       object-fit: cover;
       flex-shrink: 0;
+      loading: lazy;
     }
 
     .testimonial .txt {
@@ -479,7 +471,6 @@
       margin-top: 0.4rem;
     }
 
-    /* Contact form */
     .contact-form {
       max-width: 720px;
       margin: 0 auto;
@@ -522,7 +513,6 @@
       transform: translateY(-3px);
     }
 
-    /* Floating whatsapp */
     .whatsapp-button {
       position: fixed;
       bottom: 20px;
@@ -555,7 +545,6 @@
       font-family: var(--font-body);
     }
 
-    /* Modal */
     .modal {
       position: fixed;
       top: 0;
@@ -625,7 +614,6 @@
       transform: translateY(-3px);
     }
 
-    /* Animación */
     .fade-in.appear {
       animation: fadeInUp 0.6s ease forwards;
     }
@@ -641,7 +629,6 @@
       }
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       header {
         padding: 5rem 1rem 2.8rem;
@@ -746,8 +733,8 @@
       </div>
       <ul>
         <li><a href="#sobre-mi">Sobre nosotros</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#portafolio">Portafolio</a></li>
+        <li><a href="#servicios">Automatizaciones</a></li>
+        <li><a href="#portafolio">Ejemplos</a></li>
         <li><a href="#testimonios">Testimonios</a></li>
         <li><a href="#planes">Planes</a></li>
         <li><a href="#contacto">Contacto</a></li>
@@ -759,10 +746,10 @@
   <header>
     <div class="hero-inner">
       <h1>RPP Agency</h1>
-      <p>Contenido profesional para marcas que quieren crecer. Textos, diseños e imágenes creados por expertos y optimizados con herramientas avanzadas.</p>
+      <p>Automatizamos tareas repetitivas para emprendedores y pequeños negocios. Sin tecnicismos, sin complicaciones.</p>
       <div class="hero-ctas">
         <a class="btn-primary" href="#planes"><i class="fa-solid fa-bolt"></i> Ver planes</a>
-        <a class="btn-secondary" href="#portafolio">Ver portafolio</a>
+        <a class="btn-secondary" href="#servicios">Ver automatizaciones</a>
       </div>
     </div>
   </header>
@@ -770,123 +757,123 @@
   <div class="wrap">
     <section id="sobre-mi" class="card fade-in">
       <h2>Sobre nosotros</h2>
-      <p class="lead">En RPP Agency ayudamos a marcas, emprendedores y negocios a tener siempre contenido fresco, atractivo y profesional. Utilizamos herramientas modernas para entregar resultados de alta calidad y con tiempos eficientes, sin sacrificar atención al detalle.</p>
+      <p class="lead">En RPP Agency ayudamos a autónomos, tiendas locales, coaches y pequeños negocios a ahorrar tiempo con automatizaciones simples y efectivas. Nada de código ni configuraciones complejas: solo soluciones prácticas que funcionan desde el primer día.</p>
       <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem;">
         <div style="flex:1;min-width:220px;background:#fff;padding:1rem;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.04);">
-          <strong style="display:block;margin-bottom:0.5rem;">Nuestro enfoque</strong>
-          <span style="color:var(--muted);font-size:0.95rem;">Estrategia clara, contenidos que generan interacción y mensajes adaptados a tu público objetivo.</span>
+          <strong style="display:block;margin-bottom:0.5rem;">Sin conocimientos técnicos</strong>
+          <span style="color:var(--muted);font-size:0.95rem;">No necesitas saber programar. Nosotros nos encargamos de todo.</span>
         </div>
         <div style="flex:1;min-width:220px;background:#fff;padding:1rem;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.04);">
-          <strong style="display:block;margin-bottom:0.5rem;">Canales habituales</strong>
-          <span style="color:var(--muted);font-size:0.95rem;">Instagram, Facebook, LinkedIn, blogs y newsletters, con formatos listos para publicar.</span>
+          <strong style="display:block;margin-bottom:0.5rem;">Resultados inmediatos</strong>
+          <span style="color:var(--muted);font-size:0.95rem;">Tu automatización estará activa en 48 horas o menos.</span>
         </div>
         <div style="flex:0 0 220px;min-width:200px;background:#fff;padding:1rem;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.04);">
-          <strong style="display:block;margin-bottom:0.5rem;">Contacto rápido</strong>
-          <span style="color:var(--muted);font-size:0.95rem;">Respuestas ágiles vía WhatsApp y correo para presupuestos y dudas.</span>
+          <strong style="display:block;margin-bottom:0.5rem;">Soporte humano</strong>
+          <span style="color:var(--muted);font-size:0.95rem;">Si algo no funciona, te ayudamos al instante por WhatsApp.</span>
         </div>
       </div>
     </section>
 
     <section id="servicios" class="card services fade-in">
-      <h2>Servicios</h2>
+      <h2>Automatizaciones simples y útiles</h2>
       <ul>
         <li>
           <div>
-            <i class="fa-solid fa-pen-nib"></i>
-            <strong>Redacción y creación de contenido personalizado</strong>
-            <p>Publicaciones para blogs, webs y newsletters, adaptadas a tu marca.</p>
+            <i class="fa-solid fa-robot"></i>
+            <strong>Chatbot para WhatsApp o web</strong>
+            <p>Responde preguntas frecuentes (horarios, precios, ubicación) sin que tú estés presente.</p>
           </div>
           <div style="margin-top:8px;">
-            <button class="open-modal" data-type="contenido">Ver precios / ejemplos</button>
+            <button class="open-modal" data-type="chatbot">Ver ejemplo</button>
+          </div>
+        </li>
+        <li>
+          <div>
+            <i class="fa-solid fa-envelope"></i>
+            <strong>Respuestas automáticas por email</strong>
+            <p>Confirma recepción de mensajes y gestiona expectativas desde el primer segundo.</p>
+          </div>
+          <div style="margin-top:8px;">
+            <button class="open-modal" data-type="email-auto">Ver ejemplo</button>
+          </div>
+        </li>
+        <li>
+          <div>
+            <i class="fa-solid fa-bell"></i>
+            <strong>Recordatorios automáticos</strong>
+            <p>Envía avisos por WhatsApp o email antes de citas, pagos o entregas.</p>
+          </div>
+          <div style="margin-top:8px;">
+            <button class="open-modal" data-type="recordatorios">Ver ejemplo</button>
+          </div>
+        </li>
+        <li>
+          <div>
+            <i class="fa-solid fa-file-csv"></i>
+            <strong>Formularios que se guardan solos</strong>
+            <p>Tus formularios se almacenan automáticamente en una hoja de Google Sheets.</p>
+          </div>
+          <div style="margin-top:8px;">
+            <button class="open-modal" data-type="formularios">Ver ejemplo</button>
           </div>
         </li>
         <li>
           <div>
             <i class="fa-brands fa-instagram"></i>
-            <strong>Contenido para redes sociales</strong>
-            <p>Textos y publicaciones diseñadas para captar la atención y aumentar interacción.</p>
+            <strong>Publicaciones programadas</strong>
+            <p>Programa tus posts de redes para toda la semana en menos de 10 minutos.</p>
           </div>
           <div style="margin-top:8px;">
-            <button class="open-modal" data-type="redes">Ver precios / ejemplos</button>
-          </div>
-        </li>
-        <li>
-          <div>
-            <i class="fa-solid fa-image"></i>
-            <strong>Creatividades visuales con IA</strong>
-            <p>Imágenes, banners y diseños generados y ajustados con criterio creativo.</p>
-          </div>
-          <div style="margin-top:8px;">
-            <button class="open-modal" data-type="imagenes">Ver precios / ejemplos</button>
-          </div>
-        </li>
-        <li>
-          <div>
-            <i class="fa-solid fa-robot"></i>
-            <strong>Chatbots con IA personalizados</strong>
-            <p>Automatiza respuestas y atención al cliente con un asistente virtual inteligente y alineado a tu marca.</p>
-          </div>
-          <div style="margin-top:8px;">
-            <button class="open-modal" data-type="chatbot">Ver precios / ejemplos</button>
-          </div>
-        </li>
-        <li>
-          <div>
-            <i class="fa-solid fa-box-open"></i>
-            <strong>Packs de contenido mensual</strong>
-            <p>Suscripciones para mantener activa tu presencia online sin esfuerzo semanal.</p>
-          </div>
-          <div style="margin-top:8px;">
-            <button class="open-modal" data-type="packs">Ver precios / ejemplos</button>
+            <button class="open-modal" data-type="redes">Ver ejemplo</button>
           </div>
         </li>
       </ul>
     </section>
 
     <section id="portafolio" class="card fade-in">
-      <h2>Portafolio</h2>
-      <p class="lead">Trabajos recientes y creatividades que reflejan la línea profesional que ofrecemos.</p>
+      <h2>Ejemplos reales</h2>
+      <p class="lead">Automatizaciones que ya usan nuestros clientes.</p>
       <div class="portfolio-grid" aria-hidden="false">
-        <div class="port-item" tabindex="0" role="button" aria-label="Portafolio 1">
-          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&auto=format&fit=crop" alt="Estrategia de marketing digital">
+        <div class="port-item" tabindex="0" role="button" aria-label="Chatbot para peluquería">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop" alt="Chatbot atendiendo clientes">
           <div class="meta">
-            <strong>Estrategia de lanzamiento</strong>
-            <span>Campaña multiplataforma y calendario editorial.</span>
+            <strong>Chatbot para peluquería</strong>
+            <span>Responde: horarios, servicios, precios y agenda cita.</span>
           </div>
         </div>
-        <div class="port-item" tabindex="0" role="button" aria-label="Portafolio 2">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop" alt="Diseño visual profesional">
+        <div class="port-item" tabindex="0" role="button" aria-label="Recordatorios para consultorio">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&auto=format&fit=crop" alt="Recordatorios automáticos">
           <div class="meta">
-            <strong>Creatividades de alto impacto</strong>
-            <span>Diseños listos para publicar y optimizados para interacción.</span>
+            <strong>Recordatorios médicos</strong>
+            <span>WhatsApp 24h antes: “¿Confirmas tu cita de mañana?”</span>
           </div>
         </div>
-        <div class="port-item" tabindex="0" role="button" aria-label="Portafolio 3">
-          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop" alt="Contenido para redes sociales">
+        <div class="port-item" tabindex="0" role="button" aria-label="Formulario para coach">
+          <img src="https://images.unsplash.com/photo-1556742400-b5c0f6f7f1f8?w=600&auto=format&fit=crop" alt="Formulario guardado">
           <div class="meta">
-            <strong>Calendario para redes</strong>
-            <span>Pack mensual con posteos listos y copies optimizados.</span>
+            <strong>Formulario de contacto</strong>
+            <span>Se guarda solo en Google Sheets. Sin copiar ni pegar.</span>
           </div>
         </div>
-        <div class="port-item" tabindex="0" role="button" aria-label="Portafolio 4">
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&auto=format&fit=crop" alt="Análisis y resultados">
+        <div class="port-item" tabindex="0" role="button" aria-label="Email automático para tienda">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&auto=format&fit=crop" alt="Email automático">
           <div class="meta">
-            <strong>Reportes y mejoras</strong>
-            <span>Medición de rendimiento y ajustes para maximizar alcance.</span>
+            <strong>Email de confirmación</strong>
+            <span>“Gracias por tu pedido. Te avisamos cuando salga a reparto.”</span>
           </div>
         </div>
-        <div class="port-item" tabindex="0" role="button" aria-label="Portafolio 5">
-          <img src="https://images.unsplash.com/photo-1556742400-b5c0f6f7f1f8?w=600&auto=format&fit=crop" alt="Imágenes generadas con IA">
+        <div class="port-item" tabindex="0" role="button" aria-label="Redes para pastelería">
+          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&auto=format&fit=crop" alt="Publicaciones programadas">
           <div class="meta">
-            <strong>Imágenes con estilo</strong>
-            <span>Visuales coherentes con identidad de marca.</span>
+            <strong>Redes para pastelería</strong>
+            <span>5 posts semanales programados: novedades, promos, recetas.</span>
           </div>
         </div>
-        <div class="port-item" tabindex="0" role="button" aria-label="Portafolio 6">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&auto=format&fit=crop" alt="Contenido profesional para empresas">
+        <div class="port-item" tabindex="0" role="button" aria-label="Recordatorios de pago">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop" alt="Recordatorios de pago">
           <div class="meta">
-            <strong>Contenido corporativo</strong>
-            <span>Artículos y publicaciones con tono profesional y claro.</span>
+            <strong>Recordatorios de pago</strong>
+            <span>Email automático al vencimiento: “Tu factura está pendiente”.</span>
           </div>
         </div>
       </div>
@@ -894,27 +881,27 @@
 
     <section id="testimonios" class="card fade-in">
       <h2>Testimonios</h2>
-      <p class="lead">Opiniones reales de clientes que han trabajado con nosotros.</p>
+      <p class="lead">Lo que dicen quienes ya automatizaron con nosotros.</p>
       <div class="testimonials" role="list">
         <div class="testimonial" role="listitem">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c" alt="Cliente 1">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&crop=face" alt="Cliente 1">
           <div>
-            <div class="txt">Resultados visibles en pocas semanas. La comunicación fue muy fluida y entendieron la voz de nuestra marca.</div>
-            <div class="who">Marta R., Marketing Manager</div>
+            <div class="txt">Ahora no pierdo clientes por no responder rápido. El chatbot contesta de inmediato y agenda citas.</div>
+            <div class="who">Sandra M., Peluquería</div>
           </div>
         </div>
         <div class="testimonial" role="listitem">
-          <img src="https://images.unsplash.com/photo-1545996124-6d5d4b8f1b3b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e" alt="Cliente 2">
+          <img src="https://images.unsplash.com/photo-1545996124-6d5d4b8f1b3b?w=80&h=80&fit=crop&crop=face" alt="Cliente 2">
           <div>
-            <div class="txt">Calidad y rapidez. El pack mensual nos permitió mantener actividad constante sin complicaciones.</div>
-            <div class="who">Luis G., Emprendedor</div>
+            <div class="txt">Mis formularios se guardan solos. Ya no copio datos a mano. ¡Me ahorró 5 horas a la semana!</div>
+            <div class="who">Carlos R., Coach personal</div>
           </div>
         </div>
         <div class="testimonial" role="listitem">
-          <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=7c6b5a4d3e2f1a0b9c8d7e6f5a4b3c2d" alt="Cliente 3">
+          <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=80&h=80&fit=crop&crop=face" alt="Cliente 3">
           <div>
-            <div class="txt">Creatividades muy alineadas con nuestra identidad. La visibilidad aumentó y la audiencia respondió mejor.</div>
-            <div class="who">Ana P., Fundadora</div>
+            <div class="txt">Los recordatorios redujeron mis cancelaciones en un 40%. Muy fácil de usar.</div>
+            <div class="who">Laura T., Consultorio</div>
           </div>
         </div>
       </div>
@@ -922,82 +909,82 @@
 
     <section id="planes" class="card fade-in">
       <h2>Planes y precios</h2>
-      <p class="lead">Escoge el plan que mejor se adapte a tus necesidades. Todos pueden personalizarse.</p>
+      <p class="lead">Todo incluido: configuración, pruebas y soporte. Sin sorpresas.</p>
       <div class="pricing" role="list">
         <div class="price-card" role="listitem">
           <div>
             <h3>Básico</h3>
-            <div class="price">90 € / mes</div>
+            <div class="price">45 € / mes</div>
             <ul>
-              <li>8 posts mensuales</li>
-              <li>2 artículos (400-600 words)</li>
-              <li>Soporte por correo</li>
+              <li>1 automatización simple</li>
+              <li>Hasta 50 ejecuciones/mes</li>
+              <li>Soporte por WhatsApp</li>
             </ul>
           </div>
-          <a class="btn-join open-modal" data-type="packs" href="javascript:void(0)">Seleccionar</a>
+          <a class="btn-join open-modal" data-type="basico" href="javascript:void(0)">Seleccionar</a>
         </div>
-        <div class="price-card popular" role="listitem" aria-label="Plan profesional - recomendado">
+        <div class="price-card popular" role="listitem" aria-label="Plan recomendado">
           <div>
-            <h3>Profesional</h3>
-            <div class="price">170 € / mes</div>
+            <h3>Estándar</h3>
+            <div class="price">85 € / mes</div>
             <ul>
-              <li>20 posts mensuales</li>
-              <li>4 artículos (600-1000 words)</li>
-              <li>5 imágenes personalizadas</li>
-              <li>Revisión mensual</li>
+              <li>Hasta 3 automatizaciones</li>
+              <li>Hasta 200 ejecuciones/mes</li>
+              <li>Actualizaciones mensuales</li>
+              <li>Soporte prioritario</li>
             </ul>
           </div>
-          <a class="btn-join open-modal" data-type="packs" href="javascript:void(0)">Seleccionar</a>
+          <a class="btn-join open-modal" data-type="estandar" href="javascript:void(0)">Seleccionar</a>
         </div>
         <div class="price-card" role="listitem">
           <div>
-            <h3>Premium</h3>
-            <div class="price">290 € / mes</div>
+            <h3>Todo incluido</h3>
+            <div class="price">140 € / mes</div>
             <ul>
-              <li>40 posts mensuales</li>
-              <li>6 artículos</li>
-              <li>10 imágenes y creatividades</li>
-              <li>Atención prioritaria</li>
+              <li>Automatizaciones ilimitadas</li>
+              <li>Ejecuciones ilimitadas</li>
+              <li>Llamada mensual de revisión</li>
+              <li>Prioridad absoluta</li>
             </ul>
           </div>
-          <a class="btn-join open-modal" data-type="packs" href="javascript:void(0)">Seleccionar</a>
+          <a class="btn-join open-modal" data-type="todo" href="javascript:void(0)">Seleccionar</a>
         </div>
       </div>
     </section>
 
     <section id="contacto" class="card fade-in">
       <h2>Contacto</h2>
-      <p class="lead">Escríbenos y en menos de 24 horas te respondemos con opciones claras para tu proyecto.</p>
+      <p class="lead">Escríbenos y te proponemos la automatización ideal para tu negocio, sin compromiso.</p>
       <form class="contact-form" action="https://formsubmit.co/rppagencyy@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="https://gabriel33-cpu.github.io/gabriel33-cpu.io/">
         <input type="text" name="nombre" placeholder="Tu nombre" required>
-        <input type="email" name="email" placeholder="Tu correo electrónico" required>
-        <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+        <input type="email" name="email" placeholder="Tu correo o WhatsApp" required>
+        <textarea name="mensaje" placeholder="¿Qué tarea repetitiva te gustaría automatizar?" rows="5" required></textarea>
         <button type="submit">Enviar</button>
       </form>
     </section>
   </div>
 
-  <a href="https://wa.me/34681044146?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20contenido%20con%20IA." class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
+  <a href="https://wa.me/34681044146?text=Hola,%20quiero%20automatizar%20una%20tarea%20repetitiva%20en%20mi%20negocio." class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar vía WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
   <footer>
-    <p>© 2025 RPP Agency — Contenido inteligente para marcas que crecen.</p>
+    <p>© 2025 RPP Agency — Automatizaciones simples para emprendedores y pequeños negocios.</p>
   </footer>
 
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
-      <h3 id="modal-title">Precios y Ejemplo</h3>
+      <h3 id="modal-title">Detalles de la automatización</h3>
       <ul id="modal-list"></ul>
       <div id="modal-ejemplo" style="margin-top: 1rem; padding: 1rem; background: #fcfaf6; border-radius: 10px; font-style: italic; font-size: 1rem;"></div>
-      <button class="go-contact">Quiero un servicio así</button>
+      <button class="go-contact">Quiero esta automatización</button>
       <button class="close-modal">Cerrar</button>
     </div>
   </div>
 
   <script>
-    /* Animación de aparición */
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1007,7 +994,6 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    /* Modal */
     const modal = document.querySelector('.modal');
     const modalList = document.getElementById('modal-list');
     const modalEjemplo = document.getElementById('modal-ejemplo');
@@ -1017,50 +1003,59 @@
     const openModalBtns = document.querySelectorAll('.open-modal');
 
     const data = {
-      contenido: {
-        titulo: "Redacción y creación de contenido personalizado",
+      chatbot: {
+        titulo: "Chatbot para WhatsApp o web",
         lista: [
-          {nombre:"Artículo básico (400-600 palabras)", precio:30},
-          {nombre:"Artículo avanzado (600-1000 palabras)", precio:50},
-          {nombre:"Pack 5 publicaciones para redes sociales", precio:40}
+          {nombre:"Chatbot básico (5 preguntas)", precio:60},
+          {nombre:"Chatbot con 10 preguntas + respuestas personalizadas", precio:90}
         ],
-        ejemplo: "¿Sabías que el 78% de los consumidores confían más en marcas que publican contenido útil y constante? Aquí un extracto de muestra que puedes usar como base para un artículo."
+        ejemplo: "Ejemplo: Cliente pregunta '¿Cuáles son sus horarios?'. El bot responde: 'Estamos abiertos de lunes a viernes, 9:00 a 18:00. ¿Te reservo cita?'"
+      },
+      email-auto: {
+        titulo: "Respuestas automáticas por email",
+        lista: [
+          {nombre:"Respuesta automática simple", precio:30},
+          {nombre:"Secuencia de 2 emails (bienvenida + seguimiento)", precio:50}
+        ],
+        ejemplo: "Cuando alguien te escribe, recibe: '¡Gracias por contactarnos! Revisaremos tu mensaje y te responderemos antes de 24h.'"
+      },
+      recordatorios: {
+        titulo: "Recordatorios automáticos",
+        lista: [
+          {nombre:"Recordatorios vía WhatsApp (hasta 20/mes)", precio:40},
+          {nombre:"Recordatorios por email + WhatsApp", precio:60}
+        ],
+        ejemplo: "24h antes de la cita: 'Hola [Nombre], te recordamos tu cita mañana a las 16:00. ¿Necesitas reprogramar?'"
+      },
+      formularios: {
+        titulo: "Formularios que se guardan solos",
+        lista: [
+          {nombre:"Conexión formulario → Google Sheets", precio:35}
+        ],
+        ejemplo: "Cada vez que alguien llena tu formulario de contacto, sus datos aparecen automáticamente en tu hoja de cálculo, sin copiar ni pegar."
       },
       redes: {
-        titulo: "Contenido para redes sociales",
+        titulo: "Publicaciones programadas",
         lista: [
-          {nombre:"Pack 5 publicaciones", precio:30},
-          {nombre:"Pack 10 publicaciones", precio:55},
-          {nombre:"Pack 20 publicaciones", precio:95}
+          {nombre:"5 publicaciones programadas", precio:45},
+          {nombre:"12 publicaciones (1 mes completo)", precio:95}
         ],
-        ejemplo: "Publicación lista para Instagram: “Nuevo producto disponible. Diseño moderno y caption orientado a conversión. Reserva ahora.”"
+        ejemplo: "Elegimos juntos los textos e imágenes, y programamos toda tu semana en Instagram o Facebook. Tú solo revisas los resultados."
       },
-      imagenes: {
-        titulo: "Creatividades visuales con IA",
-        lista: [
-          {nombre:"Imagen única", precio:18},
-          {nombre:"Pack 5 imágenes", precio:60},
-          {nombre:"Pack 10 imágenes", precio:110}
-        ],
-        ejemplo: "Imagen de ejemplo: composición limpia, tipografía legible y colores corporativos alineados a la identidad."
+      basico: {
+        titulo: "Plan Básico",
+        lista: [{nombre:"1 automatización simple (ej: chatbot o recordatorios)", precio:45}],
+        ejemplo: "Ideal para empezar: elige una tarea repetitiva y la automatizamos por ti."
       },
-      chatbot: {
-        titulo: "Chatbots con IA personalizados",
-        lista: [
-          {nombre:"Chatbot básico (FAQ)", precio:120},
-          {nombre:"Chatbot avanzado (integrado con CRM)", precio:250},
-          {nombre:"Mantenimiento mensual", precio:60}
-        ],
-        ejemplo: "Asistente virtual que responde preguntas frecuentes, guía a los usuarios y deriva consultas complejas al equipo humano."
+      estandar: {
+        titulo: "Plan Estándar",
+        lista: [{nombre:"Hasta 3 automatizaciones + 200 ejecuciones/mes", precio:85}],
+        ejemplo: "Perfecto para quienes ya tienen varias tareas que quieren delegar a la automatización."
       },
-      packs: {
-        titulo: "Packs de contenido mensual",
-        lista: [
-          {nombre:"Básico: 8 posts + 2 artículos", precio:90},
-          {nombre:"Profesional: 20 posts + 4 artículos + 5 imágenes", precio:170},
-          {nombre:"Premium: 40 posts + 6 artículos + 10 imágenes", precio:290}
-        ],
-        ejemplo: "Cada mes entregamos posts, artículos y creatividades listos para publicar, con revisión y ajustes incluidos."
+      todo: {
+        titulo: "Plan Todo incluido",
+        lista: [{nombre:"Automatizaciones ilimitadas + soporte prioritario", precio:140}],
+        ejemplo: "Para negocios que quieren escalar sin preocuparse por tareas repetitivas."
       }
     };
 
@@ -1072,25 +1067,14 @@
 
         modalTitle.textContent = servicio.titulo;
         modalList.innerHTML = servicio.lista.map((item, index) => {
-          return `<li data-tipo="${tipo}">
-            <strong>${item.nombre}: ${item.precio} €</strong><br>
-            <button class="show-pay" data-index="${index}">Contratar servicio</button>
+          return `<li>
+            <strong>${item.nombre}: ${item.precio} €</strong>
           </li>`;
         }).join('');
         modalEjemplo.textContent = servicio.ejemplo;
 
-        modalList.querySelectorAll('.show-pay').forEach((btn2, index) => {
-          btn2.addEventListener('click', () => {
-            const nombre = servicio.lista[index].nombre;
-            const precio = servicio.lista[index].precio;
-            window.location.href = `pago.html?nombre=${encodeURIComponent(nombre)}&precio=${encodeURIComponent(precio)}`;
-          });
-        });
-
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
-        const firstBtn = modal.querySelector('.show-pay');
-        if (firstBtn) firstBtn.focus();
       });
     });
 
@@ -1118,11 +1102,18 @@
         document.body.style.overflow = '';
       }
     });
+
+    document.querySelectorAll('.port-item').forEach(item => {
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          alert('Más información próximamente');
+        }
+      });
+    });
   </script>
 </body>
 </html>
-```
-
 
 
 
